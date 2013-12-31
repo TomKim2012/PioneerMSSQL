@@ -60,46 +60,45 @@ class Flexipay_server extends REST_Controller
     /*
      * Get customer Transactions
      */
-    function custTransactions_get()
+    function custTransactions_post()
     {
-    	if($this->get('clCode')){
-	    	//Check if user is Logged In
-	    	if($this->authorize())
-	    	{
-	    		$transactions = $this->transactions->getCustTransaction($this->get('clCode'));
-	    		if($transactions)
+    	if($this->post('clCode')){
+    	   //Check if user is Logged In
+    	   if($this->authorize())
+    	   {
+    	  	
+                $sharesBal = $this->transactions->getCustTransaction($this->post('clCode'), 1);
+                $savingsBal = $this->transactions->getCustTransaction($this->post('clCode'), 2);
+                $loanBal = $this->transactions->getCustTransaction($this->post('clCode'), 3);
+                
+                $customerData=$this->customers->getSingleCustomer("clCode", $this->post('clCode'));
+	    		
+                if($sharesBal)
 	    		{
-	    			$counter=1;
-	    			$message = null;
-	    			foreach ($transactions as $row) {
-	    				$message .=$counter.". ".$row['transaction_date'].":".$row['transaction_type']." -".
-	    						   "Ksh ". number_format($row['transaction_amount'])." || ";
-	    				$counter++;
-	    			}
+    				$message ="Dear ".$customerData['firstName'].", Your shares Balance is Ksh".number_format($sharesBal).", Savings Balance is Ksh ".
+                              number_format($savingsBal).".and Loan Balance is Ksh ".number_format($loanBal);
+    			}
 	    			
-	    			$customerData=$this->customers->getSingleCustomer("clCode", $this->get('clCode'));
-	    			
-	    			$save = $this->saveMiniStatement($this->get('clCode'), "Mini-Statement", 10);
-	    			
-	    			if($save){
-	    				$response=$this->_send_sms($customerData->mobileNo, $message);
-	    			}
-	    			
-			        if($response){
-			        	$clientResponse['sms']=$response;
-			        	$clientResponse['success']=true;
-			        	$this->response($clientResponse, 200); // 200 being the HTTP response code
-			        }
-	    		}else
-	    		{
-	    			$this->response(array('message' => 'No transactions set returned',
-	    					'error' =>true), 404
-	    			);
-	    		}
-	    	}
+    			$save = $this->saveMiniStatement($this->get('clCode'), "Mini-Statement", 10);
+    			if($save){
+                    $response=$this->_send_sms('0729472421', $message);
+    				//$response=$this->_send_sms($customerData->mobileNo, $message);
+    			}
+    			
+		        if($response){
+		        	$clientResponse['sms']=true;
+		        	$clientResponse['success']=true;
+		        	$this->response($clientResponse, 200); // 200 being the HTTP response code
+		        }
+    		}else
+    		{
+    			$this->response(array('message' => 'User Not Logged In',
+    					'error' =>true), 200
+    			);
+    		}
     	}else{
     		$this->response(array('message' => 'clCode not sent in the request',
-    				'error' =>true), 404
+    				'error' =>true), 200
     			);
     	}
     }

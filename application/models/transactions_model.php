@@ -57,8 +57,16 @@ class Transactions_Model extends CI_Model {
 		 	}
 	}
 	
-	function getCustTransaction($customerId){
-		//Users transaction for Today
+	function getCustTransaction($customerId, $transactionId){
+		$this->db->query('Use MergeFinal');
+        $rs = $this->db->query('SELECT Dbo.SP_GetBalances(\''.$customerId.'\','.$transactionId.') AS balance');
+		//echo $this->db->last_query();
+
+        $balance = $rs->row()->balance;
+        $this->db->query('Use mobileBanking');
+		return $balance;
+
+		/*//Users transaction for Today
 		$this->db->select('transaction_amount,transaction_date,transaction_type');
 		$this->db->where(
 						array('customerId'=>$customerId,
@@ -66,6 +74,7 @@ class Transactions_Model extends CI_Model {
 		$query=$this->db->get('transactions',5);
 		$transactions= $query->result_array();
 		return $transactions;
+		*/	
 	}
 	
 	function random_string($length = 4) {
