@@ -62,11 +62,11 @@ class Flexipay_server extends REST_Controller
      */
     function custTransactions_get()
     {
-    	if($this->get('customerId')){
+    	if($this->get('clCode')){
 	    	//Check if user is Logged In
 	    	if($this->authorize())
 	    	{
-	    		$transactions = $this->transactions->getCustTransaction($this->get('customerId'));
+	    		$transactions = $this->transactions->getCustTransaction($this->get('clCode'));
 	    		if($transactions)
 	    		{
 	    			$counter=1;
@@ -77,9 +77,9 @@ class Flexipay_server extends REST_Controller
 	    				$counter++;
 	    			}
 	    			
-	    			$customerData=$this->customers->getSingleCustomer("customerId", $this->get('customerId'));
+	    			$customerData=$this->customers->getSingleCustomer("clCode", $this->get('clCode'));
 	    			
-	    			$save = $this->saveMiniStatement($this->get('customerId'), "Mini-Statement", 10);
+	    			$save = $this->saveMiniStatement($this->get('clCode'), "Mini-Statement", 10);
 	    			
 	    			if($save){
 	    				$response=$this->_send_sms($customerData->mobileNo, $message);
@@ -98,7 +98,7 @@ class Flexipay_server extends REST_Controller
 	    		}
 	    	}
     	}else{
-    		$this->response(array('message' => 'CustomerId not sent in the request',
+    		$this->response(array('message' => 'clCode not sent in the request',
     				'error' =>true), 404
     			);
     	}
@@ -118,14 +118,14 @@ class Flexipay_server extends REST_Controller
 	        	$counter=0;
 	        	foreach ($transactions as $row) {
 	        		///Get Customer Data 
-		        	$customerData=$this->customers->getSingleCustomer("clcode", $row['customerId']);
+		        	$customerData=$this->customers->getSingleCustomer("clcode", $row['clCode']);
 		            $customer['custNames']= $customerData['firstName']." ".$customerData['lastName'];
 		            $mergedTransaction[] = array_merge($transactions[$counter], $customer);
 		            $counter+=1;
 	        	}
 	        	//$this->response($mergedTransaction, 200); // 200 being the HTTP response code
-	        	header('content-type: application/json; charset=utf-8');
 	        	
+	        	header('content-type: application/json; charset=utf-8');
 	        	$json = json_encode($mergedTransaction);
 	        	
 	        	echo isset($_GET['callback'])
@@ -145,13 +145,13 @@ class Flexipay_server extends REST_Controller
       if($this->authorize())
       {     
 	      $inp= array(
-	        	'customerId' => $this->post('customerId'),
+	        	'clCode' => $this->post('customerId'),
 	            'transaction_amount' => $this->post('transaction_amount'),
 	            'transaction_type' => $this->post('transaction_type')
 	          );
 		
 
-	      $customer = $this->customers->getSingleCustomer('clcode', $inp['customerId']);
+	      $customer = $this->customers->getSingleCustomer('clCode', $inp['clCode']);
 		  if($customer)	{	      
 		      $response = $this->transactions->createTransaction($inp); 
 		      if ($response['success']){
@@ -177,11 +177,11 @@ class Flexipay_server extends REST_Controller
     }
     
     
-    function saveMiniStatement($customerId, $transactionType, $transactionAmount){
+    function saveMiniStatement($clCode, $transactionType, $transactionAmount){
     	if($this->authorize())
     	{
     		$inp= array(
-    				'customerId' => $customerId,
+    				'clCode' => $clCode,
     				'transaction_amount' => $transactionAmount,
     				'transaction_type' => $transactionType
     		);
@@ -206,23 +206,11 @@ class Flexipay_server extends REST_Controller
 	    	if(!empty($parameter) && !empty($value)){
 	    		$customers=$this->customers->getCustomer($parameter,$value);
 	           
-                $counter=0;
-                $response=array(1=>"hallo world");
 	    		if($customers)
 	    		{    
-                    foreach ($customers as $row) {
-                         $data=array('firstName' => $row['clname'],
-                                     'lastName' => $row['clsurname'],
-                                     'refNo'  =>   $row['refno']
-                          );
-                        print_r($data);
-                         array_merge($response, $data);
-                    }
-                    
-	    			$this->response($response, 200); // 200 being the HTTP response code
+	    			$this->response($customers, 200); // 200 being the HTTP response code
 	    		}else
 	    		{
-	    			/* echo 'resultEmpty'; */
 	    			$this->response(null, 200);
 	    		}
 	    	}else{
@@ -320,6 +308,7 @@ class Flexipay_server extends REST_Controller
     				$userDetails = $this->users->getUserById($allocation['allocatedTo']);
     				$allocateeDetails = $this->users->getUserById($allocation['allocatedBy']);
     				
+    				$allocation['allocationId']= (String)$allocation['allocationId'];
     				$allocation['allocatedName']= $userDetails['firstName']." ".$userDetails['lastName'];
     				$allocation['allocateeName']= $allocateeDetails['firstName']." ".$allocateeDetails['lastName'];
     				$allocation['isAllocated']= true;
@@ -343,8 +332,8 @@ class Flexipay_server extends REST_Controller
     		$input = array(
     				'allocatedTo' => $this->post('allocatedTo'),
     				'allocatedBy' => $this->post('allocatedBy'),
+    				'allocationDate'=> date("Y-m-d H:i:s"),
     				'deallocationDate'=>NULL,
-    				'deallocationTime' =>NULL,
     				'deallocatedBy' =>NULL,
     				'terminalId'=> $this->post('terminalId')
     		);
@@ -370,7 +359,6 @@ class Flexipay_server extends REST_Controller
     	if($this->post('allocationId')){
 	    	$input = array(
 	    			'deallocationDate' =>date("Y-m-d H:i:s"),
-	    			'deallocationTime' =>date("G:i:s"),
 	    			'deallocatedBy' =>$this->post('deallocatedBy'),
 	    	);
     	}

@@ -9,9 +9,21 @@ class Customer_Model extends CI_Model {
 				));
 		$query=$this->db->get('Client');
 		
-// 		echo $this->db->last_query();
-		$custData=$query->result_array();
-		return $custData;
+		//echo $this->db->last_query();
+		
+		$response=array();
+		$customers=$query->result_array();
+		
+		foreach ($customers as $row) {
+			$data=array('firstName' => trim($row['clname']),
+						'lastName' => trim($row['clsurname']),
+						'refNo'  => trim($row['refno']),
+						'mobileNo'  => trim($row['phone']),
+						'customerId'  => trim($row['clcode'])
+			);
+			array_push($response, $data);
+		}
+		return $response;
 	}
 	
 	
@@ -23,10 +35,14 @@ class Customer_Model extends CI_Model {
 				array($parameter=>$value,
 				));
 		$query=$this->db->get('Client');
-		//print_r($query->row()->clname);
-		$custData= array( 'firstName' => $query->row()->clname,
-						  'lastName' => $query->row()->clsurname,
-						  'refNo' => $query->row()->refno
+		
+		//echo $this->db->last_query();
+		
+		$custData= array( 'firstName'=> trim($query->row()->clname),
+						  'lastName'=> trim($query->row()->clsurname),
+						  'refNo' => trim($query->row()->refno),
+						  'mobileNo'=> trim($query->row()->phone),
+						  'customerId'=>trim($query->row()->clcode)
 						);
 		return $custData;
 	}

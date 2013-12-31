@@ -20,7 +20,21 @@ class Transactions_Model extends CI_Model {
 						      ));
 		$query=$this->db->get('transactions');
 		$transactions= $query->result_array();
-		return $transactions;
+		
+		$response=array();
+		foreach ($transactions as $row) {
+			$data=array('transaction_date' => $row['transaction_date'],
+					    'transaction_code' => $row['transaction_code'],
+						'transaction_amount'=> (String)$row['transaction_amount'],
+					    'transaction_time'=> $row['transaction_time'],
+						'transaction_id'=>(String)$row['transaction_id'],
+					    'transaction_type'=>$row['transaction_type'],
+					    'clCode'=>$row['clCode'],
+			);
+			array_push($response, $data);
+		}
+		
+		return $response;
 	}
 	
 	function createTransaction($inp){

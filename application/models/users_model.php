@@ -25,7 +25,7 @@ class Users_Model extends CI_Model {
 		//$pw = MD5($password);
  		//1. Match the UserName and Password Combination
 		$this -> db -> limit(1);
-		$query=$this -> db -> get_where('user',array('userName'=> $userName, 
+		$query=$this -> db -> get_where('users',array('userName'=> $userName, 
 													 'password'=> $password));
 		//echo $this->db->last_query();
 		
@@ -72,7 +72,7 @@ class Users_Model extends CI_Model {
 			////---Check for Allocation(Admin has straight Pass) /////
 			if(in_array('Admin',$groupsData)){
 				$session_data= array(
-						'userId'=>$userInfo->userId,
+						'userId'=>(string)$userInfo->userId,
 						'firstName'=>$userInfo->firstName,
 						'lastName'=>$userInfo->lastName,
 						'userName'=>$userInfo->userName,
@@ -84,7 +84,7 @@ class Users_Model extends CI_Model {
 			if((in_array('fieldofficer', $groupsData))){
 				if($this->check_allocation($userInfo,$imeiCode)){
 				$session_data= array(
-				'userId'=>$userInfo->userId,
+				'userId'=>(string)$userInfo->userId,
 				'firstName'=>$userInfo->firstName,
 				'lastName'=>$userInfo->lastName,
 				'userName'=>$userInfo->userName,
@@ -152,6 +152,7 @@ class Users_Model extends CI_Model {
 		//if Data is Present
 		if ($query->num_rows() > 0) {
 			if($userInfo){
+				//echo "userInfo here";
 				//Save terminal Id to the Session
 				$this->update_session(NULL, NULL, $terminalId);
 				return true;
@@ -236,19 +237,37 @@ class Users_Model extends CI_Model {
 	function getUsers(){
 		$this->db->select('userId,firstName,lastName,userName');
 		//$this->db->where(array('userId' => 1));
-		$query=$this->db->get('user');
+		$query=$this->db->get('users');
 	
-		$userData=$query->result();
-		return $userData;
+		$userData=$query->result_array();
+		
+		$response =array();
+		//MS-SQL Integer Problem.
+		foreach ($userData as $row) {
+			$data=array('userId' => (String)$row['userId'],
+						'firstName' =>$row['firstName'],
+					    'lastName'  =>$row['lastName'],
+					    'userName'  =>$row['userName']
+			);
+			array_push($response, $data);
+		}
+		
+		return $response;
 		
 	}
 	
 	function getUserById($userId){
 		$this->db->select('userId,firstName,lastName,userName');
 		$this->db->where(array('userId' => $userId));
-		$query=$this->db->get('user');
+		$query=$this->db->get('users');
 	
 		$userData=$query->row_array();
+		
+		$data=array('userId' => (String)$userData['userId'],
+				'firstName' =>$userData['firstName'],
+				'lastName'  =>$userData['lastName'],
+				'userName'  =>$userData['userName']
+		);
 		return $userData;
 	
 	}
