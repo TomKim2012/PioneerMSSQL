@@ -49,7 +49,7 @@ class Transactions_Model extends CI_Model {
 		 					 'transaction_code'=>$inp['transaction_code'],
 		 					 'transaction_date'=>$inp['transaction_date'],
 		 					 'transaction_time'=>$inp['transaction_time'],
-		 					 'officer_names' =>$this->userData->firstName." ".$this->userData->lastName
+		 					 'officer_names' =>$this->userData->firstName
 		 					);
 		 	}
 		 	else{
