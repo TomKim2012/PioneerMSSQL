@@ -65,16 +65,20 @@ class Transactions_Model extends CI_Model {
         $balance = $rs->row()->balance;
         $this->db->query('Use mobileBanking');
 		return $balance;
+		
+	}
 
-		/*//Users transaction for Today
-		$this->db->select('transaction_amount,transaction_date,transaction_type');
+
+	function getPrevDeposits($customerId){
+		//Users transaction for Today
+		$this->db->select_sum('transaction_amount');
 		$this->db->where(
-						array('customerId'=>$customerId,
+						array('clCode'=>$customerId,
+						       'isRecorded' => '0'
 						));
-		$query=$this->db->get('transactions',5);
-		$transactions= $query->result_array();
-		return $transactions;
-		*/	
+		$query=$this->db->get('transactions');
+		$amount= $query->row()->transaction_amount;
+		return $amount;
 	}
 	
 	function random_string($length = 4) {

@@ -82,7 +82,7 @@ class Flexipay_server extends REST_Controller
 	    			
     			$save = $this->saveMiniStatement($this->post('clCode'), "Mini-Statement", 10);
     			if($save){
-                    $response=$this->_send_sms('0721815466', $message);
+                    //$response=$this->_send_sms('0721815466', $message);
                     $response=$this->_send_sms('0729472421', $message);
     				//$response=$this->_send_sms($customerData['mobileNo'], $message);
     			}
@@ -155,7 +155,8 @@ class Flexipay_server extends REST_Controller
 	      $customer = $this->customers->getSingleCustomer('clCode', $inp['clCode']);
 
           $savingsBal = $this->transactions->getCustTransaction($inp['clCode'], 2);
-          $balance = $savingsBal + $inp['transaction_amount'];
+          $prevDeposits = $this->transactions->getPrevDeposits($inp['clCode']);
+          $balance = $savingsBal + $prevDeposits+$inp['transaction_amount'];
 		  if($customer)	{	      
 		      $response = $this->transactions->createTransaction($inp); 
 		      if ($response['success']){
@@ -166,7 +167,7 @@ class Flexipay_server extends REST_Controller
 			        		    " by ".$response['officer_names'].".Your new saving Balance is Ksh ".number_format($balance);
 
 		      		$response=$this->_send_sms('0729472421', $message);
-		      		$response=$this->_send_sms($customer['mobileNo'], $message);
+		      		//$response=$this->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){
 			        	$clientResponse['sms']=true;
