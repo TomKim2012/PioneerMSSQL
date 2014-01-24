@@ -20,14 +20,13 @@ class Flexipay_server extends REST_Controller
 	private $isLoggedIn=false;
 	 
     function __construct(){
-     	header("Access-Control-Allow-Origin: http://192.168.0.106");
+		//header("Access-Control-Allow-Origin: http://192.168.0.106");
         //header("Access-Control-Allow-Origin:".$_SERVER['REMOTE_ADDR'].":".$_SERVER['SERVER_PORT']);
         //header("Access-Control-Allow-Origin:".$_SERVER['REMOTE_ADDR']);
     	//header("Access-Control-Allow-Origin: http://127.0.0.1:8888");
     	header("Access-Control-Allow-Credentials:true");
     	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
     	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-//     	header("Content-Type: application/json");
     	$method = $_SERVER['REQUEST_METHOD'];
     	if($method == "OPTIONS") {
     		die();
@@ -45,7 +44,7 @@ class Flexipay_server extends REST_Controller
     
     function authorize(){
        
-       /*	if($this->users->user)
+      	if($this->users->user)
     	{
     	 return true;
     	}else{
@@ -53,8 +52,7 @@ class Flexipay_server extends REST_Controller
 	            				  'error' =>false, 
     							  'isLogged' => false), 200
     						);
-    	}*/
-
+    	}
         return true;
     }
  
@@ -84,6 +82,7 @@ class Flexipay_server extends REST_Controller
     			if($save){
                     //$response=$this->_send_sms('0721815466', $message);
                     $response=$this->_send_sms('0729472421', $message);
+                    //$response=$this->_send_sms('0702021629', $message);
     				//$response=$this->_send_sms($customerData['mobileNo'], $message);
     			}
     			
@@ -167,6 +166,7 @@ class Flexipay_server extends REST_Controller
 			        		    " by ".$response['officer_names'].".Your new saving Balance is Ksh ".number_format($balance);
 
 		      		$response=$this->_send_sms('0729472421', $message);
+		      		//$response=$this->_send_sms('0702021629', $message);
 		      		//$response=$this->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){

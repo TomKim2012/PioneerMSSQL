@@ -236,13 +236,15 @@ class Users_Model extends CI_Model {
 	
 	function getUsers(){
 		$this->db->select('userId,firstName,lastName,userName');
-		//$this->db->where(array('userId' => 1));
 		$query=$this->db->get('users');
 	
 		$userData=$query->result_array();
 		
+		//Check Allocation
+		
+		
+		//MS-SQL Integer Problem
 		$response =array();
-		//MS-SQL Integer Problem.
 		foreach ($userData as $row) {
 			$data=array('userId' => (String)$row['userId'],
 						'firstName' =>$row['firstName'],
