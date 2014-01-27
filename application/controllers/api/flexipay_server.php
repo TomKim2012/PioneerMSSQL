@@ -23,7 +23,7 @@ class Flexipay_server extends REST_Controller
 		//header("Access-Control-Allow-Origin: http://192.168.0.106");
         //header("Access-Control-Allow-Origin:".$_SERVER['REMOTE_ADDR'].":".$_SERVER['SERVER_PORT']);
         //header("Access-Control-Allow-Origin:".$_SERVER['REMOTE_ADDR']);
-    	//header("Access-Control-Allow-Origin: http://127.0.0.1:8888");
+    	header("Access-Control-Allow-Origin: http://127.0.0.1:8888");
     	header("Access-Control-Allow-Credentials:true");
     	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
     	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
@@ -80,11 +80,12 @@ class Flexipay_server extends REST_Controller
 	    			
     			$save = $this->saveMiniStatement($this->post('clCode'), "Mini-Statement", 10);
     			if($save){
-                    //$response=$this->_send_sms('0721815466', $message);
                     $response=$this->_send_sms('0729472421', $message);
+                    //$response=$this->_send_sms('0720527322', $message);//the other Chic-Sunbeam
+                    //$response=$this->_send_sms('0729859354', $message);//Rose-Sunbeam
                     //$response=$this->_send_sms('0702021629', $message);
-    				//$response=$this->_send_sms($customerData['mobileNo'], $message);
-    			}
+    				$response=$this->_send_sms($customerData['mobileNo'], $message);
+    			}	
     			
 		        if($response){
 		        	$clientResponse['sms']=true;
@@ -161,13 +162,15 @@ class Flexipay_server extends REST_Controller
 		      if ($response['success']){
 		      		$message = "Transaction ". $response['transaction_code']. " confirmed on ". 
 			        		  	 date("d/m/Y",strtotime($response['transaction_date']))." at ".$response['transaction_time'].
-			        		   ". Ksh ".number_format($inp['transaction_amount']). " has been deposited to Account ".
+			        		   ". Ksh ".number_format($inp['transaction_amount']). " deposited to A/C ".
 				        		   $customer['refNo']. "- ".$customer['firstName']." ".$customer['lastName'].
-			        		    " by ".$response['officer_names'].".Your new saving Balance is Ksh ".number_format($balance);
+			        		    " by ".$response['officer_names'].".New balance is Ksh ".number_format($balance);
 
 		      		$response=$this->_send_sms('0729472421', $message);
+		      		//$response=$this->_send_sms('0729859354', $message); // Rose Sunbeam
+		      		//$response=$this->_send_sms('0720527322', $message); // Rose Sunbeam
 		      		//$response=$this->_send_sms('0702021629', $message);
-		      		//$response=$this->_send_sms($customer['mobileNo'], $message);
+		      		$response=$this->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){
 			        	$clientResponse['sms']=true;
@@ -387,14 +390,15 @@ class Flexipay_server extends REST_Controller
     
 	//----------Function to send sms-------------------
     function _send_sms($recipient,$message){
-    	$serverUrl= "http://31.222.168.80/smartsms/sms_ext.jsp";
+    	$serverUrl= "http://api.smartsms.co.ke/api/sendsms/plain";
     	
     	$recipient = "+254".substr($recipient, 1);
     	
-    	$parameters= array( 'code'=>'MGRD19',
-    						'task'=>'send',
-    					    'msisdn'=>$recipient,
-    					  	'message'=>$message
+    	$parameters= array( 'user'=>'megarider',
+    						'password'=>'ZpmXSCdd',
+    						'sender'=>'InfoSMS',
+    					    'GSM'=>$recipient,
+    					  	'SMSText'=>$message
     					  );
     	
     	$response = $this->curl->simple_get($serverUrl,$parameters);
