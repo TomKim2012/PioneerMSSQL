@@ -52,8 +52,9 @@ class Flexipay_server extends REST_Controller
 	            				  'error' =>false, 
     							  'isLogged' => false), 200
     						);
+            return false;
     	}
-        return true;
+        //return true;
     }
  
     /*
@@ -84,7 +85,7 @@ class Flexipay_server extends REST_Controller
                     //$response=$this->_send_sms('0720527322', $message);//the other Chic-Sunbeam
                     //$response=$this->_send_sms('0729859354', $message);//Rose-Sunbeam
                     //$response=$this->_send_sms('0702021629', $message);
-    				$response=$this->_send_sms($customerData['mobileNo'], $message);
+    				//$response=$this->_send_sms($customerData['mobileNo'], $message);
     			}	
     			
 		        if($response){
@@ -170,7 +171,7 @@ class Flexipay_server extends REST_Controller
 		      		//$response=$this->_send_sms('0729859354', $message); // Rose Sunbeam
 		      		//$response=$this->_send_sms('0720527322', $message); // Rose Sunbeam
 		      		//$response=$this->_send_sms('0702021629', $message);
-		      		$response=$this->_send_sms($customer['mobileNo'], $message);
+		      		//$response=$this->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){
 			        	$clientResponse['sms']=true;

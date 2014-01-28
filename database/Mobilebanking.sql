@@ -20,13 +20,13 @@ End
 	
 Go
 
-If Not Exists(Select * from Mergefinal..para Where varname = 'P_MOBILECASHACC')
-	Insert Into Mergefinal..para(varname,vartype,varvalue,descr)
+If Not Exists(Select * from mergeFinals..para Where varname = 'P_MOBILECASHACC')
+	Insert Into mergeFinals..para(varname,vartype,varvalue,descr)
 	Values('P_MOBILECASHACC','C','130014','Mobile App Cash Collection Account') 
 Go
 
-If Not Exists(Select * from Mergefinal..para Where varname = 'P_MOBFEEACC')
-	Insert Into Mergefinal..para(varname,vartype,varvalue,descr)
+If Not Exists(Select * from mergeFinals..para Where varname = 'P_MOBFEEACC')
+	Insert Into mergeFinals..para(varname,vartype,varvalue,descr)
 	Values('P_MOBFEEACC','C','310022','Mobile App Mini-Statement Fee Account ') 
 Go
 
@@ -39,9 +39,9 @@ Begin
 
 	Select @Myyear = Right(Cast(YEAR(Getdate()) As Varchar(4)),2)
 
-	Select @MycashAcc = varvalue From Mergefinal..para where varname = 'P_MOBILECASHACC'
+	Select @MycashAcc = varvalue From mergeFinals..para where varname = 'P_MOBILECASHACC'
 
-	Select @MyIncome = varvalue From Mergefinal..para where varname = 'P_MOBFEEACC'
+	Select @MyIncome = varvalue From mergeFinals..para where varname = 'P_MOBFEEACC'
 
 	Set @Mydate = Getdate()
 
@@ -58,22 +58,22 @@ Begin
 	From Transactions
 	Where isRecorded = 0 And terminalId = @TerminalId And userId = @UserId
 
-	Select @ctcode = varvalue From Mergefinal..Para Where varname = 'P_NEXTTCODE'
+	Select @ctcode = varvalue From mergeFinals..Para Where varname = 'P_NEXTTCODE'
 
 	If Isnumeric(@ctcode) = 1
 		Set @ntcode = Cast(@ctcode As Int) 
 	Else
 		Begin
-			Select @ctcode =Max(Right(Tcode,6)) From Mergefinal..genledg Where tcode like '%PD%' And len(Tday) = 10
+			Select @ctcode =Max(Right(Tcode,6)) From mergeFinals..genledg Where tcode like '%PD%' And len(Tday) = 10
 			If ISNUMERIC(Isnull(@ctcode,0)) = 0
 				set @ntcode = 0
 			Else
 				Set @ntcode = Cast(@ctcode As Int) 
 		End	
 
-	Update t_MobTrans Set t_MobTrans.Accnr = Mergefinal..client.accnr,
+	Update t_MobTrans Set t_MobTrans.Accnr = mergeFinals..client.accnr,
 		Mytcode = @Myyear + 'PD' + Dbo.Fn_Padl(Cast((t_MobTrans.Recid + @ntcode) As Varchar(10)),6)
-		From Mergefinal..client Where t_MobTrans.ClCode = Mergefinal..client.clcode
+		From mergeFinals..client Where t_MobTrans.ClCode = mergeFinals..client.clcode
 
 	Update t_MobTrans Set Glaccount = 
 		Case Mytype
@@ -94,19 +94,19 @@ Begin
 	Update t_mobtrans Set Crdr = 'DR' Where Mytype = 'SD'
 	Update t_mobtrans Set Crdr = 'CR' Where Mytype = 'SW'
 
-	Update t_MobTrans Set t_MobTrans.Mytype = Mergefinal..savacc.prodid From Mergefinal..savacc Where t_MobTrans.Accnr = Mergefinal..savacc.accnr
-		And Mergefinal..savacc.closedate Is null
+	Update t_MobTrans Set t_MobTrans.Mytype = mergeFinals..savacc.prodid From mergeFinals..savacc Where t_MobTrans.Accnr = mergeFinals..savacc.accnr
+		And mergeFinals..savacc.closedate Is null
 
 	Print 'The Rows Are ' + Cast(@@Rowcount as Varchar(10))
 	
 	If Exists(Select * From Sysobjects Where xtype = 'U' And Name = 't_Balances')
 		Drop Table t_Balances
 
-	Select Mergefinal..savta.accnr,Mergefinal..savta.prodid, Sum(Mergefinal..savta.Amount) As Mybalance
+	Select mergeFinals..savta.accnr,mergeFinals..savta.prodid, Sum(mergeFinals..savta.Amount) As Mybalance
 		Into t_Balances
-		From Mergefinal..savta 
-		Where Mergefinal..savta.accnr in(Select t_MobTrans.Accnr from t_MobTrans)
-		Group By Mergefinal..savta.accnr,Mergefinal..savta.prodid
+		From mergeFinals..savta 
+		Where mergeFinals..savta.accnr in(Select t_MobTrans.Accnr from t_MobTrans)
+		Group By mergeFinals..savta.accnr,mergeFinals..savta.prodid
 
 	Update t_MobTrans set t_MobTrans.Prevbalance = t_Balances.Mybalance 
 		From t_Balances 
@@ -116,14 +116,14 @@ Begin
 
 	Select Mytcode,Accnr,Mytype,Trantype,MyAmount,Prevbalance,Trantype From t_MobTrans
 
-	Insert Into Mergefinal..savta(tcode,accnr,prodid,tday,type,cash,cheqid,voucher,amount,balance,penalty,commission,stationery,uid,descr)
+	Insert Into mergeFinals..savta(tcode,accnr,prodid,tday,type,cash,cheqid,voucher,amount,balance,penalty,commission,stationery,uid,descr)
 		Select Mytcode,Accnr,Mytype,@Mydate,Trantype,1,0,'MOBILE',MyAmount,Prevbalance,0,0,0,'Per',Trantype From t_MobTrans
 		Where Len(t_MobTrans.Mytype) = 3
 
 	If Exists(Select * From Sysobjects Where xtype = 'U' And Name = 't_products')
 		Drop Table t_products
 
-	Select prodid,savindacc Into t_products From Mergefinal..product
+	Select prodid,savindacc Into t_products From mergeFinals..product
 		Where prodid in(Select Mytype from t_MobTrans)
 
 	Insert Into t_MobTrans(ClCode,Accnr,Mytcode,MyAmount, Mydate, Mytype, Glaccount, Prevbalance,Trantype,TranNarr,Crdr)
@@ -138,7 +138,7 @@ Begin
 	
 	Update t_MobTrans Set Crdr = 'CR' Where MyAmount > 0 And Crdr = ''
 
-	Insert Into Mergefinal..genledg(Account,tcode,Tday,descriptio,Debit,credit,temp,uid,voucher,prodid,donorid,branchid,export,entrydate,lnr,accnr,trancode,costcid,cheqid)
+	Insert Into mergeFinals..genledg(Account,tcode,Tday,descriptio,Debit,credit,temp,uid,voucher,prodid,donorid,branchid,export,entrydate,lnr,accnr,trancode,costcid,cheqid)
 		Select Glaccount,Mytcode,@Mydate,TranNarr, 
 		case t_MobTrans.Crdr 
 			when 'DR' then abs(t_MobTrans.MyAmount)
