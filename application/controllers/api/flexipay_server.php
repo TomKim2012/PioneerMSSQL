@@ -84,7 +84,7 @@ class Flexipay_server extends REST_Controller
                     //$response=$this->_send_sms('0720527322', $message);//the other Chic-Sunbeam
                     //$response=$this->_send_sms('0729859354', $message);//Rose-Sunbeam
                     //$response=$this->_send_sms('0702021629', $message);
-    				$response=$this->_send_sms($customerData['mobileNo'], $message);
+    				//$response=$this->_send_sms($customerData['mobileNo'], $message);
     			}	
     			
 		        if($response){
@@ -160,9 +160,10 @@ class Flexipay_server extends REST_Controller
 		  if($customer)	{	      
 		      $response = $this->transactions->createTransaction($inp); 
 		      if ($response['success']){
+		      		$tDate = date("d/m/Y",strtotime($response['transaction_date']));
 		      		$message = "Transaction ". $response['transaction_code']. " confirmed on ". 
-			        		  	 date("d/m/Y",strtotime($response['transaction_date']))." at ".$response['transaction_time'].
-			        		   ". Ksh ".number_format($inp['transaction_amount']). " deposited to A/C ".
+			        		  	 $tDate." at ".$response['transaction_time'].
+			        		    ". Ksh ".number_format($inp['transaction_amount']). " deposited to A/C ".
 				        		   $customer['refNo']. "- ".$customer['firstName']." ".$customer['lastName'].
 			        		    " by ".$response['officer_names'].".New balance is Ksh ".number_format($balance);
 
@@ -170,11 +171,17 @@ class Flexipay_server extends REST_Controller
 		      		//$response=$this->_send_sms('0729859354', $message); // Rose Sunbeam
 		      		//$response=$this->_send_sms('0720527322', $message); // Rose Sunbeam
 		      		//$response=$this->_send_sms('0702021629', $message);
-		      		$response=$this->_send_sms($customer['mobileNo'], $message);
+		      		//$response=$this->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){
 			        	$clientResponse['sms']=true;
 			        	$clientResponse['success']=true;
+			        	$clientResponse['transactionCode']= $response['transaction_code'];
+			        	$clientResponse['transactionType']= "Deposit";
+			        	$clientResponse['transactionTime'] = $response['transaction_time'];
+			        	$clientResponse['transactionDate'] = $tDate;
+			        	$clientResponse['transactionAmount'] = $inp['transaction_amount'];
+			        	$clientResponse['custNames'] = $customer['firstName']." ".$customer['lastName'];
 			        	$this->response($clientResponse, 200); // 200 being the HTTP response code
 			        }
 		        } else {
