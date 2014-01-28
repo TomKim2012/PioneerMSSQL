@@ -52,8 +52,9 @@ class Flexipay_server extends REST_Controller
 	            				  'error' =>false, 
     							  'isLogged' => false), 200
     						);
+            return false;
     	}
-        return true;
+        //return true;
     }
  
     /*
@@ -77,21 +78,28 @@ class Flexipay_server extends REST_Controller
     				$message ="Dear ".$customerData['firstName'].", Your shares Balance is Ksh".number_format($sharesBal).", Savings Balance is Ksh ".
                               number_format($savingsBal).".and Loan Balance is Ksh ".number_format($loanBal);
     			}
-	    			
-    			$save = $this->saveMiniStatement($this->post('clCode'), "Mini-Statement", 10);
-    			if($save){
-                    $response=$this->_send_sms('0729472421', $message);
-                    //$response=$this->_send_sms('0720527322', $message);//the other Chic-Sunbeam
-                    //$response=$this->_send_sms('0729859354', $message);//Rose-Sunbeam
-                    //$response=$this->_send_sms('0702021629', $message);
+	    		
+                $tType = "Mini-Statement";
+    			$response = $this->saveMiniStatement($this->post('clCode'),$tType, 10);
+    			if($response['success']){
+                    
+                    $sms=$this->_send_sms('0729472421', $message);
     				//$response=$this->_send_sms($customerData['mobileNo'], $message);
-    			}	
-    			
-		        if($response){
-		        	$clientResponse['sms']=true;
-		        	$clientResponse['success']=true;
-		        	$this->response($clientResponse, 200); // 200 being the HTTP response code
-		        }
+
+                    if($sms){
+                    $clientResponse['sms']=true;
+                    $clientResponse['success']=true;
+                    $clientResponse['sms']=true;
+                    $clientResponse['transactionCode']= $response['transaction_code'] ;
+                    $clientResponse['transactionType']= $tType;
+                    $clientResponse['transactionTime'] = $response['transaction_time'];
+                    $clientResponse['transactionDate'] = $response['transaction_date'];
+                    $clientResponse['transactionAmount'] = "10";
+                    $clientResponse['custNames'] = $customerData['firstName']." ".$customerData['lastName'];
+                    $this->response($clientResponse, 200); // 200 being the HTTP response code
+                    }
+    			}
+		       
     		}else
     		{
     			$this->response(array('message' => 'User Not Logged In',
@@ -161,10 +169,10 @@ class Flexipay_server extends REST_Controller
 		      $response = $this->transactions->createTransaction($inp); 
 		      if ($response['success']){
 		      		$tDate = date("d/m/Y",strtotime($response['transaction_date']));
-		      		$tTime = $response['transaction_time'];
+		      		$tTime = date("h:i A",strtotime($response['transaction_time']));
 		      		$tCode = $response['transaction_code'];
 		      		$message = "Transaction ". $response['transaction_code']. " confirmed on ". 
-			        		  	 $tDate." at ".$response['transaction_time'].
+			        		  	 $tDate." at ".$tTime.
 			        		    ". Ksh ".number_format($inp['transaction_amount']). " deposited to A/C ".
 				        		   $customer['refNo']. "- ".$customer['firstName']." ".$customer['lastName'].
 			        		    " by ".$response['officer_names'].".New balance is Ksh ".number_format($balance);
@@ -178,9 +186,9 @@ class Flexipay_server extends REST_Controller
 			        if($message){
 			        	$clientResponse['sms']=true;
 			        	$clientResponse['success']=true;
-			        	$clientResponse['transactionCode']= $tTime ;
+			        	$clientResponse['transactionCode']= $tCode ;
 			        	$clientResponse['transactionType']= "Deposit";
-			        	$clientResponse['transactionTime'] = $tCode;
+			        	$clientResponse['transactionTime'] = $tTime;
 			        	$clientResponse['transactionDate'] = $tDate;
 			        	$clientResponse['transactionAmount'] = $inp['transaction_amount'];
 			        	$clientResponse['custNames'] = $customer['firstName']." ".$customer['lastName'];
@@ -205,7 +213,7 @@ class Flexipay_server extends REST_Controller
     		
     		$response = $this->transactions->createTransaction($inp);
     	
-    		return $response['success'];
+    		return $response;
     		
     		//$this->response($clientResponse, 200); // 200 being the HTTP response code
     	}
