@@ -58,7 +58,7 @@ class Transactions_Model extends CI_Model {
 	}
 	
 	function getCustTransaction($customerId, $transactionId){
-		$this->db->query('Use MergeFinal');
+		$this->db->query('Use MergeFinals');
         $rs = $this->db->query('SELECT Dbo.SP_GetBalances(\''.$customerId.'\','.$transactionId.') AS balance');
 		//echo $this->db->last_query();
 
