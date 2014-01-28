@@ -161,6 +161,8 @@ class Flexipay_server extends REST_Controller
 		      $response = $this->transactions->createTransaction($inp); 
 		      if ($response['success']){
 		      		$tDate = date("d/m/Y",strtotime($response['transaction_date']));
+		      		$tTime = $response['transaction_time'];
+		      		$tCode = $response['transaction_code'];
 		      		$message = "Transaction ". $response['transaction_code']. " confirmed on ". 
 			        		  	 $tDate." at ".$response['transaction_time'].
 			        		    ". Ksh ".number_format($inp['transaction_amount']). " deposited to A/C ".
@@ -176,9 +178,9 @@ class Flexipay_server extends REST_Controller
 			        if($message){
 			        	$clientResponse['sms']=true;
 			        	$clientResponse['success']=true;
-			        	$clientResponse['transactionCode']= $response['transaction_code'];
+			        	$clientResponse['transactionCode']= $tTime ;
 			        	$clientResponse['transactionType']= "Deposit";
-			        	$clientResponse['transactionTime'] = $response['transaction_time'];
+			        	$clientResponse['transactionTime'] = $tCode;
 			        	$clientResponse['transactionDate'] = $tDate;
 			        	$clientResponse['transactionAmount'] = $inp['transaction_amount'];
 			        	$clientResponse['custNames'] = $customer['firstName']." ".$customer['lastName'];
