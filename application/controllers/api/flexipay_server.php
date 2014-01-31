@@ -178,9 +178,6 @@ class Flexipay_server extends REST_Controller
 			        		    " by ".$response['officer_names'].".New balance is Ksh ".number_format($balance);
 
 		      		$response=$this->_send_sms('0729472421', $message);
-		      		//$response=$this->_send_sms('0729859354', $message); // Rose Sunbeam
-		      		//$response=$this->_send_sms('0720527322', $message); // Rose Sunbeam
-		      		//$response=$this->_send_sms('0702021629', $message);
 		      		//$response=$this->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){

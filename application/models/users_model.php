@@ -175,8 +175,13 @@ class Users_Model extends CI_Model {
 	
 	function createDeallocation($input,$allocationId){
 		$this->db->where('allocationId', $allocationId);
-		$this->db->update('allocation', $input);
-		return true;
+		$query=$this->db->update('Allocation', $input);
+		if($query){
+			echo $this->db->last_query();
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	
