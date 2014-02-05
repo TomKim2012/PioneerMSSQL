@@ -47,4 +47,15 @@ class Customer_Model extends CI_Model {
 		return $custData;
 	}
 	
+	function UpdateCustomer($clCode, $newValue){
+		$this->db->where('clcode', $clCode);
+		$query=$this->db->update('Client',$newValue);
+		if($query){
+			//echo $this->db->last_query();
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 }

@@ -66,6 +66,14 @@ class Flexipay_server extends REST_Controller
     	   //Check if user is Logged In
     	   if($this->authorize())
     	   {
+    	   		//updating customer Record
+	    	   	$cust = array(
+	    	   			'newMobile'=>$this->post('newMobile')
+	    	   			);
+	    	   	if(isset($cust['newMobile'])){
+	    	   		$newInput =array('phone'=>$cust['newMobile']);
+	    	   		$this->customers->UpdateCustomer($inp['clCode'],$newInput);
+	    	   	}
     	  	
                 $sharesBal = $this->transactions->getCustTransaction($this->post('clCode'), 1);
                 $savingsBal = $this->transactions->getCustTransaction($this->post('clCode'), 2);
@@ -84,7 +92,7 @@ class Flexipay_server extends REST_Controller
     			if($response['success']){
                     
                     $sms=$this->_send_sms('0729472421', $message);
-    				$response=$this->_send_sms($customerData['mobileNo'], $message);
+    				//$response=$this->_send_sms($customerData['mobileNo'], $message);
 
                     if($sms){
                     $clientResponse['sms']=true;
@@ -156,9 +164,17 @@ class Flexipay_server extends REST_Controller
 	      $inp= array(
 	        	'clCode' => $this->post('customerId'),
 	            'transaction_amount' => $this->post('transaction_amount'),
-	            'transaction_type' => $this->post('transaction_type')
+	            'transaction_type' => $this->post('transaction_type'),
 	          );
-		
+		  $cust = array(
+		  		'newMobile'=>$this ->post('newMobile')
+		  	  );
+
+	      //updating customer
+	      if(isset($cust['newMobile'])){
+	      		$newInput =array('phone'=>$cust['newMobile']);
+	    	   	$this->customers->UpdateCustomer($inp['clCode'],$newInput);
+	      }
 
 	      $customer = $this->customers->getSingleCustomer('clCode', $inp['clCode']);
 
@@ -179,7 +195,7 @@ class Flexipay_server extends REST_Controller
 
 		      		$response=$this->_send_sms('0729472421', $message);
 
-		      		$response=$this->_send_sms($customer['mobileNo'], $message);
+		      		//$response=$this->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){
 			        	$clientResponse['sms']=true;
@@ -411,7 +427,7 @@ class Flexipay_server extends REST_Controller
     	
     	$parameters= array( 'user'=>'megarider',
     						'password'=>'ZpmXSCdd',
-    						'sender'=>'InfoSMS',
+    						'sender'=>'pioneerFSA',
     					    'GSM'=>$recipient,
     					  	'SMSText'=>$message
     					  );
