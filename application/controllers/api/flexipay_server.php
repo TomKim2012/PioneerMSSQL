@@ -70,10 +70,11 @@ class Flexipay_server extends REST_Controller
 	    	   	$cust = array(
 	    	   			'newMobile'=>$this->post('newMobile')
 	    	   			);
-	    	   	if(isset($cust['newMobile'])){
-	    	   		$newInput =array('phone'=>$cust['newMobile']);
-	    	   		$this->customers->UpdateCustomer($inp['clCode'],$newInput);
-	    	   	}
+	    	    //updating customer
+                  if(strlen($cust['newMobile'])==10){ //0729472421
+                        $newInput =array('phone'=>$cust['newMobile']
+                        $this->customers->UpdateCustomer($inp['clCode'],$newInput);
+                  }
     	  	
                 $sharesBal = $this->transactions->getCustTransaction($this->post('clCode'), 1);
                 $savingsBal = $this->transactions->getCustTransaction($this->post('clCode'), 2);
@@ -93,6 +94,7 @@ class Flexipay_server extends REST_Controller
                     
                     //$sms=$this->_send_sms('0729472421', $message);
     				$response=$this->_send_sms($customerData['mobileNo'], $message);
+
 
                     if($sms){
                     $clientResponse['sms']=true;
@@ -171,8 +173,8 @@ class Flexipay_server extends REST_Controller
 		  	  );
 
 	      //updating customer
-	      if(isset($cust['newMobile'])){
-	      		$newInput =array('phone'=>$cust['newMobile']);
+	      if(strlen($cust['newMobile'])==10){ //0729472421
+	      		$newInput =array('phone'=>$cust['newMobile']
 	    	   	$this->customers->UpdateCustomer($inp['clCode'],$newInput);
 	      }
 

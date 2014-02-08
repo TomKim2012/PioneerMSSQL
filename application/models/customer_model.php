@@ -15,12 +15,13 @@ class Customer_Model extends CI_Model {
 		$customers=$query->result_array();
 		
 		foreach ($customers as $row) {
-			$data=array('firstName' => trim($row['clname']),
-						'lastName' => trim($row['clsurname']),
-						'refNo'  => trim($row['refno']),
-						'mobileNo'  => trim($row['phone']),
-						'customerId'  => trim($row['clcode'])
-			);
+			$data= array( 'firstName'=> trim(isset($query->row()->clname)),
+						  'middleName'=> trim(isset($query->row()->middlename)),
+						  'lastName'=> trim(isset($query->row()->clsurname)),
+						  'refNo' => trim(isset($query->row()->refno)),
+						  'mobileNo'=> trim(isset($query->row()->phone)),
+						  'customerId'=>trim(isset($query->row()->clcode))
+						);
 			array_push($response, $data);
 		}
 		return $response;
@@ -36,13 +37,14 @@ class Customer_Model extends CI_Model {
 				));
 		$query=$this->db->get('Client');
 		
-		//echo $this->db->last_query();
+		//print_r($query->result());
 		
-		$custData= array( 'firstName'=> trim($query->row()->clname),
-						  'lastName'=> trim($query->row()->clsurname),
-						  'refNo' => trim($query->row()->refno),
-						  'mobileNo'=> trim($query->row()->phone),
-						  'customerId'=>trim($query->row()->clcode)
+		$custData= array( 'firstName'=> trim((isset($query->row()->clname))?($query->row()->clname):"N/a"),
+						  'middleName'=> trim((isset($query->row()->middlename))?($query->row()->middlename):"N/a"),
+						  'lastName'=> trim((isset($query->row()->clsurname))?($query->row()->clsurname):"N/a"),
+						  'refNo' => trim(isset($query->row()->refno)),
+						  'mobileNo'=> trim(isset($query->row()->phone)),
+						  'customerId'=>trim((isset($query->row()->clcode))?($query->row()->clcode):"N/a")
 						);
 		return $custData;
 	}
