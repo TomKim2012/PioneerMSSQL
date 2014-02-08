@@ -42,8 +42,8 @@ class Customer_Model extends CI_Model {
 		$custData= array( 'firstName'=> trim((isset($query->row()->clname))?($query->row()->clname):"N/a"),
 						  'middleName'=> trim((isset($query->row()->middlename))?($query->row()->middlename):"N/a"),
 						  'lastName'=> trim((isset($query->row()->clsurname))?($query->row()->clsurname):"N/a"),
-						  'refNo' => trim(isset($query->row()->refno)),
-						  'mobileNo'=> trim(isset($query->row()->phone)),
+						  'refNo' => trim((isset($query->row()->refno))?($query->row()->refno):"N/a"),
+						  'mobileNo'=> trim((isset($query->row()->phone))?($query->row()->phone):"N/a"),
 						  'customerId'=>trim((isset($query->row()->clcode))?($query->row()->clcode):"N/a")
 						);
 		return $custData;
