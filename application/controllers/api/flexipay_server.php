@@ -91,8 +91,8 @@ class Flexipay_server extends REST_Controller
     			$response = $this->saveMiniStatement($this->post('clCode'),$tType, 10);
     			if($response['success']){
                     
-                    $sms=$this->_send_sms('0729472421', $message);
-    				//$response=$this->_send_sms($customerData['mobileNo'], $message);
+                    //$sms=$this->_send_sms('0729472421', $message);
+    				$response=$this->_send_sms($customerData['mobileNo'], $message);
 
                     if($sms){
                     $clientResponse['sms']=true;
@@ -193,9 +193,9 @@ class Flexipay_server extends REST_Controller
 				        		   $customer['refNo']. "- ".$customer['firstName']." ".$customer['lastName'].
 			        		    " by ".$response['officer_names'].".New balance is Ksh ".number_format($balance);
 
-		      		$response=$this->_send_sms('0729472421', $message);
+		      		//$response=$this->_send_sms('0729472421', $message);
 
-		      		//$response=$this->_send_sms($customer['mobileNo'], $message);
+		      		$response=$this->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){
 			        	$clientResponse['sms']=true;
