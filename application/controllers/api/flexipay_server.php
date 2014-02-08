@@ -72,7 +72,7 @@ class Flexipay_server extends REST_Controller
 	    	   			);
 	    	    //updating customer
                   if(strlen($cust['newMobile'])==10){ //0729472421
-                        $newInput =array('phone'=>$cust['newMobile']
+                        $newInput =array('phone'=>$cust['newMobile']);
                         $this->customers->UpdateCustomer($inp['clCode'],$newInput);
                   }
     	  	
@@ -174,7 +174,7 @@ class Flexipay_server extends REST_Controller
 
 	      //updating customer
 	      if(strlen($cust['newMobile'])==10){ //0729472421
-	      		$newInput =array('phone'=>$cust['newMobile']
+	      		$newInput =array('phone'=>$cust['newMobile']);
 	    	   	$this->customers->UpdateCustomer($inp['clCode'],$newInput);
 	      }
 
