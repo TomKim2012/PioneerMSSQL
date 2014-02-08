@@ -96,7 +96,7 @@ class Flexipay_server extends REST_Controller
     				$response=$this->_send_sms($customerData['mobileNo'], $message);
 
 
-                    if($sms){
+                    if($response){
                     $clientResponse['sms']=true;
                     $clientResponse['success']=true;
                     $clientResponse['sms']=true;
