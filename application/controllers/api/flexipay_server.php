@@ -193,7 +193,7 @@ class Flexipay_server extends REST_Controller
 			        		  	 $tDate." at ".$tTime.
 			        		    ". Ksh ".number_format($inp['transaction_amount']). " deposited to A/C ".
 				        		   $customer['refNo']. "- ".$customer['firstName']." ".$customer['lastName'].
-			        		    " by ".$response['officer_names'].".New balance is Ksh ".number_format($balance);
+			        		     ".New balance is Ksh ".number_format($balance);
 
 		      		//$response=$this->_send_sms('0729472421', $message);
 		      		$response=$this->_send_sms($customer['mobileNo'], $message);
