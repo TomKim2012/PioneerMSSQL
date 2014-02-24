@@ -144,7 +144,7 @@ class Users_Model extends CI_Model {
 			$this->db->select('allocationDate,allocatedBy,allocatedTo,allocationId');
 			$this->db->where(array(
 						'terminalId' => $query->row()->terminalId,
-					   'deallocatedBy' => NULL
+					    'deallocatedBy' => NULL
 			));
 			$query = $this->db->get('allocation');
 		}
@@ -190,11 +190,13 @@ class Users_Model extends CI_Model {
 	*/
 	function update_session($user_array,$groupsData,$terminalId) {
 		if($user_array){
-		$ez['user'] = $user_array;
-		}elseif($groupsData){
-		$ez['groups']=$groupsData;
-		}elseif($terminalId){
-		$ez['terminal']= $terminalId;	
+			$ez['user'] = $user_array;
+		}
+		elseif($groupsData){
+			$ez['groups']=$groupsData;
+		}
+		elseif($terminalId){
+			$ez['terminal']= $terminalId;	
 		}
 		$this->session->set_userdata($ez);
 		$this->user = $ez;
