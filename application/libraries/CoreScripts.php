@@ -50,8 +50,8 @@ class CoreScripts{
     	
     	if($response['success']){
     		
-    		$smsResponse= $this->_send_sms('0729472421', $message);
-    		//$smsResponse=$this->_send_sms($customerData['mobileNo'], $message);
+    		//$smsResponse= $this->_send_sms('0729472421', $message);
+    		$smsResponse=$this->_send_sms($customerData['mobileNo'], $message);
     		
     		
     		if($smsResponse){
@@ -66,6 +66,8 @@ class CoreScripts{
     			$clientResponse['custNames'] = $customerData['firstName']." ".$customerData['lastName'];
     			$this->CI()->response($clientResponse, 200); // 200 being the HTTP response code
     		}
+    		
+    		$smsResponse2= $this->_send_sms2('0729472421', $message,'SMSLEOPARD');
     	}
     	
     }
@@ -93,6 +95,27 @@ class CoreScripts{
     	return true;
     }
     
+    /* Africa Is Talking SMS-Sending */
+    function _send_sms2($phoneNumber, $message, $shortCode) {
+    	// Create an instance of the gateway class
+    	$username = "TomKim";
+    	$apiKey = "1473c117e56c4f2df393c36dda15138a57b277f5683943288c189b966aae83b4";
+    	$gateway = new AfricasTalkingGateway ( $username, $apiKey );
+    
+    	try {
+    		// Send a response originating from the short code that received the message
+    		$results = $gateway->sendMessage ( $phoneNumber, $message, $shortCode );
+    		// Read in the gateway response and persist if necessary
+    		$response = $results [0];
+    		$status = $response->status;
+    		$cost = $response->cost;
+    		
+    		echo $status." ".$cost;
+    	} catch ( AfricasTalkingGatewayException $e ) {
+    		// Log the error
+    		$errorMessage = $e->getMessage ();
+    	}
+    }
     
     function saveMiniStatement($clCode, $transactionType, $transactionAmount){
     		$inp= array(

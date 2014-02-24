@@ -42,11 +42,11 @@ class Sms extends REST_Controller {
 				$this->login();
 			}
 			
-			$response = $this->corescripts->getStatement ( $custData ['customerId'] );
+			$response = $this->corescripts->getStatement($custData ['customerId']);
 			echo $response;
 		} else {
 			$message = 'Incorrect Format sent.Please add "Balance" to the Message text, then send again';
-			$this->_send_sms ( $phoneNumber, $message, $shortCode );
+			$this->corescripts->_send_sms2( $phoneNumber, $message, $shortCode );
 		}
 	}
 	function login() {
@@ -61,23 +61,5 @@ class Sms extends REST_Controller {
 		// echo $login_ok;
 	}
 	
-	/* Africa Is Talking SMS-Sending */
-	function _send_sms($phoneNumber, $message, $shortCode) {
-		// Create an instance of the gateway class
-		$username = "TomKim";
-		$apiKey = "1473c117e56c4f2df393c36dda15138a57b277f5683943288c189b966aae83b4";
-		$gateway = new AfricasTalkingGateway ( $username, $apiKey );
-		
-		try {
-			// Send a response originating from the short code that received the message
-			$results = $gateway->sendMessage ( $phoneNumber, $message, $shortCode );
-			// Read in the gateway response and persist if necessary
-			$response = $results [0];
-			$status = $response->status;
-			$cost = $response->cost;
-		} catch ( AfricasTalkingGatewayException $e ) {
-			// Log the error
-			$errorMessage = $e->getMessage ();
-		}
-	}
+	
 }
