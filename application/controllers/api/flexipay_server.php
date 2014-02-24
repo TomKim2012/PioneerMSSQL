@@ -35,6 +35,7 @@ class Flexipay_server extends REST_Controller
     	date_default_timezone_set('Africa/Nairobi');
     	
     	$this->load->library('curl');
+    	$this->load->library('coreScripts');
         $this->load->model('Users_Model', 'users');
         $this->load->model('Transactions_Model', 'transactions');
         $this->load->model('Customer_Model', 'customers');
@@ -66,56 +67,14 @@ class Flexipay_server extends REST_Controller
     	   //Check if user is Logged In
     	   if($this->authorize())
     	   {
-    	   		//updating customer Record
-	    	   	$cust = array(
-	    	   			'newMobile'=>$this->post('newMobile')
-	    	   			);
-	    	    //updating customer
-                  if(strlen($cust['newMobile'])==10){ //0729472421
-                        $newInput =array('phone'=>$cust['newMobile']);
-                        $this->customers->UpdateCustomer($inp['clCode'],$newInput);
-                  }
-    	  	
-                $sharesBal = $this->transactions->getCustTransaction($this->post('clCode'), 1);
-                $savingsBal = $this->transactions->getCustTransaction($this->post('clCode'), 2);
-                $loanBal = $this->transactions->getCustTransaction($this->post('clCode'), 3);
-                
-                $customerData=$this->customers->getSingleCustomer("clCode", $this->post('clCode'));
-	    		
-                if($sharesBal)
-	    		{
-    				$message ="Dear ".$customerData['firstName'].", Your shares Balance is Ksh".number_format($sharesBal).", Savings Balance is Ksh ".
-                              number_format($savingsBal).".and Loan Balance is Ksh ".number_format($loanBal);
-    			}
-	    		
-                $tType = "Mini-Statement";
-    			$response = $this->saveMiniStatement($this->post('clCode'),$tType, 10);
-    			if($response['success']){
-                    
-                    //$sms=$this->_send_sms('0729472421', $message);
-    				$response=$this->_send_sms($customerData['mobileNo'], $message);
-
-
-                    if($response){
-                    $clientResponse['sms']=true;
-                    $clientResponse['success']=true;
-                    $clientResponse['sms']=true;
-                    $clientResponse['transactionCode']= $response['transaction_code'] ;
-                    $clientResponse['transactionType']= $tType;
-                    $clientResponse['transactionTime'] = $response['transaction_time'];
-                    $clientResponse['transactionDate'] = $response['transaction_date'];
-                    $clientResponse['transactionAmount'] = "10";
-                    $clientResponse['custNames'] = $customerData['firstName']." ".$customerData['lastName'];
-                    $this->response($clientResponse, 200); // 200 being the HTTP response code
-                    }
-    			}
-		       
-    		}else
-    		{
-    			$this->response(array('message' => 'User Not Logged In',
+    	   	$this->corescripts->getStatement($this->post('clCode'));
+    	   }else
+    	   {
+    		 $this->response(array('message' => 'User Not Logged In',
     					'error' =>true), 200
-    			);
-    		}
+    		  );
+    	   } 
+    	  
     	}else{
     		$this->response(array('message' => 'clCode not sent in the request',
     				'error' =>true), 200
@@ -195,8 +154,8 @@ class Flexipay_server extends REST_Controller
 				        		   $customer['refNo']. "- ".$customer['firstName']." ".$customer['lastName'].
 			        		     ".New balance is Ksh ".number_format($balance);
 
-		      		//$response=$this->_send_sms('0729472421', $message);
-		      		$response=$this->_send_sms($customer['mobileNo'], $message);
+		      		//$response=$this->corescripts->_send_sms('0729472421', $message);
+		      		$response=$this->corescripts->_send_sms($customer['mobileNo'], $message);
 					
 			        if($message){
 			        	$clientResponse['sms']=true;
@@ -214,24 +173,6 @@ class Flexipay_server extends REST_Controller
 		        }
 		  }
       }
-    }
-    
-    
-    function saveMiniStatement($clCode, $transactionType, $transactionAmount){
-    	if($this->authorize())
-    	{
-    		$inp= array(
-    				'clCode' => $clCode,
-    				'transaction_amount' => $transactionAmount,
-    				'transaction_type' => $transactionType
-    		);
-    		
-    		$response = $this->transactions->createTransaction($inp);
-    	
-    		return $response;
-    		
-    		//$this->response($clientResponse, 200); // 200 being the HTTP response code
-    	}
     }
     
     /*
@@ -420,21 +361,4 @@ class Flexipay_server extends REST_Controller
     	 
     }
     
-	//----------Function to send sms-------------------
-    function _send_sms($recipient,$message){
-    	$serverUrl= "http://api.smartsms.co.ke/api/sendsms/plain";
-    	
-    	$recipient = "+254".substr($recipient, 1);
-    	
-    	$parameters= array( 'user'=>'megarider',
-    						'password'=>'ZpmXSCdd',
-    						'sender'=>'pioneerFSA',
-    					    'GSM'=>$recipient,
-    					  	'SMSText'=>$message
-    					  );
-    	
-    	$response = $this->curl->simple_get($serverUrl,$parameters);
-    	return true;
-    }
-       
 }

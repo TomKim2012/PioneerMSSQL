@@ -8,6 +8,7 @@ class Transactions_Model extends CI_Model {
 	function __construct(){
 		parent::__construct();
 		date_default_timezone_set('Africa/Nairobi');
+		
 		if ($this->session->userdata('user')) {
 		$this->userData= $this->session->userdata('user');
 		$this->terminal=$this->session->userdata('terminal');
