@@ -92,6 +92,9 @@ class CoreScripts{
     	 
     	$response = $this->CI()->curl->simple_get($serverUrl,$parameters);
     	
+    	//Validate Response
+    	//Ascertain -- the necessary return response is sent
+    	
     	return true;
     }
     

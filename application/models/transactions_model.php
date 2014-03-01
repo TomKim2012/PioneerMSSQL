@@ -54,7 +54,9 @@ class Transactions_Model extends CI_Model {
 		 					);
 		 	}
 		 	else{
-		 		return  array('success'=>false);
+		 		return  array('success'=>false,
+		 					 'error'=>'Transaction not posted. Please try Again.'
+		 					 );
 		 	}
 	}
 	
