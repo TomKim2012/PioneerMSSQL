@@ -129,16 +129,16 @@ class Flexipay_server extends REST_Controller {
 			$prevDeposits = $this->transactions->getPrevDeposits ( $inp ['clCode'] );
 			$balance = $savingsBal + $prevDeposits + $inp ['transaction_amount'];
 			
-			if ($customer['mobileNo']) {
+			if ($customer ['mobileNo']) {
 				$response = $this->transactions->createTransaction ( $inp );
 				if ($response ['success']) {
 					$tDate = date ( "d/m/Y", strtotime ( $response ['transaction_date'] ) );
 					$tTime = date ( "h:i A", strtotime ( $response ['transaction_time'] ) );
 					$tCode = $response ['transaction_code'];
-					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate ." at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $customer ['firstName'] . " " . $customer ['lastName'] . ".New balance is Ksh " . number_format ( $balance );
+					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $customer ['firstName'] . " " . $customer ['lastName'] . ".New balance is Ksh " . number_format ( $balance );
 					
-					$response=$this->corescripts->_send_sms('0729472421', $message);
-					//$response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
+					$response = $this->corescripts->_send_sms ( '0729472421', $message );
+					// $response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
 					
 					if ($response) {
 						$clientResponse ['sms'] = true;
@@ -152,12 +152,13 @@ class Flexipay_server extends REST_Controller {
 						$this->response ( $clientResponse, 200 ); // 200 being the HTTP response code
 					}
 				} else {
-					$this->response ($response, 200); // Reject code
+					$this->response ( $response, 200 ); // Reject code
 				}
-			}else{
-				return $this->response (array('success'=>false,
-											  'error'=>'Transaction not posted. Customer does not have mobile Number saved. Please update and Try Again.'
-											  ),200);
+			} else {
+				return $this->response ( array (
+						'success' => false,
+						'error' => 'Transaction not posted. Customer does not have mobile Number saved. Please update and Try Again.' 
+				), 200 );
 			}
 		}
 	}
@@ -334,6 +335,32 @@ class Flexipay_server extends REST_Controller {
 					'message' => 'Missing parameters',
 					'success' => false 
 			);
+			$this->response ( $response, 200 );
+		}
+	}
+	function customerSyncCheck_post() {
+		if ($this->post ( 'contactCount' )) {
+			$contactCount = $this->post ( 'contactCount' );
+			
+			$response = $this->customers->SyncCheck ( $contactCount );
+			
+			$this->response ( $response, 200 );
+		}else{
+			$this->response ("Contact Count Not sent", 404 );
+		}
+	}
+	function customerSync_post() {
+		
+		if ($this->post ( 'countDifference' ) > 0) {
+			$syncStart = $this->post ( 'contactCount' ) + 1;
+			$syncStop = $this->post( 'contactCount' ) + $this->post('countDifference');
+			$response = array ();
+			
+			for($i = $syncStart; $i <= $syncStop; $i ++) {
+				$data = $this->customers->getSingleCustomer ( 'Recid', $i );
+				array_push ( $response, $data );
+			}
+			
 			$this->response ( $response, 200 );
 		}
 	}
