@@ -77,6 +77,7 @@ class Transactions_Model extends CI_Model {
 		$this->db->select_sum('transaction_amount');
 		$this->db->where(
 						array('clCode'=>$customerId,
+							   'transaction_type'=>'Deposit',
 						       'isRecorded' => '0'
 						));
 		$query=$this->db->get('transactions');

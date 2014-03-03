@@ -62,12 +62,7 @@ class Flexipay_server extends REST_Controller {
 			// Check if user is Logged In
 			if ($this->authorize ()) {
 				$this->corescripts->getStatement ( $this->post ( 'clCode' ) );
-			} else {
-				$this->response ( array (
-						'message' => 'User Not Logged In',
-						'error' => true 
-				), 200 );
-			}
+			} 
 		} else {
 			$this->response ( array (
 					'message' => 'clCode not sent in the request',
@@ -340,7 +335,7 @@ class Flexipay_server extends REST_Controller {
 	}
 	function customerSyncCheck_post() {
 		if ($this->post ( 'contactCount' )) {
-			$contactCount = $this->post ( 'contactCount' );
+			$contactCount = $this->post( 'contactCount' );
 			
 			$response = $this->customers->SyncCheck ( $contactCount );
 			
@@ -357,7 +352,7 @@ class Flexipay_server extends REST_Controller {
 			$response = array ();
 			
 			for($i = $syncStart; $i <= $syncStop; $i ++) {
-				$data = $this->customers->getSingleCustomer ( 'Recid', $i );
+				$data = $this->customers->getSingleCustomer ('Recid',$i);
 				array_push ( $response, $data );
 			}
 			
