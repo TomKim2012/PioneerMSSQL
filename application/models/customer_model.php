@@ -5,7 +5,8 @@ class Customer_Model extends CI_Model {
 		$this->db->where ( array (
 				$parameter => $value 
 		) );
-		$query = $this->db->get ( 'Client' );
+		$query = $this->db->get( 'Client' );
+		$this->db->order_by("Recid", "asc");
 		
 		// echo $this->db->last_query();
 		
