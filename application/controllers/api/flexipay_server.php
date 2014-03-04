@@ -132,8 +132,8 @@ class Flexipay_server extends REST_Controller {
 					$tCode = $response ['transaction_code'];
 					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $customer ['firstName'] . " " . $customer ['lastName'] . ".New balance is Ksh " . number_format ( $balance );
 					
-					$response = $this->corescripts->_send_sms ( '0729472421', $message );
-					// $response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
+					//$response = $this->corescripts->_send_sms ( '0729472421', $message );
+				    $response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
 					
 					if ($response) {
 						$clientResponse ['sms'] = true;
