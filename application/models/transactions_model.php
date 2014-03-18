@@ -17,6 +17,7 @@ class Transactions_Model extends CI_Model {
 	
 	function getTransactions(){
 		//Users transaction for Today
+		$this->db->limit (50);
 		$this->db->where(array('userId'=>$this->userData->userId
 						      ));
 		$query=$this->db->get('transactions');
