@@ -16,12 +16,10 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 
 // This can be removed if you use __autoload() in config.php OR use Modular Extensions
 require APPPATH . '/libraries/REST_Controller.php';
-class Flexipay_server extends REST_Controller {
+
+class Flexipay_server extends REST_Controller{
 	private $isLoggedIn = false;
 	function __construct() {
-		// header("Access-Control-Allow-Origin: http://192.168.0.106");
-		// header("Access-Control-Allow-Origin:".$_SERVER['REMOTE_ADDR'].":".$_SERVER['SERVER_PORT']);
-		// header("Access-Control-Allow-Origin:".$_SERVER['REMOTE_ADDR']);
 		header ( "Access-Control-Allow-Origin: http://127.0.0.1:8888" );
 		header ( "Access-Control-Allow-Credentials:true" );
 		header ( "Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method" );
@@ -31,6 +29,7 @@ class Flexipay_server extends REST_Controller {
 			die ();
 		}
 		parent::__construct ();
+		
 		date_default_timezone_set ( 'Africa/Nairobi' );
 		
 		$this->load->library ( 'curl' );
@@ -40,8 +39,10 @@ class Flexipay_server extends REST_Controller {
 		$this->load->model ( 'Customer_Model', 'customers' );
 		$this->load->model ( 'Terminal_Model', 'terminals' );
 	}
+	
 	function authorize() {
 		if ($this->users->user) {
+			
 			return true;
 		} else {
 			$this->response ( array (
@@ -62,7 +63,7 @@ class Flexipay_server extends REST_Controller {
 			// Check if user is Logged In
 			if ($this->authorize ()) {
 				$this->corescripts->getStatement ( $this->post ( 'clCode' ) );
-			} 
+			}
 		} else {
 			$this->response ( array (
 					'message' => 'clCode not sent in the request',
@@ -132,8 +133,8 @@ class Flexipay_server extends REST_Controller {
 					$tCode = $response ['transaction_code'];
 					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $customer ['firstName'] . " " . $customer ['lastName'] . ".New balance is Ksh " . number_format ( $balance );
 					
-					//$response = $this->corescripts->_send_sms ( '0729472421', $message );
-				    $response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
+					// $response = $this->corescripts->_send_sms ( '0729472421', $message );
+					$response = $this->corescripts->_send_sms2 ( $customer ['mobileNo'], $message );
 					
 					if ($response) {
 						$clientResponse ['sms'] = true;
@@ -193,23 +194,37 @@ class Flexipay_server extends REST_Controller {
 			// $login_ok is true or false depending on user login information
 			$login_ok = $this->users->login ( $UserName, $password, $imeiCode );
 			if ($login_ok ['authorize'] == true) {
-				/* UserName For testing */
-				if (! (isset ( $username ))) {
-					$this->response ( $login_ok, 200 );
-				} else {
-					return true;
-				}
+				$this->response ( $login_ok, 200 );
 			} else {
-				$response = $login_ok;
-				$this->response ( $response, 200 );
+				$this->response ( $login_ok, 200 );
 			}
 		} else {
 			$response = array (
-					'message' => 'UserName OR ImeiCode Missing',
+					'message' => 'UserName or ImeiCode Missing',
 					'success' => false 
 			);
 			$this->response ( $response, 200 );
 		}
+	}
+	
+	// -------Function to login user ------------------
+	function updatePassword_post() {
+		if ($this->post ( 'password' )) {
+			$password = $this->post ( 'password' );
+			$userId = $this->post ( 'userId' );
+			$userName = $this->post ( 'userName' );
+			$imeiCode = $this->post ( 'imeiCode');
+		}
+		
+		if ((! empty ( $password )) && (! empty ( $userId ))) {
+			$response = $this->users->updatePassword ( $userId, $password, $userName, $imeiCode);
+		} else {
+			$response = array (
+					'message' => 'UserId or NewPassword not sent',
+					'success' => false 
+			);
+		}
+		$this->response ( $response, 200 );
 	}
 	
 	// --------------Function to logout user----------------------------
@@ -218,7 +233,7 @@ class Flexipay_server extends REST_Controller {
 		if ($response ['success']) {
 			$this->response ( $response, 200 );
 		} else {
-			$this->response ( $response, 404 );
+			$this->response ( $response, 200 );
 		}
 	}
 	
@@ -243,7 +258,6 @@ class Flexipay_server extends REST_Controller {
 			if ($response ['success']) {
 				echo $response ['terminalId'];
 			} else {
-				// echo "";
 				echo $response ['terminalId'];
 			}
 		} else {
@@ -283,6 +297,7 @@ class Flexipay_server extends REST_Controller {
 			), 200 );
 		}
 	}
+	
 	function allocation_post() {
 		if ($this->post ( 'allocatedTo' )) {
 			$input = array (
@@ -310,6 +325,7 @@ class Flexipay_server extends REST_Controller {
 			$this->response ( $response, 200 );
 		}
 	}
+	
 	function deallocation_post() {
 		if ($this->post ( 'allocationId' )) {
 			$input = array (
@@ -333,30 +349,35 @@ class Flexipay_server extends REST_Controller {
 			$this->response ( $response, 200 );
 		}
 	}
+	
 	function customerSyncCheck_post() {
 		if ($this->post ( 'contactCount' )) {
-			$contactCount = $this->post( 'contactCount' );
+			$contactCount = $this->post ( 'contactCount' );
 			
 			$response = $this->customers->SyncCheck ( $contactCount );
 			
 			$this->response ( $response, 200 );
-		}else{
-			$this->response ("Contact Count Not sent", 404 );
+		} else {
+			$this->response ( "Contact Count Not sent", 404 );
 		}
 	}
+	
 	function customerSync_post() {
-		
 		if ($this->post ( 'countDifference' ) > 0) {
 			$syncStart = $this->post ( 'contactCount' ) + 1;
-			$syncStop = $this->post( 'contactCount' ) + $this->post('countDifference');
+			$syncStop = $this->post ( 'contactCount' ) + $this->post ( 'countDifference' );
 			$response = array ();
 			
 			for($i = $syncStart; $i <= $syncStop; $i ++) {
-				$data = $this->customers->getSingleCustomer ('Recid',$i);
+				$data = $this->customers->getSingleCustomer ( 'Recid', $i );
 				array_push ( $response, $data );
 			}
 			
 			$this->response ( $response, 200 );
 		}
+	}
+	
+	function version_get() {
+		echo CI_VERSION; // echoes something like 1.7.1
 	}
 }

@@ -1,6 +1,8 @@
 <?php
 if (! defined ( 'BASEPATH' ))
 	exit ( 'No direct script access allowed' );
+
+require APPPATH . '/libraries/AfricasTalkingGateway.php';
 class CoreScripts {
 	public function __construct() {
 		$this->CI ()->load->library ( 'curl' );
@@ -36,13 +38,12 @@ class CoreScripts {
 		$customerData = $this->CI ()->customers->getSingleCustomer ( "clCode", $clCode );
 		
 		/* No mobile Number */
-		if (!$customerData ['mobileNo']) {
+		if (! $customerData ['mobileNo']) {
 			return $this->response ( array (
 					'success' => false,
 					'error' => 'Transaction not posted. Customer does not have mobile Number saved. Please update and Try Again.' 
 			), 200 );
 		}
-		
 		
 		if ($sharesBal) {
 			$message = "Dear " . $customerData ['firstName'] . ", Your shares Balance is Ksh " . number_format ( $sharesBal ) . ", Savings Balance is Ksh " . number_format ( $savingsBal ) . ".and Loan Balance is Ksh " . number_format ( $loanBal );
@@ -54,7 +55,7 @@ class CoreScripts {
 		if ($response ['success']) {
 			
 			// $smsResponse= $this->_send_sms('0729472421', $message);
-			$smsResponse = $this->_send_sms ( $customerData ['mobileNo'], $message );
+			$smsResponse = $this->_send_sms2 ( $customerData ['mobileNo'], $message );
 			
 			if ($smsResponse) {
 				$clientResponse ['sms'] = true;
@@ -78,8 +79,9 @@ class CoreScripts {
 		$serverUrl = "http://api.smartsms.co.ke/api/sendsms/plain";
 		
 		if ($recipient == "") {
-			echo "Message not sent, No phoneNumber passed";
-			return;
+			return array (
+					'error' => "Message not sent, No phoneNumber passed" 
+			);
 		}
 		
 		$recipient = "+254" . substr ( $recipient, 1 );
@@ -101,24 +103,46 @@ class CoreScripts {
 	}
 	
 	/* Africa Is Talking SMS-Sending */
-	function _send_sms2($phoneNumber, $message, $shortCode) {
+	function _send_sms2($phoneNumber, $message) {
+		if ($phoneNumber == "") {
+			return array (
+					'error' => "Message not sent, No phoneNumber passed" 
+			);
+		}
+		
+		$recipient = "+254" . substr ( $phoneNumber, 1 );
+		
 		// Create an instance of the gateway class
 		$username = "TomKim";
+		$shortCode = "SMSLEOPARD";
 		$apiKey = "1473c117e56c4f2df393c36dda15138a57b277f5683943288c189b966aae83b4";
 		$gateway = new AfricasTalkingGateway ( $username, $apiKey );
 		
 		try {
 			// Send a response originating from the short code that received the message
-			$results = $gateway->sendMessage ( $phoneNumber, $message, $shortCode );
+			/*
+			 * Bug:: If you put shortcode - It fails completely.
+			 */
+			
+			$results = $gateway->sendMessage ( $recipient, $message );
+			
 			// Read in the gateway response and persist if necessary
 			$response = $results [0];
 			$status = $response->status;
 			$cost = $response->cost;
 			
-			echo $status . " " . $cost;
+			//echo $status . " " . $cost;
+			
+			if ($status = "Success") {
+				return true;
+			} else {
+				return false;
+			}
+			
 		} catch ( AfricasTalkingGatewayException $e ) {
 			// Log the error
 			$errorMessage = $e->getMessage ();
+			return false;
 		}
 	}
 	function saveMiniStatement($clCode, $transactionType, $transactionAmount) {
