@@ -17,7 +17,7 @@ class Transactions_Model extends CI_Model {
 	
 	function getTransactions(){
 		//Users transaction for Today
-		$this->db->limit (50);
+		//$this->db->limit (50);
 		$this->db->order_by ("transaction_date", "asc");
 		$this->db->where(array('userId'=>$this->userData->userId
 						      ));
