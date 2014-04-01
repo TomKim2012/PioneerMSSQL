@@ -19,7 +19,7 @@ class Users_Model extends CI_Model {
 				'password' => $newPw 
 		);
 		$this->db->where ( 'userId', $userId );
-		$query = $this->db->update ( 'Users', $newPassword );
+		$query = $this->db->update( 'Users', $newPassword );
 		if ($query) {
 			return $this->login ( $userName, $newPw, $imeiCode );
 		} else {
@@ -204,7 +204,7 @@ class Users_Model extends CI_Model {
 					$session_data = array (
 							'userId' => ( string ) $userInfo->userId,
 							'firstName' => $userInfo->firstName,
-							'lastName' => $userInfo->lastName,
+							'lastName' => trim($userInfo->lastName),
 							'userName' => $userInfo->userName,
 							'authorize' => true,
 							'firstTime' => false,

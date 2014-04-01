@@ -14,8 +14,7 @@ class Sms extends REST_Controller {
 		$this->load->model ( 'Customer_Model', 'customers' );
 		$this->load->model ( 'Users_Model', 'users' );
 	}
-	function custSms_post() {
-		
+	function custSms_post() {	
 		// 2.Read in the received values
 		$phoneNumber = $this->post ( "from" ); // sender's Phone Number
 		$shortCode = $this->post ( "to" ); // The short code that received the message
