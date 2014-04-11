@@ -16,8 +16,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 
 // This can be removed if you use __autoload() in config.php OR use Modular Extensions
 require APPPATH . '/libraries/REST_Controller.php';
-
-class Flexipay_server extends REST_Controller{
+class Flexipay_server extends REST_Controller {
 	private $isLoggedIn = false;
 	function __construct() {
 		header ( "Access-Control-Allow-Origin: http://127.0.0.1:8888" );
@@ -39,7 +38,6 @@ class Flexipay_server extends REST_Controller{
 		$this->load->model ( 'Customer_Model', 'customers' );
 		$this->load->model ( 'Terminal_Model', 'terminals' );
 	}
-	
 	function authorize() {
 		if ($this->users->user) {
 			
@@ -131,7 +129,10 @@ class Flexipay_server extends REST_Controller{
 					$tDate = date ( "d/m/Y", strtotime ( $response ['transaction_date'] ) );
 					$tTime = date ( "h:i A", strtotime ( $response ['transaction_time'] ) );
 					$tCode = $response ['transaction_code'];
-					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $customer ['firstName'] . " " . $customer ['lastName'] . ".New balance is Ksh " . number_format ( $balance );
+					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " .
+								$tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . 
+								$customer ['refNo'] . "- " . $customer ['firstName'] . " " . $customer ['lastName'] . 
+								".New balance is Ksh " . number_format ( $balance );
 					
 					// $response = $this->corescripts->_send_sms ( '0729472421', $message );
 					$response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
@@ -213,11 +214,11 @@ class Flexipay_server extends REST_Controller{
 			$password = $this->post ( 'password' );
 			$userId = $this->post ( 'userId' );
 			$userName = $this->post ( 'userName' );
-			$imeiCode = $this->post ( 'imeiCode');
+			$imeiCode = $this->post ( 'imeiCode' );
 		}
 		
 		if ((! empty ( $password )) && (! empty ( $userId ))) {
-			$response = $this->users->updatePassword ( $userId, $password, $userName, $imeiCode);
+			$response = $this->users->updatePassword ( $userId, $password, $userName, $imeiCode );
 		} else {
 			$response = array (
 					'message' => 'UserId or NewPassword not sent',
@@ -240,7 +241,6 @@ class Flexipay_server extends REST_Controller{
 	// --------Function to get All Users -------
 	function users_get() {
 		$response = $this->users->getUsers ();
-		
 		$this->response ( $response, 200 );
 	}
 	function terminal_post() {
@@ -297,7 +297,6 @@ class Flexipay_server extends REST_Controller{
 			), 200 );
 		}
 	}
-	
 	function allocation_post() {
 		if ($this->post ( 'allocatedTo' )) {
 			$input = array (
@@ -325,7 +324,6 @@ class Flexipay_server extends REST_Controller{
 			$this->response ( $response, 200 );
 		}
 	}
-	
 	function deallocation_post() {
 		if ($this->post ( 'allocationId' )) {
 			$input = array (
@@ -349,7 +347,6 @@ class Flexipay_server extends REST_Controller{
 			$this->response ( $response, 200 );
 		}
 	}
-	
 	function customerSyncCheck_post() {
 		if ($this->post ( 'contactCount' )) {
 			$contactCount = $this->post ( 'contactCount' );
@@ -361,7 +358,6 @@ class Flexipay_server extends REST_Controller{
 			$this->response ( "Contact Count Not sent", 404 );
 		}
 	}
-	
 	function customerSync_post() {
 		if ($this->post ( 'countDifference' ) > 0) {
 			$syncStart = $this->post ( 'contactCount' ) + 1;
@@ -376,7 +372,6 @@ class Flexipay_server extends REST_Controller{
 			$this->response ( $response, 200 );
 		}
 	}
-	
 	function version_get() {
 		echo CI_VERSION; // echoes something like 1.7.1
 	}

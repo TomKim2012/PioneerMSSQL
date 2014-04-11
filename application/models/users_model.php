@@ -19,7 +19,7 @@ class Users_Model extends CI_Model {
 				'password' => $newPw 
 		);
 		$this->db->where ( 'userId', $userId );
-		$query = $this->db->update( 'Users', $newPassword );
+		$query = $this->db->update ( 'Users', $newPassword );
 		if ($query) {
 			return $this->login ( $userName, $newPw, $imeiCode );
 		} else {
@@ -139,8 +139,8 @@ class Users_Model extends CI_Model {
 				'password' => $password 
 		) );
 		
-		//echo $this->db->last_query();
-
+		// echo $this->db->last_query();
+		
 		// --Results found
 		if ($query->num_rows () > 0) {
 			$userInfo = $query->row (); // user Data
@@ -150,8 +150,6 @@ class Users_Model extends CI_Model {
 					'userId' => $userInfo->userId 
 			) );
 			$userdata = $query2->result ();
-			
-			
 			
 			// Add User Group
 			$groupsData = array ();
@@ -204,7 +202,7 @@ class Users_Model extends CI_Model {
 					$session_data = array (
 							'userId' => ( string ) $userInfo->userId,
 							'firstName' => $userInfo->firstName,
-							'lastName' => trim($userInfo->lastName),
+							'lastName' => trim ( $userInfo->lastName ),
 							'userName' => $userInfo->userName,
 							'authorize' => true,
 							'firstTime' => false,
@@ -351,24 +349,78 @@ class Users_Model extends CI_Model {
 			);
 		}
 	}
+	
+	/*
+	 * Description: Filter the Users List if A user has a previous Allocation or Admin Date: 11/4/2014
+	 */
+	function filter_by_Allocation($userId) {
+		// Get the Allocation
+		$this->db->where ( 'allocatedTo', $userId );
+		$this->db->where ( 'deallocatedBy', NULL );
+		$query = $this->db->get ( 'Allocation' );
+		
+		if ($query->num_rows () == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	function filter_by_Group($userId) {
+		
+		// Check the User's Group
+		$query2 = $this->db->get_where ( 'usergroup', array (
+				'userId' => $userId 
+		) );
+		$userdata = $query2->result ();
+		
+		// Add User Group
+		$groupsData = array ();
+		foreach ( $userdata as $value ) {
+			$this->db->select ( 'groupName' );
+			$this->db->where ( array (
+					'groupId' => $value->groupId 
+			) );
+			$query = $this->db->get ( 'groups' );
+			$groupsData [] = $query->row ()->groupName;
+		}
+		
+		if (in_array ( 'Admin', $groupsData )) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 	function getUsers() {
 		$this->db->select ( 'userId,firstName,lastName,userName' );
 		$query = $this->db->get ( 'users' );
 		
 		$userData = $query->result_array ();
 		
-		// Check Allocation
-		
-		// MS-SQL Integer Problem
+		// Do some Checks
 		$response = array ();
+		
 		foreach ( $userData as $row ) {
-			$data = array (
-					'userId' => ( string ) $row ['userId'],
-					'firstName' => $row ['firstName'],
-					'lastName' => $row ['lastName'],
-					'userName' => $row ['userName'] 
-			);
-			array_push ( $response, $data );
+			// Filter out Administrators
+			$admin_check = $this->filter_by_Group ( $row ['userId'] );
+			
+			if ($admin_check) {
+				//echo $row ['userId'] . "-Passed Admin Check";
+				$allocation_check = $this->filter_by_Allocation ( $row ['userId'] );
+			} else{
+				$allocation_check = false;
+			}
+			
+			if ($allocation_check) {
+				//echo $row ['userId'] . "-Passed Allocation Check; ";
+				$data = array (
+						'userId' => ( string ) $row ['userId'],
+						'firstName' => trim($row ['firstName']),
+						'lastName' => trim($row ['lastName']),
+						'userName' => trim($row ['userName']) 
+				);
+				array_push ( $response, $data );
+				//echo $row ['userId'] . "-Added to Array ";
+			}
 		}
 		
 		return $response;
