@@ -135,7 +135,7 @@ class Flexipay_server extends REST_Controller {
 								".New balance is Ksh " . number_format ( $balance );
 					
 					// $response = $this->corescripts->_send_sms ( '0729472421', $message );
-					$response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
+					$response = $this->corescripts->_send_sms2 ( $customer ['mobileNo'], $message );
 					
 					if ($response) {
 						$clientResponse ['sms'] = true;
