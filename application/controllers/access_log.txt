@@ -1,0 +1,29 @@
+=============================
+userName = tomkim
+password = gitaru09
+imeiCode = 8bed81d29882d48d
+=============================
+userId = 1
+firstName = Tom
+lastName = Kimani
+userName = TomKim
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+userName = tomkim
+password = gitaru09
+imeiCode = 8bed81d29882d48d
+=============================
+userName = tomkim
+password = gitaru09
+imeiCode = 8bed81d29882d48d
+==================
+Response at: 2014-04-26 14:32:52
+userId = 1
+firstName = Tom
+lastName = Kimani
+userName = TomKim
+authorize = 1
+firstTime = 
+group = fieldOfficer

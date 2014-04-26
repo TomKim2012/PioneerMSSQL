@@ -18,6 +18,8 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 require APPPATH . '/libraries/REST_Controller.php';
 class Flexipay_server extends REST_Controller {
 	private $isLoggedIn = false;
+	
+	private $myFile = "application/controllers/access_log.txt";
 	function __construct() {
 		header ( "Access-Control-Allow-Origin: http://127.0.0.1:8888" );
 		header ( "Access-Control-Allow-Credentials:true" );
@@ -38,9 +40,24 @@ class Flexipay_server extends REST_Controller {
 		$this->load->model ( 'Customer_Model', 'customers' );
 		$this->load->model ( 'Terminal_Model', 'terminals' );
 	}
+	
+	
+	function log($content){
+		//Log the details
+		write_file ( $this->myFile, "=============================\n", 'a+' );
+		write_file ( $this->myFile, "Received: ".date("Y-m-d H:i:s")."\n", 'a+' );
+		
+		foreach ( $content as $var => $value ) {
+			if (! write_file ( $this->myFile, "$var = $value\n", 'a+' )) {
+				echo "Unable to write to file!";
+			}
+		}
+		
+	}
+	
+	
 	function authorize() {
-		if ($this->users->user) {
-			
+		if ($this->users->user) {			
 			return true;
 		} else {
 			$this->response ( array (
@@ -189,6 +206,8 @@ class Flexipay_server extends REST_Controller {
 			$UserName = $this->post ( 'userName' );
 			$password = $this->post ( 'password' );
 			$imeiCode = $this->post ( 'imeiCode' );
+			
+			$this->log($this->post());
 		}
 		
 		if ((! empty ( $UserName )) && ! (empty ( $imeiCode ))) {
@@ -243,6 +262,7 @@ class Flexipay_server extends REST_Controller {
 		$response = $this->users->getUsers ();
 		$this->response ( $response, 200 );
 	}
+	
 	function terminal_post() {
 		if ($this->post ( 'terminalName' )) {
 			$terminalName = $this->post ( 'terminalName' );
