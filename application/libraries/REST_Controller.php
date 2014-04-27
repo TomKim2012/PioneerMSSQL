@@ -1,5 +1,4 @@
 <?php
-
 defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 
 /**
@@ -146,7 +145,7 @@ abstract class REST_Controller extends CI_Controller {
 	
 	/**
 	 * Constructor function
-	 * 
+	 *
 	 * @todo Document more please.
 	 */
 	public function __construct() {
@@ -364,7 +363,7 @@ abstract class REST_Controller extends CI_Controller {
 	public function response($data = array(), $http_code = null) {
 		global $CFG;
 		
-		$this->mylog($data);
+		$this->mylog ( $data );
 		// If data is empty and not code provide, error and bail
 		if (empty ( $data ) && $http_code === null) {
 			$http_code = 404;
@@ -413,7 +412,6 @@ abstract class REST_Controller extends CI_Controller {
 			}
 		}
 		
-		
 		// Written for every response
 		header ( 'HTTP/1.1: ' . $http_code );
 		header ( 'Status: ' . $http_code );
@@ -431,7 +429,7 @@ abstract class REST_Controller extends CI_Controller {
 		
 		/*
 		 * Custom Logging Mechanism Author:TomKim Date:4/26/2014
-		 */		
+		 */
 	}
 	
 	/*
@@ -440,11 +438,13 @@ abstract class REST_Controller extends CI_Controller {
 	function mylog($content) {
 		// Log the details
 		write_file ( $this->myFile, "======================================\n", 'a+' );
-		write_file ( $this->myFile, "Response at: ".date("Y-m-d H:i:s")."\n", 'a+' );
+		write_file ( $this->myFile, "Response at: " . date ( "Y-m-d H:i:s" ) . "\n", 'a+' );
 		
-		foreach ( $content as $var => $value ) {
-			if (! write_file ( $this->myFile, "$var = $value\n", 'a+' )) {
-				echo "Unable to write to file!";
+		if (! is_array ( $content [0] )) {
+			foreach ( $content as $var => $value ) {
+				if (! write_file ( $this->myFile, "$var = $value\n", 'a+' )) {
+					echo "Unable to write to file!";
+				}
 			}
 		}
 	}
@@ -1088,8 +1088,8 @@ abstract class REST_Controller extends CI_Controller {
 		}
 		
 		$uniqid = uniqid ( "" ); // Empty argument for backward compatibility
-		                      // We need to test which server authentication variable to use
-		                      // because the PHP ISAPI module in IIS acts different from CGI
+		                         // We need to test which server authentication variable to use
+		                         // because the PHP ISAPI module in IIS acts different from CGI
 		if ($this->input->server ( 'PHP_AUTH_DIGEST' )) {
 			$digest_string = $this->input->server ( 'PHP_AUTH_DIGEST' );
 		} elseif ($this->input->server ( 'HTTP_AUTHORIZATION' )) {
