@@ -260,6 +260,7 @@ class Flexipay_server extends REST_Controller {
 	// --------Function to get All Users -------
 	function users_get() {
 		$response = $this->users->getUsers ();
+		$this->log(array('Requested for Users'));
 		$this->response ( $response, 200 );
 	}
 	
@@ -292,6 +293,7 @@ class Flexipay_server extends REST_Controller {
 	// ----Check Allocation
 	function allocation_get() {
 		if ($this->get ( 'imeiCode' )) {
+			$this->log($this->get());
 			// Check if user is Logged In
 			if ($this->authorize ()) {
 				$allocation = $this->users->check_allocation ( NULL, $this->get ( 'imeiCode' ) );
