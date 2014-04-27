@@ -440,15 +440,15 @@ abstract class REST_Controller extends CI_Controller {
 		write_file ( $this->myFile, "======================================\n", 'a+' );
 		write_file ( $this->myFile, "Response at: " . date ( "Y-m-d H:i:s" ) . "\n", 'a+' );
 		
-		if (! is_array ( $content [0] )) {
+		
 			foreach ( $content as $var => $value ) {
-				if (! write_file ( $this->myFile, "$var = $value\n", 'a+' )) {
-					echo "Unable to write to file!";
+				if (!is_array($value)) {
+					if (! write_file ( $this->myFile, "$var = $value\n", 'a+' )) {
+						echo "Unable to write to file!";
+					}
 				}
 			}
-		}
 	}
-	
 	/*
 	 * Detect SSL use Detect whether SSL is being used or not
 	 */
