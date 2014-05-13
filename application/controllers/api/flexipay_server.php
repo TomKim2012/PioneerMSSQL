@@ -18,7 +18,6 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 require APPPATH . '/libraries/REST_Controller.php';
 class Flexipay_server extends REST_Controller {
 	private $isLoggedIn = false;
-	
 	private $myFile = "application/controllers/access_log.txt";
 	function __construct() {
 		header ( "Access-Control-Allow-Origin: http://127.0.0.1:8888" );
@@ -40,24 +39,19 @@ class Flexipay_server extends REST_Controller {
 		$this->load->model ( 'Customer_Model', 'customers' );
 		$this->load->model ( 'Terminal_Model', 'terminals' );
 	}
-	
-	
-	function log($content){
-		//Log the details
+	function log($content) {
+		// Log the details
 		write_file ( $this->myFile, "=============================\n", 'a+' );
-		write_file ( $this->myFile, "Received: ".date("Y-m-d H:i:s")."\n", 'a+' );
+		write_file ( $this->myFile, "Received: " . date ( "Y-m-d H:i:s" ) . "\n", 'a+' );
 		
 		foreach ( $content as $var => $value ) {
 			if (! write_file ( $this->myFile, "$var = $value\n", 'a+' )) {
 				echo "Unable to write to file!";
 			}
 		}
-		
 	}
-	
-	
 	function authorize() {
-		if ($this->users->user) {			
+		if ($this->users->user) {
 			return true;
 		} else {
 			$this->response ( array (
@@ -67,7 +61,7 @@ class Flexipay_server extends REST_Controller {
 			), 200 );
 			return false;
 		}
-		return true;
+// 		return true;
 	}
 	
 	/*
@@ -146,10 +140,14 @@ class Flexipay_server extends REST_Controller {
 					$tDate = date ( "d/m/Y", strtotime ( $response ['transaction_date'] ) );
 					$tTime = date ( "h:i A", strtotime ( $response ['transaction_time'] ) );
 					$tCode = $response ['transaction_code'];
-					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " .
-								$tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . 
-								$customer ['refNo'] . "- " . $customer ['firstName'] . " " . $customer ['lastName'] . 
-								".New balance is Ksh " . number_format ( $balance );
+					$names = $customer ['firstName'] . " " . $customer ['lastName'];
+					
+					echo strlen ( $names );
+					if (strlen ( $names ) > 15) {
+						$names = substr ( $names, 0, 15 ) . "...";
+					}
+					
+					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $names . ".New balance is Ksh " . number_format ( $balance );
 					
 					// $response = $this->corescripts->_send_sms ( '0729472421', $message );
 					$response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
@@ -207,7 +205,7 @@ class Flexipay_server extends REST_Controller {
 			$password = $this->post ( 'password' );
 			$imeiCode = $this->post ( 'imeiCode' );
 			
-			$this->log($this->post());
+			$this->log ( $this->post () );
 		}
 		
 		if ((! empty ( $UserName )) && ! (empty ( $imeiCode ))) {
@@ -263,7 +261,6 @@ class Flexipay_server extends REST_Controller {
 		$this->log(array('Requested for Users'));
 		$this->response ( $response, 200 );
 	}
-	
 	function terminal_post() {
 		if ($this->post ( 'terminalName' )) {
 			$terminalName = $this->post ( 'terminalName' );
