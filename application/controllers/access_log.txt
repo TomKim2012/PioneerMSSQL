@@ -1,29 +1,26 @@
 =============================
-userName = tomkim
-password = gitaru09
-imeiCode = 8bed81d29882d48d
-=============================
-userId = 1
-firstName = Tom
-lastName = Kimani
-userName = TomKim
+Received: 2014-04-28 01:01:45
+userName = daniel
+password = daniel
+imeiCode = 25173da39bf8618c
+======================================
+Response at: 2014-04-28 01:01:45
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
 authorize = 1
 firstTime = 
-group = fieldOfficer
+group = Admin
 =============================
-userName = tomkim
-password = gitaru09
-imeiCode = 8bed81d29882d48d
+Received: 2014-04-28 01:01:46
+imeiCode = 25173da39bf8618c
+format = json
+======================================
+Response at: 2014-04-28 01:01:46
+isAllocated = 
 =============================
-userName = tomkim
-password = gitaru09
-imeiCode = 8bed81d29882d48d
-==================
-Response at: 2014-04-26 14:32:52
-userId = 1
-firstName = Tom
-lastName = Kimani
-userName = TomKim
-authorize = 1
-firstTime = 
-group = fieldOfficer
+Received: 2014-04-28 01:01:47
+0 = Requested for Users
+======================================
+Response at: 2014-04-28 01:01:47
