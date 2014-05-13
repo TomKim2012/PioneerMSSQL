@@ -67,7 +67,7 @@ class Flexipay_server extends REST_Controller {
 			), 200 );
 			return false;
 		}
-		// return true;
+		return true;
 	}
 	
 	/*
