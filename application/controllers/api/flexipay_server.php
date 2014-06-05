@@ -142,7 +142,7 @@ class Flexipay_server extends REST_Controller {
 					$tCode = $response ['transaction_code'];
 					$names = $customer ['firstName'] . " " . $customer ['lastName'];
 					
-					echo strlen ( $names );
+					//echo strlen ( $names );
 					if (strlen ( $names ) > 15) {
 						$names = substr ( $names, 0, 15 ) . "...";
 					}

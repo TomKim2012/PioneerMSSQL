@@ -74,8 +74,13 @@ class CoreScripts {
 		}
 	}
 	
-	// ----------Function to send sms-------------------
 	function _send_sms($recipient, $message) {
+		//Set the prefered message provider from here
+		return $this->_send_sms2($recipient, $message);
+	}
+	
+	// ----------Function to send sms-------------------
+	function _send_sms1($recipient, $message) {
 		$serverUrl = "http://api.smartsms.co.ke/api/sendsms/plain";
 		
 		if ($recipient == "") {
@@ -114,7 +119,7 @@ class CoreScripts {
 		
 		// Create an instance of the gateway class
 		$username = "TomKim";
-		$shortCode = "SMSLEOPARD";
+		$shortCode = "PioneerFSA";
 		$apiKey = "1473c117e56c4f2df393c36dda15138a57b277f5683943288c189b966aae83b4";
 		$gateway = new AfricasTalkingGateway ( $username, $apiKey );
 		
@@ -124,7 +129,7 @@ class CoreScripts {
 			 * Bug:: If you put shortcode - It fails completely.
 			 */
 			
-			$results = $gateway->sendMessage ( $recipient, $message );
+			$results = $gateway->sendMessage ( $recipient, $message,$shortCode );
 			
 			// Read in the gateway response and persist if necessary
 			$response = $results [0];
