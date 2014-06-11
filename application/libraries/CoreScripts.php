@@ -46,11 +46,13 @@ class CoreScripts {
 		}
 		
 		if ($sharesBal) {
-			$message = "Dear " . $customerData ['firstName'] . ", Your shares Balance is Ksh " . number_format ( $sharesBal ) . ", Savings Balance is Ksh " . number_format ( $savingsBal ) . ".and Loan Balance is Ksh " . number_format ( $loanBal );
+			$message = "Dear " . $customerData ['firstName'] . ", Your shares Balance is Ksh " .
+						number_format ( $sharesBal ) . ", Savings Balance is Ksh " . number_format ( $savingsBal ) .
+						".and Loan Balance is Ksh " . number_format ( $loanBal );
 		}
 		
 		$tType = "Mini-Statement";
-		$response = $this->saveMiniStatement ( $clCode, $tType, 10 );
+		$response = $this->saveMiniStatement($clCode, $tType, 10 );
 		
 		if ($response ['success']) {
 			
@@ -73,10 +75,9 @@ class CoreScripts {
 			// $smsResponse2= $this->_send_sms2('0729472421', $message,'SMSLEOPARD');
 		}
 	}
-	
 	function _send_sms($recipient, $message) {
-		//Set the prefered message provider from here
-		return $this->_send_sms2($recipient, $message);
+		// Set the prefered message provider from here
+		return $this->_send_sms2 ( $recipient, $message );
 	}
 	
 	// ----------Function to send sms-------------------
@@ -129,21 +130,20 @@ class CoreScripts {
 			 * Bug:: If you put shortcode - It fails completely.
 			 */
 			
-			$results = $gateway->sendMessage ( $recipient, $message,$shortCode );
+			$results = $gateway->sendMessage ( $recipient, $message, $shortCode );
 			
 			// Read in the gateway response and persist if necessary
 			$response = $results [0];
 			$status = $response->status;
 			$cost = $response->cost;
 			
-			//echo $status . " " . $cost;
+			// echo $status . " " . $cost;
 			
 			if ($status = "Success") {
 				return true;
 			} else {
 				return false;
 			}
-			
 		} catch ( AfricasTalkingGatewayException $e ) {
 			// Log the error
 			$errorMessage = $e->getMessage ();

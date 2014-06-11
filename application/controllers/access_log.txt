@@ -1,0 +1,5217 @@
+=============================
+Received: 2014-06-10 09:35:44
+userName = daniel
+password = daniel
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 09:35:44
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 09:35:48
+imeiCode = d33dfd59b6c18548
+format = json
+======================================
+Response at: 2014-06-10 09:35:48
+allocationDate = 2014-06-07 10:14:34
+allocatedBy = 10
+allocatedTo = 25
+allocationId = 779
+allocatedName = Esther       Karambu                       
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 09:36:09
+userName = daniel
+password = daniel
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 09:36:09
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 09:36:13
+imeiCode = d33dfd59b6c18548
+format = json
+======================================
+Response at: 2014-06-10 09:36:13
+isAllocated = 
+=============================
+Received: 2014-06-10 09:36:16
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 09:36:16
+=============================
+Received: 2014-06-10 09:52:52
+userName = daniel
+password = daniep
+imeiCode = 1875947d7e01c80
+======================================
+Response at: 2014-06-10 09:52:52
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-10 09:53:24
+userName = daniel
+password = daniel
+imeiCode = 1875947d7e01c80
+======================================
+Response at: 2014-06-10 09:53:24
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 09:53:29
+imeiCode = 1875947d7e01c80
+format = json
+======================================
+Response at: 2014-06-10 09:53:29
+isAllocated = 
+=============================
+Received: 2014-06-10 09:53:30
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 09:53:30
+======================================
+Response at: 2014-06-10 09:53:48
+countDifference = 4
+=============================
+Received: 2014-06-10 09:54:42
+imeiCode = 1875947d7e01c80
+format = json
+======================================
+Response at: 2014-06-10 09:54:42
+allocationDate = 2014-06-10 09:54:38
+allocatedBy = 10
+allocatedTo = 16
+allocationId = 795
+allocatedName = Caroline     Muthoni                       
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 09:55:38
+userName = caroline
+password = caroline
+imeiCode = 1875947d7e01c80
+======================================
+Response at: 2014-06-10 09:55:38
+userId = 16
+firstName = Caroline    
+lastName = Muthoni
+userName = Caroline    
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-10 10:06:07
+userName = esther
+password = esther
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 10:06:07
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-10 10:09:13
+userName = daniel
+password = daniel
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 10:09:13
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 10:09:22
+userName = joan
+password = joam
+imeiCode = 3875df8dba565db7
+======================================
+Response at: 2014-06-10 10:09:22
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-10 10:09:27
+userName = joan
+password = joam
+imeiCode = 3875df8dba565db7
+======================================
+Response at: 2014-06-10 10:09:27
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-10 10:11:14
+userName = daniel
+password = daniel
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:11:14
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 10:11:18
+imeiCode = cdc66b7e39361ff1
+format = json
+======================================
+Response at: 2014-06-10 10:11:19
+isAllocated = 
+=============================
+Received: 2014-06-10 10:11:20
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 10:11:20
+=============================
+Received: 2014-06-10 10:11:30
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 10:11:30
+=============================
+Received: 2014-06-10 10:11:38
+imeiCode = cdc66b7e39361ff1
+format = json
+======================================
+Response at: 2014-06-10 10:11:38
+allocationDate = 2014-06-10 10:11:37
+allocatedBy = 10
+allocatedTo = 19
+allocationId = 796
+allocatedName = Keziah       Ruguru                        
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 10:12:01
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:12:01
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 10:12:33
+sms = 1
+success = 1
+transactionCode = XW1C01A00
+transactionType = Deposit
+transactionTime = 10:12 AM
+transactionDate = 10/06/2014
+transactionAmount = 600
+custNames = George Mwenjeri
+======================================
+Response at: 2014-06-10 10:15:50
+sms = 1
+success = 1
+transactionCode = DW917395F
+transactionType = Deposit
+transactionTime = 10:15 AM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Mary Githei
+======================================
+Response at: 2014-06-10 10:17:16
+sms = 1
+success = 1
+transactionCode = MFC6E555A
+transactionType = Deposit
+transactionTime = 10:17 AM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Lucy Wangui
+======================================
+Response at: 2014-06-10 10:18:17
+sms = 1
+success = 1
+transactionCode = XCB60A949
+transactionType = Deposit
+transactionTime = 10:18 AM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Alice Macharia
+=============================
+Received: 2014-06-10 10:18:41
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:18:41
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 10:19:13
+sms = 1
+success = 1
+transactionCode = BV82E1197
+transactionType = Deposit
+transactionTime = 10:19 AM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Samuel Kamau
+======================================
+Response at: 2014-06-10 10:20:09
+sms = 1
+success = 1
+transactionCode = JX0056CA0
+transactionType = Mini-Statement
+transactionTime = 10:20:08
+transactionDate = 2014-06-10 10:20:08
+transactionAmount = 10
+custNames = Mary Githei
+======================================
+Response at: 2014-06-10 10:20:35
+sms = 1
+success = 1
+transactionCode = PZ06EF1A5
+transactionType = Deposit
+transactionTime = 10:20 AM
+transactionDate = 10/06/2014
+transactionAmount = 50
+custNames = Ruth W
+======================================
+Response at: 2014-06-10 10:23:31
+sms = 1
+success = 1
+transactionCode = TS36CEB6A
+transactionType = Deposit
+transactionTime = 10:23 AM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Fredrick Kinyanjui
+=============================
+Received: 2014-06-10 10:23:57
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:23:57
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-10 10:27:18
+imeiCode = d33dfd59b6c18548
+format = json
+======================================
+Response at: 2014-06-10 10:27:18
+isAllocated = 
+=============================
+Received: 2014-06-10 10:27:19
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 10:27:19
+=============================
+Received: 2014-06-10 10:27:29
+imeiCode = d33dfd59b6c18548
+format = json
+======================================
+Response at: 2014-06-10 10:27:29
+allocationDate = 2014-06-10 10:27:29
+allocatedBy = 10
+allocatedTo = 25
+allocationId = 797
+allocatedName = Esther       Karambu                       
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 10:27:41
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:27:41
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-10 10:28:05
+userName = esther
+password = esther
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 10:28:06
+userId = 25
+firstName = Esther      
+lastName = Karambu
+userName = Esther      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-10 10:28:11
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:28:11
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-10 10:28:37
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:28:37
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 10:29:09
+sms = 1
+success = 1
+transactionCode = FTD51D769
+transactionType = Deposit
+transactionTime = 10:29 AM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Hanna Wangui
+=============================
+Received: 2014-06-10 10:29:19
+userName = keziah
+password = kezish
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:29:19
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-10 10:29:48
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 10:29:48
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 10:30:22
+sms = 1
+success = 1
+transactionCode = YA41FA0A1
+transactionType = Deposit
+transactionTime = 10:30 AM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Kennedy Ngige
+======================================
+Response at: 2014-06-10 10:30:58
+sms = 1
+success = 1
+transactionCode = HK9DF1479
+transactionType = Deposit
+transactionTime = 10:30 AM
+transactionDate = 10/06/2014
+transactionAmount = 400
+custNames = Hanna Wanjiru Wangui Kennedy Wanjiru Wangui
+======================================
+Response at: 2014-06-10 10:33:22
+sms = 1
+success = 1
+transactionCode = CF978A0AC
+transactionType = Deposit
+transactionTime = 10:33 AM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Peter Gichaga
+=============================
+Received: 2014-06-10 10:38:25
+userName = Daniel
+password = daniel
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-10 10:38:25
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 10:38:31
+imeiCode = 4d83b0cb12dcb79e
+format = json
+======================================
+Response at: 2014-06-10 10:38:31
+isAllocated = 
+=============================
+Received: 2014-06-10 10:38:31
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 10:38:31
+=============================
+Received: 2014-06-10 10:38:39
+imeiCode = 4d83b0cb12dcb79e
+format = json
+======================================
+Response at: 2014-06-10 10:38:39
+allocationDate = 2014-06-10 10:38:38
+allocatedBy = 10
+allocatedTo = 9
+allocationId = 798
+allocatedName = Rose SunBeam
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 10:38:49
+countDifference = 5
+======================================
+Response at: 2014-06-10 10:39:03
+=============================
+Received: 2014-06-10 10:39:15
+userName = rose
+password = rose
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-10 10:39:15
+userId = 9
+firstName = Rose
+lastName = SunBeam
+userName = rose
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-10 10:42:52
+userName = daniel
+password = daniel
+imeiCode = f5414d65a45d5198
+======================================
+Response at: 2014-06-10 10:42:52
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 10:42:55
+imeiCode = f5414d65a45d5198
+format = json
+======================================
+Response at: 2014-06-10 10:42:55
+isAllocated = 
+=============================
+Received: 2014-06-10 10:42:55
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 10:42:55
+=============================
+Received: 2014-06-10 10:43:04
+imeiCode = f5414d65a45d5198
+format = json
+======================================
+Response at: 2014-06-10 10:43:04
+allocationDate = 2014-06-10 10:43:04
+allocatedBy = 10
+allocatedTo = 22
+allocationId = 799
+allocatedName = Milkah       W                             
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 10:43:16
+countDifference = 5
+======================================
+Response at: 2014-06-10 10:43:36
+sms = 1
+success = 1
+transactionCode = RX7F0C3E7
+transactionType = Deposit
+transactionTime = 10:43 AM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Nancy Mwangi
+=============================
+Received: 2014-06-10 10:43:38
+userName = milkah
+password = mumbi
+imeiCode = f5414d65a45d5198
+======================================
+Response at: 2014-06-10 10:43:38
+userId = 22
+firstName = Milkah      
+lastName = W
+userName = Milkah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 10:46:30
+sms = 1
+success = 1
+transactionCode = IR6669493
+transactionType = Deposit
+transactionTime = 10:46 AM
+transactionDate = 10/06/2014
+transactionAmount = 2000
+custNames = Dominus Yongo
+======================================
+Response at: 2014-06-10 10:47:31
+sms = 1
+success = 1
+transactionCode = ZO7044673
+transactionType = Deposit
+transactionTime = 10:47 AM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = John Njiru
+======================================
+Response at: 2014-06-10 10:49:33
+sms = 1
+success = 1
+transactionCode = EZ94A19A8
+transactionType = Deposit
+transactionTime = 10:49 AM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Gerald Macharia
+======================================
+Response at: 2014-06-10 10:50:56
+sms = 1
+success = 1
+transactionCode = RV749A84D
+transactionType = Deposit
+transactionTime = 10:50 AM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Faith Njue
+======================================
+Response at: 2014-06-10 10:51:59
+sms = 1
+success = 1
+transactionCode = AH02C588D
+transactionType = Deposit
+transactionTime = 10:51 AM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Joyce Wanjeri Kariuki Catherine Njeri Kabutha
+======================================
+Response at: 2014-06-10 10:52:54
+sms = 1
+success = 1
+transactionCode = RB6E2A2CB
+transactionType = Deposit
+transactionTime = 10:52 AM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Joyce Kariuki
+=============================
+Received: 2014-06-10 10:53:23
+userName = regina
+password = regina
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-10 10:53:23
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-10 10:53:30
+userName = regina
+password = regina
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-10 10:53:30
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-10 10:53:52
+userName = daniel
+password = daniel
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-10 10:53:52
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 10:53:57
+imeiCode = 9e27bb074e23f17c
+format = json
+======================================
+Response at: 2014-06-10 10:53:57
+isAllocated = 
+=============================
+Received: 2014-06-10 10:53:57
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 10:53:57
+======================================
+Response at: 2014-06-10 10:53:57
+sms = 1
+success = 1
+transactionCode = TD2BD9B00
+transactionType = Deposit
+transactionTime = 10:53 AM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Catherine Kabutha
+=============================
+Received: 2014-06-10 10:54:03
+imeiCode = 9e27bb074e23f17c
+format = json
+=============================
+Received: 2014-06-10 10:54:04
+userName = daniel
+password = daniel
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-10 10:54:04
+allocationDate = 2014-06-10 10:54:03
+allocatedBy = 10
+allocatedTo = 14
+allocationId = 800
+allocatedName = Regina Muthurwa
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 10:54:04
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 10:54:09
+imeiCode = cc4a63bc36bebd50
+format = json
+======================================
+Response at: 2014-06-10 10:54:09
+isAllocated = 
+=============================
+Received: 2014-06-10 10:54:10
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 10:54:10
+=============================
+Received: 2014-06-10 10:54:20
+imeiCode = cc4a63bc36bebd50
+format = json
+======================================
+Response at: 2014-06-10 10:54:20
+allocationDate = 2014-06-10 10:54:20
+allocatedBy = 10
+allocatedTo = 28
+allocationId = 801
+allocatedName = Wangechi     Grace                         
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 10:54:24
+userName = regina
+password = regina
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-10 10:54:24
+userId = 14
+firstName = Regina
+lastName = Muthurwa
+userName = regina
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 10:54:28
+countDifference = 0
+======================================
+Response at: 2014-06-10 10:54:51
+countDifference = 0
+======================================
+Response at: 2014-06-10 10:55:14
+sms = 1
+success = 1
+transactionCode = KEC0BE22E
+transactionType = Deposit
+transactionTime = 10:55 AM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Richard Carlos Owiro
+======================================
+Response at: 2014-06-10 10:55:22
+countDifference = -4535
+======================================
+Response at: 2014-06-10 10:59:16
+sms = 1
+success = 1
+transactionCode = RP02553F8
+transactionType = Deposit
+transactionTime = 10:59 AM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Patrick Muhoro
+======================================
+Response at: 2014-06-10 11:02:01
+sms = 1
+success = 1
+transactionCode = FS62D8EB4
+transactionType = Deposit
+transactionTime = 11:01 AM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Grace Gitonga
+======================================
+Response at: 2014-06-10 11:05:02
+sms = 1
+success = 1
+transactionCode = HZB799CCE
+transactionType = Deposit
+transactionTime = 11:05 AM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Charles Irungu
+======================================
+Response at: 2014-06-10 11:06:28
+sms = 1
+success = 1
+transactionCode = LM9708830
+transactionType = Deposit
+transactionTime = 11:06 AM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Joseph Karoki
+======================================
+Response at: 2014-06-10 11:07:23
+sms = 1
+success = 1
+transactionCode = QO973F08B
+transactionType = Deposit
+transactionTime = 11:07 AM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Jane Kiarie
+======================================
+Response at: 2014-06-10 11:11:13
+sms = 1
+success = 1
+transactionCode = ZK953DF3E
+transactionType = Deposit
+transactionTime = 11:11 AM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Angela Kaloki
+======================================
+Response at: 2014-06-10 11:12:58
+sms = 1
+success = 1
+transactionCode = EY6547239
+transactionType = Deposit
+transactionTime = 11:12 AM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = George Kiige
+======================================
+Response at: 2014-06-10 11:15:32
+sms = 1
+success = 1
+transactionCode = GF94D05FA
+transactionType = Mini-Statement
+transactionTime = 11:15:27
+transactionDate = 2014-06-10 11:15:27
+transactionAmount = 10
+custNames = George Kiige
+======================================
+Response at: 2014-06-10 11:16:32
+sms = 1
+success = 1
+transactionCode = TWF9F109B
+transactionType = Deposit
+transactionTime = 11:16 AM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = David Mwangi
+=============================
+Received: 2014-06-10 11:21:34
+userName = lucy
+password = lucy
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 11:21:34
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-10 11:21:35
+userName = lucy
+password = lucy
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 11:21:35
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-10 11:21:35
+userName = lucy
+password = lucy
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 11:21:35
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-10 11:21:45
+userName = lucy
+password = lucy
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 11:21:45
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+======================================
+Response at: 2014-06-10 11:21:49
+sms = 1
+success = 1
+transactionCode = HGC5715D9
+transactionType = Deposit
+transactionTime = 11:21 AM
+transactionDate = 10/06/2014
+transactionAmount = 1500
+custNames = Muthoka Kiragu
+======================================
+Response at: 2014-06-10 11:24:50
+sms = 1
+success = 1
+transactionCode = XE9310EA8
+transactionType = Deposit
+transactionTime = 11:24 AM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Miriam Wambui & John Irungu Murugami
+======================================
+Response at: 2014-06-10 11:28:32
+sms = 1
+success = 1
+transactionCode = FZ715B33D
+transactionType = Deposit
+transactionTime = 11:28 AM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Henry Kamau
+=============================
+Received: 2014-06-10 11:36:43
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 11:36:43
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 11:37:39
+sms = 1
+success = 1
+transactionCode = CE9FD97D6
+transactionType = Deposit
+transactionTime = 11:37 AM
+transactionDate = 10/06/2014
+transactionAmount = 1500
+custNames = Joseph Njambara
+======================================
+Response at: 2014-06-10 11:43:46
+sms = 1
+success = 1
+transactionCode = PIF0BF6A9
+transactionType = Deposit
+transactionTime = 11:43 AM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = James Mwangi
+======================================
+Response at: 2014-06-10 11:57:08
+sms = 1
+success = 1
+transactionCode = CX8E6338E
+transactionType = Deposit
+transactionTime = 11:57 AM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Joseph Kiragu
+======================================
+Response at: 2014-06-10 12:00:10
+sms = 1
+success = 1
+transactionCode = JSC0B3FCD
+transactionType = Deposit
+transactionTime = 12:00 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Maurice Odongo
+======================================
+Response at: 2014-06-10 12:01:08
+sms = 1
+success = 1
+transactionCode = RSC276C90
+transactionType = Deposit
+transactionTime = 12:01 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Alex Munyithya
+======================================
+Response at: 2014-06-10 12:01:52
+sms = 1
+success = 1
+transactionCode = UM42BE899
+transactionType = Deposit
+transactionTime = 12:01 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Alfred Najoli
+======================================
+Response at: 2014-06-10 12:02:26
+sms = 1
+success = 1
+transactionCode = VI625BC24
+transactionType = Mini-Statement
+transactionTime = 12:02:24
+transactionDate = 2014-06-10 12:02:24
+transactionAmount = 10
+custNames = Irene Mbugua
+======================================
+Response at: 2014-06-10 12:04:00
+sms = 1
+success = 1
+transactionCode = SQA24AC9A
+transactionType = Deposit
+transactionTime = 12:03 PM
+transactionDate = 10/06/2014
+transactionAmount = 700
+custNames = Sammy Muthoni
+======================================
+Response at: 2014-06-10 12:04:32
+sms = 1
+success = 1
+transactionCode = CA9A15B84
+transactionType = Deposit
+transactionTime = 12:04 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Wilfred Mulu
+======================================
+Response at: 2014-06-10 12:05:17
+sms = 1
+success = 1
+transactionCode = HNE980FEA
+transactionType = Deposit
+transactionTime = 12:05 PM
+transactionDate = 10/06/2014
+transactionAmount = 1100
+custNames = Geoffrey Maina
+======================================
+Response at: 2014-06-10 12:05:52
+sms = 1
+success = 1
+transactionCode = MNDB6A753
+transactionType = Deposit
+transactionTime = 12:05 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Leah Kuria
+======================================
+Response at: 2014-06-10 12:06:23
+sms = 1
+success = 1
+transactionCode = KB4BB4E56
+transactionType = Deposit
+transactionTime = 12:06 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Anne Kuria
+======================================
+Response at: 2014-06-10 12:08:23
+sms = 1
+success = 1
+transactionCode = JNCAF37CD
+transactionType = Deposit
+transactionTime = 12:08 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = kevin ndungire
+======================================
+Response at: 2014-06-10 12:12:23
+sms = 1
+success = 1
+transactionCode = YKC4A03E0
+transactionType = Deposit
+transactionTime = 12:12 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Jackson Ondoyo
+======================================
+Response at: 2014-06-10 12:12:44
+sms = 1
+success = 1
+transactionCode = NS4378A11
+transactionType = Deposit
+transactionTime = 12:12 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Rose Njoroge
+======================================
+Response at: 2014-06-10 12:13:08
+sms = 1
+success = 1
+transactionCode = BU05B321A
+transactionType = Deposit
+transactionTime = 12:13 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Jared Juma
+======================================
+Response at: 2014-06-10 12:17:24
+sms = 1
+success = 1
+transactionCode = RC5647C81
+transactionType = Deposit
+transactionTime = 12:17 PM
+transactionDate = 10/06/2014
+transactionAmount = 4850
+custNames = Francis Njeri
+======================================
+Response at: 2014-06-10 12:18:16
+sms = 1
+success = 1
+transactionCode = SF5DC8CF4
+transactionType = Deposit
+transactionTime = 12:18 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = John Muema
+======================================
+Response at: 2014-06-10 12:22:06
+sms = 1
+success = 1
+transactionCode = UQ76562CF
+transactionType = Deposit
+transactionTime = 12:22 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = James Mwangi
+======================================
+Response at: 2014-06-10 12:24:28
+sms = 1
+success = 1
+transactionCode = KD8B77CE5
+transactionType = Deposit
+transactionTime = 12:24 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Erick Odhiambo
+======================================
+Response at: 2014-06-10 12:25:24
+sms = 1
+success = 1
+transactionCode = RS9C8EE1D
+transactionType = Deposit
+transactionTime = 12:25 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = John Aruwa
+======================================
+Response at: 2014-06-10 12:26:49
+sms = 1
+success = 1
+transactionCode = PB415C438
+transactionType = Deposit
+transactionTime = 12:26 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Geoffrey Njonge
+======================================
+Response at: 2014-06-10 12:27:20
+sms = 1
+success = 1
+transactionCode = CYFD9A838
+transactionType = Deposit
+transactionTime = 12:27 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Paul Ndichu
+======================================
+Response at: 2014-06-10 12:27:30
+success = 
+error = Transaction not posted. Customer does not have mobile Number saved. Please update and Try Again.
+======================================
+Response at: 2014-06-10 12:27:34
+sms = 1
+success = 1
+transactionCode = FN386D1B7
+transactionType = Deposit
+transactionTime = 12:27 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Charles Onyango
+======================================
+Response at: 2014-06-10 12:28:02
+sms = 1
+success = 1
+transactionCode = XF8F1147D
+transactionType = Deposit
+transactionTime = 12:28 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Janet Mbindyo
+======================================
+Response at: 2014-06-10 12:29:24
+sms = 1
+success = 1
+transactionCode = XK2A33A37
+transactionType = Deposit
+transactionTime = 12:29 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Nancy Kithuka
+=============================
+Received: 2014-06-10 12:29:25
+userName = milkah
+password = mumbi
+imeiCode = f5414d65a45d5198
+======================================
+Response at: 2014-06-10 12:29:25
+userId = 22
+firstName = Milkah      
+lastName = W
+userName = Milkah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 12:30:21
+message = Not Logged In
+error = 
+isLogged = 
+======================================
+Response at: 2014-06-10 12:31:02
+message = Not Logged In
+error = 
+isLogged = 
+=============================
+Received: 2014-06-10 12:33:13
+userName = esther
+password = esther
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 12:33:13
+userId = 25
+firstName = Esther      
+lastName = Karambu
+userName = Esther      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 12:34:34
+sms = 1
+success = 1
+transactionCode = QU567B061
+transactionType = Deposit
+transactionTime = 12:34 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = James Macharia
+======================================
+Response at: 2014-06-10 12:35:36
+sms = 1
+success = 1
+transactionCode = GX662852A
+transactionType = Deposit
+transactionTime = 12:35 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Edwin Kairu
+======================================
+Response at: 2014-06-10 12:36:24
+sms = 1
+success = 1
+transactionCode = OR70F5F78
+transactionType = Deposit
+transactionTime = 12:36 PM
+transactionDate = 10/06/2014
+transactionAmount = 50
+custNames = Nancy Ndungu
+======================================
+Response at: 2014-06-10 12:36:27
+sms = 1
+success = 1
+transactionCode = IF4B19345
+transactionType = Deposit
+transactionTime = 12:36 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Eric Kamau
+======================================
+Response at: 2014-06-10 12:37:30
+sms = 1
+success = 1
+transactionCode = CQ982CF62
+transactionType = Deposit
+transactionTime = 12:37 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Nancy Mwangi
+======================================
+Response at: 2014-06-10 12:38:34
+sms = 1
+success = 1
+transactionCode = ZW8BF9FFB
+transactionType = Deposit
+transactionTime = 12:38 PM
+transactionDate = 10/06/2014
+transactionAmount = 150
+custNames = Elizabeth Mutua
+======================================
+Response at: 2014-06-10 12:40:04
+sms = 1
+success = 1
+transactionCode = EN6D1F4F6
+transactionType = Deposit
+transactionTime = 12:40 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Boniface Muhindi
+======================================
+Response at: 2014-06-10 12:40:56
+sms = 1
+success = 1
+transactionCode = AV82A1B70
+transactionType = Deposit
+transactionTime = 12:40 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Joseph Gitau
+======================================
+Response at: 2014-06-10 12:42:04
+sms = 1
+success = 1
+transactionCode = NB29C6E61
+transactionType = Deposit
+transactionTime = 12:42 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Jackline Njuki
+======================================
+Response at: 2014-06-10 12:42:31
+sms = 1
+success = 1
+transactionCode = FB5B6BCAB
+transactionType = Deposit
+transactionTime = 12:42 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Jackson Ndiritu
+======================================
+Response at: 2014-06-10 12:44:13
+sms = 1
+success = 1
+transactionCode = IOB2AAF5E
+transactionType = Deposit
+transactionTime = 12:44 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = MILLICENT MUCHOKI
+======================================
+Response at: 2014-06-10 12:44:50
+sms = 1
+success = 1
+transactionCode = XLED3D90B
+transactionType = Deposit
+transactionTime = 12:44 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = John Gicinga
+======================================
+Response at: 2014-06-10 12:44:52
+sms = 1
+success = 1
+transactionCode = JD389E5FC
+transactionType = Deposit
+transactionTime = 12:44 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = David Kisalu
+======================================
+Response at: 2014-06-10 12:44:55
+sms = 1
+success = 1
+transactionCode = IQEDF76BE
+transactionType = Deposit
+transactionTime = 12:44 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = John Gicinga
+======================================
+Response at: 2014-06-10 12:46:14
+sms = 1
+success = 1
+transactionCode = RS88C4DEA
+transactionType = Deposit
+transactionTime = 12:46 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Geoffrey githimu
+======================================
+Response at: 2014-06-10 12:46:24
+sms = 1
+success = 1
+transactionCode = YX3991E1B
+transactionType = Deposit
+transactionTime = 12:46 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Grace Mbugua
+======================================
+Response at: 2014-06-10 12:46:57
+sms = 1
+success = 1
+transactionCode = JM21F7416
+transactionType = Deposit
+transactionTime = 12:46 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Mercy Njuguna
+======================================
+Response at: 2014-06-10 12:47:47
+sms = 1
+success = 1
+transactionCode = VFC25D8CF
+transactionType = Deposit
+transactionTime = 12:47 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Paul Mwigai
+======================================
+Response at: 2014-06-10 12:48:11
+sms = 1
+success = 1
+transactionCode = QJCAD0406
+transactionType = Deposit
+transactionTime = 12:48 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Benson Njuguna
+=============================
+Received: 2014-06-10 12:50:30
+userName = lucy
+password = lucy
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 12:50:30
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-10 12:52:24
+userName = daniel
+password = danel
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 12:52:24
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-10 12:52:25
+userName = daniel
+password = danel
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 12:52:25
+error = Wrong userName or password
+authorize = 
+======================================
+Response at: 2014-06-10 12:55:48
+sms = 1
+success = 1
+transactionCode = IDECCDE2D
+transactionType = Deposit
+transactionTime = 12:55 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = George Ndugire
+======================================
+Response at: 2014-06-10 12:56:27
+sms = 1
+success = 1
+transactionCode = PG2BC4755
+transactionType = Deposit
+transactionTime = 12:56 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Beth Maina
+=============================
+Received: 2014-06-10 12:59:07
+userName = grace
+password = grace
+imeiCode = 3878ed416fd2df8b
+======================================
+Response at: 2014-06-10 12:59:08
+userId = 11
+firstName = Grace
+lastName = SunBeam
+userName = grace
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 13:04:00
+sms = 1
+success = 1
+transactionCode = QHAB52CCB
+transactionType = Deposit
+transactionTime = 01:03 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Mary Adhiambo
+======================================
+Response at: 2014-06-10 13:05:41
+sms = 1
+success = 1
+transactionCode = IJ0723B74
+transactionType = Deposit
+transactionTime = 01:05 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Fredrick Ager
+======================================
+Response at: 2014-06-10 13:09:48
+sms = 1
+success = 1
+transactionCode = BU7DB9FB8
+transactionType = Deposit
+transactionTime = 01:09 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Philip Maina
+======================================
+Response at: 2014-06-10 13:10:47
+sms = 1
+success = 1
+transactionCode = BD6B902D9
+transactionType = Deposit
+transactionTime = 01:10 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Zipporah Wanjoga
+======================================
+Response at: 2014-06-10 13:10:51
+sms = 1
+success = 1
+transactionCode = JB28439E9
+transactionType = Deposit
+transactionTime = 01:10 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Justin Mudembi
+======================================
+Response at: 2014-06-10 13:14:58
+sms = 1
+success = 1
+transactionCode = CRDA4F36F
+transactionType = Deposit
+transactionTime = 01:14 PM
+transactionDate = 10/06/2014
+transactionAmount = 350
+custNames = Joseph Kiriga
+======================================
+Response at: 2014-06-10 13:16:09
+sms = 1
+success = 1
+transactionCode = SJ641851B
+transactionType = Deposit
+transactionTime = 01:16 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Alice Muriithi
+======================================
+Response at: 2014-06-10 13:16:13
+sms = 1
+success = 1
+transactionCode = WBFAA7CD9
+transactionType = Deposit
+transactionTime = 01:16 PM
+transactionDate = 10/06/2014
+transactionAmount = 700
+custNames = Raphael Karichu
+======================================
+Response at: 2014-06-10 13:23:53
+sms = 1
+success = 1
+transactionCode = YS272FB00
+transactionType = Deposit
+transactionTime = 01:23 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Charles Mitaru
+======================================
+Response at: 2014-06-10 13:24:50
+sms = 1
+success = 1
+transactionCode = SRB00705D
+transactionType = Deposit
+transactionTime = 01:24 PM
+transactionDate = 10/06/2014
+transactionAmount = 50
+custNames = Clement Njeru
+======================================
+Response at: 2014-06-10 13:25:15
+sms = 1
+success = 1
+transactionCode = HRE2BC275
+transactionType = Deposit
+transactionTime = 01:25 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Jacob Nyaga
+======================================
+Response at: 2014-06-10 13:27:41
+sms = 1
+success = 1
+transactionCode = ZI79D251D
+transactionType = Deposit
+transactionTime = 01:27 PM
+transactionDate = 10/06/2014
+transactionAmount = 5000
+custNames = james maina
+======================================
+Response at: 2014-06-10 13:28:34
+success = 
+error = Transaction not posted. Customer does not have mobile Number saved. Please update and Try Again.
+======================================
+Response at: 2014-06-10 13:29:23
+sms = 1
+success = 1
+transactionCode = QM7493014
+transactionType = Deposit
+transactionTime = 01:29 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Samwel Kimemia
+======================================
+Response at: 2014-06-10 13:34:15
+sms = 1
+success = 1
+transactionCode = VG0D36496
+transactionType = Deposit
+transactionTime = 01:34 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Samson Kamande
+======================================
+Response at: 2014-06-10 13:34:29
+sms = 1
+success = 1
+transactionCode = RU571A724
+transactionType = Deposit
+transactionTime = 01:34 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Peter Kinyua
+======================================
+Response at: 2014-06-10 13:34:40
+sms = 1
+success = 1
+transactionCode = QU381D370
+transactionType = Deposit
+transactionTime = 01:34 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Jane Murungu
+======================================
+Response at: 2014-06-10 13:35:09
+sms = 1
+success = 1
+transactionCode = JO509B775
+transactionType = Deposit
+transactionTime = 01:35 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Gerald Muya
+======================================
+Response at: 2014-06-10 13:35:37
+sms = 1
+success = 1
+transactionCode = WZ5844723
+transactionType = Deposit
+transactionTime = 01:35 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Peter Mwangi
+=============================
+Received: 2014-06-10 13:35:58
+userName = daniel
+password = daniel
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 13:35:58
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 13:36:03
+imeiCode = 89b5f9e97e45b522
+format = json
+======================================
+Response at: 2014-06-10 13:36:03
+isAllocated = 
+=============================
+Received: 2014-06-10 13:36:03
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 13:36:03
+=============================
+Received: 2014-06-10 13:36:29
+imeiCode = 89b5f9e97e45b522
+format = json
+======================================
+Response at: 2014-06-10 13:36:29
+allocationDate = 2014-06-10 13:36:29
+allocatedBy = 10
+allocatedTo = 15
+allocationId = 802
+allocatedName = Lucy Gikomba
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 13:37:00
+userName = lucy
+password = lucy
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-10 13:37:00
+userId = 15
+firstName = Lucy
+lastName = Gikomba
+userName = lucy
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 13:37:17
+sms = 1
+success = 1
+transactionCode = LY5FC8381
+transactionType = Deposit
+transactionTime = 01:37 PM
+transactionDate = 10/06/2014
+transactionAmount = 2000
+custNames = Mwangi Mwangi
+======================================
+Response at: 2014-06-10 13:38:28
+sms = 1
+success = 1
+transactionCode = IUBBFD54F
+transactionType = Deposit
+transactionTime = 01:38 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Charles Akengo
+======================================
+Response at: 2014-06-10 13:44:28
+sms = 1
+success = 1
+transactionCode = WN3E3E6F1
+transactionType = Deposit
+transactionTime = 01:44 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Morris Magachia
+======================================
+Response at: 2014-06-10 13:46:12
+sms = 1
+success = 1
+transactionCode = FC038D5B2
+transactionType = Deposit
+transactionTime = 01:46 PM
+transactionDate = 10/06/2014
+transactionAmount = 400
+custNames = Moses Mbugua
+======================================
+Response at: 2014-06-10 13:49:54
+sms = 1
+success = 1
+transactionCode = JI760B4C5
+transactionType = Deposit
+transactionTime = 01:49 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Joseph Onyango
+======================================
+Response at: 2014-06-10 13:50:31
+sms = 1
+success = 1
+transactionCode = MU13FBC6C
+transactionType = Deposit
+transactionTime = 01:50 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Alex Otieno
+======================================
+Response at: 2014-06-10 13:51:59
+sms = 1
+success = 1
+transactionCode = CQ966CC9F
+transactionType = Deposit
+transactionTime = 01:51 PM
+transactionDate = 10/06/2014
+transactionAmount = 7000
+custNames = Mary Muriithi
+======================================
+Response at: 2014-06-10 13:55:57
+sms = 1
+success = 1
+transactionCode = WS8A0D905
+transactionType = Deposit
+transactionTime = 01:55 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Chrispine Otieno
+======================================
+Response at: 2014-06-10 13:57:46
+sms = 1
+success = 1
+transactionCode = TA215E732
+transactionType = Deposit
+transactionTime = 01:57 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Stanley Nderi
+=============================
+Received: 2014-06-10 14:00:59
+userName = caroline
+password = caroline
+imeiCode = 1875947d7e01c80
+======================================
+Response at: 2014-06-10 14:00:59
+userId = 16
+firstName = Caroline    
+lastName = Muthoni
+userName = Caroline    
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 14:01:26
+sms = 1
+success = 1
+transactionCode = DL17DAF7E
+transactionType = Deposit
+transactionTime = 02:01 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = George Theuri
+======================================
+Response at: 2014-06-10 14:02:07
+sms = 1
+success = 1
+transactionCode = UO044EBE4
+transactionType = Deposit
+transactionTime = 02:02 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Jackline Gitira
+======================================
+Response at: 2014-06-10 14:03:31
+sms = 1
+success = 1
+transactionCode = ND1AC5488
+transactionType = Deposit
+transactionTime = 02:03 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Peter Guchu
+======================================
+Response at: 2014-06-10 14:04:03
+sms = 1
+success = 1
+transactionCode = SAAF0FCF8
+transactionType = Deposit
+transactionTime = 02:04 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = peter mwangi
+======================================
+Response at: 2014-06-10 14:06:50
+sms = 1
+success = 1
+transactionCode = YZ61E68F7
+transactionType = Deposit
+transactionTime = 02:06 PM
+transactionDate = 10/06/2014
+transactionAmount = 700
+custNames = Bekers Shisia
+======================================
+Response at: 2014-06-10 14:07:40
+sms = 1
+success = 1
+transactionCode = UD819D8BB
+transactionType = Deposit
+transactionTime = 02:07 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Martin Magwanga
+======================================
+Response at: 2014-06-10 14:09:03
+sms = 1
+success = 1
+transactionCode = ZL25416B6
+transactionType = Deposit
+transactionTime = 02:09 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Alfred Njue
+======================================
+Response at: 2014-06-10 14:09:32
+sms = 1
+success = 1
+transactionCode = UH7E9FD7E
+transactionType = Deposit
+transactionTime = 02:09 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Annsylvia Musya
+======================================
+Response at: 2014-06-10 14:10:05
+sms = 1
+success = 1
+transactionCode = EB5BCA6E5
+transactionType = Deposit
+transactionTime = 02:10 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Josephat Nguku
+======================================
+Response at: 2014-06-10 14:10:33
+sms = 1
+success = 1
+transactionCode = ZXD43A90A
+transactionType = Deposit
+transactionTime = 02:10 PM
+transactionDate = 10/06/2014
+transactionAmount = 3000
+custNames = Henry Njeru
+======================================
+Response at: 2014-06-10 14:10:34
+sms = 1
+success = 1
+transactionCode = YA8B276AA
+transactionType = Deposit
+transactionTime = 02:10 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Leah Chege
+======================================
+Response at: 2014-06-10 14:11:48
+sms = 1
+success = 1
+transactionCode = UIDD49278
+transactionType = Deposit
+transactionTime = 02:11 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Joseph Mutuku
+======================================
+Response at: 2014-06-10 14:12:58
+sms = 1
+success = 1
+transactionCode = ZY3D703B3
+transactionType = Deposit
+transactionTime = 02:12 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Charles Njuguna
+======================================
+Response at: 2014-06-10 14:14:47
+sms = 1
+success = 1
+transactionCode = ICA7D2065
+transactionType = Deposit
+transactionTime = 02:14 PM
+transactionDate = 10/06/2014
+transactionAmount = 150
+custNames = Nicasio Njeru
+======================================
+Response at: 2014-06-10 14:18:45
+sms = 1
+success = 1
+transactionCode = QSE7D83BE
+transactionType = Deposit
+transactionTime = 02:18 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Charity Maina
+======================================
+Response at: 2014-06-10 14:21:58
+sms = 1
+success = 1
+transactionCode = QX3C39562
+transactionType = Deposit
+transactionTime = 02:21 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Josphat Wachu
+======================================
+Response at: 2014-06-10 14:24:12
+sms = 1
+success = 1
+transactionCode = PSAC09500
+transactionType = Deposit
+transactionTime = 02:24 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Boniface Kariuki
+======================================
+Response at: 2014-06-10 14:25:32
+message = Not Logged In
+error = 
+isLogged = 
+======================================
+Response at: 2014-06-10 14:26:33
+sms = 1
+success = 1
+transactionCode = QRC988B85
+transactionType = Deposit
+transactionTime = 02:26 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Tabitha Njuguna
+======================================
+Response at: 2014-06-10 14:26:40
+sms = 1
+success = 1
+transactionCode = QYF003B04
+transactionType = Deposit
+transactionTime = 02:26 PM
+transactionDate = 10/06/2014
+transactionAmount = 210
+custNames = William Odek
+======================================
+Response at: 2014-06-10 14:27:37
+sms = 1
+success = 1
+transactionCode = BNB70F03A
+transactionType = Deposit
+transactionTime = 02:27 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = John Gichuhi
+=============================
+Received: 2014-06-10 14:29:29
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 14:29:29
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 14:30:39
+sms = 1
+success = 1
+transactionCode = MG6B65901
+transactionType = Deposit
+transactionTime = 02:30 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Michael Gatheru
+======================================
+Response at: 2014-06-10 14:38:20
+sms = 1
+success = 1
+transactionCode = VKF8B997B
+transactionType = Deposit
+transactionTime = 02:38 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = julius oketch
+=============================
+Received: 2014-06-10 14:39:37
+userName = caroline
+password = caroline
+imeiCode = 1875947d7e01c80
+======================================
+Response at: 2014-06-10 14:39:37
+userId = 16
+firstName = Caroline    
+lastName = Muthoni
+userName = Caroline    
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 14:40:09
+sms = 1
+success = 1
+transactionCode = FQ6F5208D
+transactionType = Deposit
+transactionTime = 02:40 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Catherine Kinuthia
+======================================
+Response at: 2014-06-10 14:40:19
+sms = 1
+success = 1
+transactionCode = QW3C95496
+transactionType = Deposit
+transactionTime = 02:40 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = William Odek
+======================================
+Response at: 2014-06-10 14:42:14
+sms = 1
+success = 1
+transactionCode = QU29EADA7
+transactionType = Deposit
+transactionTime = 02:42 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Elizaphan kiarago
+======================================
+Response at: 2014-06-10 14:48:15
+sms = 1
+success = 1
+transactionCode = KG337326B
+transactionType = Deposit
+transactionTime = 02:48 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Peter Kariuki
+======================================
+Response at: 2014-06-10 14:48:51
+sms = 1
+success = 1
+transactionCode = XWF88269D
+transactionType = Deposit
+transactionTime = 02:48 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Mary Mwitiku
+======================================
+Response at: 2014-06-10 14:49:47
+sms = 1
+success = 1
+transactionCode = XN56993D0
+transactionType = Deposit
+transactionTime = 02:49 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Jane Kigaya
+======================================
+Response at: 2014-06-10 14:51:33
+message = Not Logged In
+error = 
+isLogged = 
+======================================
+Response at: 2014-06-10 14:51:44
+sms = 1
+success = 1
+transactionCode = OB8DB7F1C
+transactionType = Deposit
+transactionTime = 02:51 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Jane Mungai
+======================================
+Response at: 2014-06-10 14:51:54
+message = Not Logged In
+error = 
+isLogged = 
+=============================
+Received: 2014-06-10 14:54:30
+userName = regina
+password = regina
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-10 14:54:30
+userId = 14
+firstName = Regina
+lastName = Muthurwa
+userName = regina
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 14:55:04
+sms = 1
+success = 1
+transactionCode = QLE067490
+transactionType = Deposit
+transactionTime = 02:55 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Wilson Orwa
+======================================
+Response at: 2014-06-10 14:55:56
+sms = 1
+success = 1
+transactionCode = AX9F4633E
+transactionType = Deposit
+transactionTime = 02:55 PM
+transactionDate = 10/06/2014
+transactionAmount = 400
+custNames = Rispar Kamau
+======================================
+Response at: 2014-06-10 14:56:56
+sms = 1
+success = 1
+transactionCode = JSE635666
+transactionType = Deposit
+transactionTime = 02:56 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Isaac onyango
+======================================
+Response at: 2014-06-10 14:59:40
+sms = 1
+success = 1
+transactionCode = UW18D1087
+transactionType = Deposit
+transactionTime = 02:59 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Reuben Wangui
+======================================
+Response at: 2014-06-10 15:00:33
+sms = 1
+success = 1
+transactionCode = NOA2BA7A5
+transactionType = Deposit
+transactionTime = 03:00 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Lucy Maina
+======================================
+Response at: 2014-06-10 15:03:23
+sms = 1
+success = 1
+transactionCode = NW3C5C150
+transactionType = Deposit
+transactionTime = 03:03 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Phineas Moses
+======================================
+Response at: 2014-06-10 15:04:33
+sms = 1
+success = 1
+transactionCode = UP2FC76C4
+transactionType = Deposit
+transactionTime = 03:04 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = George Kidera
+======================================
+Response at: 2014-06-10 15:07:18
+sms = 1
+success = 1
+transactionCode = FX5CB55B2
+transactionType = Deposit
+transactionTime = 03:07 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Margaret Gichuki
+======================================
+Response at: 2014-06-10 15:10:31
+sms = 1
+success = 1
+transactionCode = GP5A4B540
+transactionType = Deposit
+transactionTime = 03:10 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Jackson Mwaura
+======================================
+Response at: 2014-06-10 15:12:04
+sms = 1
+success = 1
+transactionCode = AZFDBDC37
+transactionType = Deposit
+transactionTime = 03:12 PM
+transactionDate = 10/06/2014
+transactionAmount = 2000
+custNames = Joyce Wambugu
+======================================
+Response at: 2014-06-10 15:12:05
+sms = 1
+success = 1
+transactionCode = TX0793FAA
+transactionType = Deposit
+transactionTime = 03:12 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Kevin Ng'ong'a
+======================================
+Response at: 2014-06-10 15:12:50
+sms = 1
+success = 1
+transactionCode = LAC85B9C2
+transactionType = Deposit
+transactionTime = 03:12 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Brenda Asiko
+======================================
+Response at: 2014-06-10 15:21:02
+sms = 1
+success = 1
+transactionCode = SV1B68D0B
+transactionType = Deposit
+transactionTime = 03:21 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Bernard Odhiambo
+======================================
+Response at: 2014-06-10 15:22:10
+sms = 1
+success = 1
+transactionCode = EKFC60A44
+transactionType = Deposit
+transactionTime = 03:22 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Jenning's Amao
+======================================
+Response at: 2014-06-10 15:22:13
+message = Not Logged In
+error = 
+isLogged = 
+=============================
+Received: 2014-06-10 15:23:45
+userName = milkah
+password = mumbi
+imeiCode = f5414d65a45d5198
+======================================
+Response at: 2014-06-10 15:23:45
+userId = 22
+firstName = Milkah      
+lastName = W
+userName = Milkah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 15:36:29
+message = Not Logged In
+error = 
+isLogged = 
+=============================
+Received: 2014-06-10 15:36:52
+userName = rose
+password = rose
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-10 15:36:52
+userId = 9
+firstName = Rose
+lastName = SunBeam
+userName = rose
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 15:37:25
+sms = 1
+success = 1
+transactionCode = NWF90D5D0
+transactionType = Deposit
+transactionTime = 03:37 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Tonny Kiruki
+======================================
+Response at: 2014-06-10 15:41:10
+sms = 1
+success = 1
+transactionCode = VH8C018A6
+transactionType = Deposit
+transactionTime = 03:41 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Elena Maina
+======================================
+Response at: 2014-06-10 15:45:04
+sms = 1
+success = 1
+transactionCode = TJB70895C
+transactionType = Deposit
+transactionTime = 03:45 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Daniel Mwangi
+======================================
+Response at: 2014-06-10 15:45:42
+sms = 1
+success = 1
+transactionCode = HWFD376C9
+transactionType = Deposit
+transactionTime = 03:45 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Billy Mboga
+======================================
+Response at: 2014-06-10 15:46:31
+sms = 1
+success = 1
+transactionCode = QK9694AB5
+transactionType = Deposit
+transactionTime = 03:46 PM
+transactionDate = 10/06/2014
+transactionAmount = 2000
+custNames = Christian Shibonje
+=============================
+Received: 2014-06-10 15:49:24
+userName = daniel
+password = daniel
+imeiCode = f5414d65a45d5198
+======================================
+Response at: 2014-06-10 15:49:24
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+======================================
+Response at: 2014-06-10 15:49:45
+countDifference = 4
+======================================
+Response at: 2014-06-10 15:49:48
+=============================
+Received: 2014-06-10 15:49:51
+imeiCode = f5414d65a45d5198
+format = json
+======================================
+Response at: 2014-06-10 15:49:51
+allocationDate = 2014-06-10 10:43:04
+allocatedBy = 10
+allocatedTo = 22
+allocationId = 799
+allocatedName = Milkah       W                             
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 15:51:23
+sms = 1
+success = 1
+transactionCode = DB6A7608A
+transactionType = Deposit
+transactionTime = 03:51 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = John Wanjema
+=============================
+Received: 2014-06-10 15:55:06
+userName = nancy
+password = nancy
+imeiCode = 25173da39bf8618c
+======================================
+Response at: 2014-06-10 15:55:06
+userId = 27
+firstName = Nancy       
+lastName = Ngugi
+userName = Nancy       
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 15:56:15
+sms = 1
+success = 1
+transactionCode = UA1028AC6
+transactionType = Deposit
+transactionTime = 03:56 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Mary Njoroge
+======================================
+Response at: 2014-06-10 15:57:07
+sms = 1
+success = 1
+transactionCode = OX2A32F7F
+transactionType = Deposit
+transactionTime = 03:57 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = George Wendua
+======================================
+Response at: 2014-06-10 15:58:16
+sms = 1
+success = 1
+transactionCode = UVF013819
+transactionType = Deposit
+transactionTime = 03:58 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Milton Kimani
+======================================
+Response at: 2014-06-10 15:58:32
+sms = 1
+success = 1
+transactionCode = HL77FD2FF
+transactionType = Deposit
+transactionTime = 03:58 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Florence Wambui
+======================================
+Response at: 2014-06-10 15:59:48
+sms = 1
+success = 1
+transactionCode = ZM5465A63
+transactionType = Deposit
+transactionTime = 03:59 PM
+transactionDate = 10/06/2014
+transactionAmount = 2500
+custNames = David Maingi
+======================================
+Response at: 2014-06-10 16:00:32
+sms = 1
+success = 1
+transactionCode = IE6C2D38C
+transactionType = Deposit
+transactionTime = 04:00 PM
+transactionDate = 10/06/2014
+transactionAmount = 2000
+custNames = Milkah Musyoki
+======================================
+Response at: 2014-06-10 16:00:36
+sms = 1
+success = 1
+transactionCode = MI34F7E7B
+transactionType = Deposit
+transactionTime = 04:00 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Rachael Kariuki
+======================================
+Response at: 2014-06-10 16:01:32
+sms = 1
+success = 1
+transactionCode = EQ7A40DA6
+transactionType = Deposit
+transactionTime = 04:01 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = James Gikaru
+======================================
+Response at: 2014-06-10 16:02:54
+sms = 1
+success = 1
+transactionCode = RAE2E0410
+transactionType = Deposit
+transactionTime = 04:02 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Elisibah Nyaga
+======================================
+Response at: 2014-06-10 16:02:59
+sms = 1
+success = 1
+transactionCode = VEA48121F
+transactionType = Deposit
+transactionTime = 04:02 PM
+transactionDate = 10/06/2014
+transactionAmount = 3000
+custNames = Catherine munyi
+======================================
+Response at: 2014-06-10 16:03:38
+sms = 1
+success = 1
+transactionCode = OLC13168B
+transactionType = Deposit
+transactionTime = 04:03 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Gideon Wachira
+======================================
+Response at: 2014-06-10 16:03:57
+sms = 1
+success = 1
+transactionCode = PV174F8B5
+transactionType = Deposit
+transactionTime = 04:03 PM
+transactionDate = 10/06/2014
+transactionAmount = 400
+custNames = Mary Mutokaa
+======================================
+Response at: 2014-06-10 16:04:43
+sms = 1
+success = 1
+transactionCode = KCEE1E8AB
+transactionType = Deposit
+transactionTime = 04:04 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Jackson Kanyingi
+======================================
+Response at: 2014-06-10 16:06:07
+sms = 1
+success = 1
+transactionCode = KZ9C198D7
+transactionType = Deposit
+transactionTime = 04:06 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Jackline Omondi
+=============================
+Received: 2014-06-10 16:06:13
+userName = daniel
+password = daniel
+imeiCode = 25173da39bf8618c
+======================================
+Response at: 2014-06-10 16:06:14
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 16:06:19
+imeiCode = 25173da39bf8618c
+format = json
+======================================
+Response at: 2014-06-10 16:06:20
+allocationDate = 2014-06-09 16:58:11
+allocatedBy = 10
+allocatedTo = 27
+allocationId = 792
+allocatedName = Nancy        Ngugi                         
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 16:06:37
+sms = 1
+success = 1
+transactionCode = EL62E12CF
+transactionType = Deposit
+transactionTime = 04:06 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Mwanzi Mula
+=============================
+Received: 2014-06-10 16:08:06
+userName = daniel
+password = daniel
+imeiCode = 25173da39bf8618c
+======================================
+Response at: 2014-06-10 16:08:06
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 16:08:11
+imeiCode = 25173da39bf8618c
+format = json
+======================================
+Response at: 2014-06-10 16:08:11
+isAllocated = 
+=============================
+Received: 2014-06-10 16:08:11
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 16:08:11
+=============================
+Received: 2014-06-10 16:08:22
+imeiCode = 25173da39bf8618c
+format = json
+======================================
+Response at: 2014-06-10 16:08:22
+allocationDate = 2014-06-10 16:08:22
+allocatedBy = 10
+allocatedTo = 27
+allocationId = 803
+allocatedName = Nancy        Ngugi                         
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 16:13:18
+sms = 1
+success = 1
+transactionCode = DNC3249F3
+transactionType = Deposit
+transactionTime = 04:13 PM
+transactionDate = 10/06/2014
+transactionAmount = 2000
+custNames = Lilian Gathoni
+======================================
+Response at: 2014-06-10 16:26:07
+sms = 1
+success = 1
+transactionCode = AW5808E5A
+transactionType = Deposit
+transactionTime = 04:26 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Maurice Masai
+=============================
+Received: 2014-06-10 16:29:26
+userName = rose
+password = rose
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-10 16:29:26
+userId = 9
+firstName = Rose
+lastName = SunBeam
+userName = rose
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 16:30:40
+sms = 1
+success = 1
+transactionCode = QA76BC127
+transactionType = Deposit
+transactionTime = 04:30 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Jane Njoroge
+======================================
+Response at: 2014-06-10 16:31:00
+sms = 1
+success = 1
+transactionCode = JB5E0C82C
+transactionType = Deposit
+transactionTime = 04:30 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Stanley Rurumo
+======================================
+Response at: 2014-06-10 16:31:52
+sms = 1
+success = 1
+transactionCode = DR8AF0E69
+transactionType = Deposit
+transactionTime = 04:31 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Esther Kariuki
+======================================
+Response at: 2014-06-10 16:32:02
+sms = 1
+success = 1
+transactionCode = QT81778C5
+transactionType = Deposit
+transactionTime = 04:32 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Florence Wangeci
+======================================
+Response at: 2014-06-10 16:32:49
+sms = 1
+success = 1
+transactionCode = CE9D8D6ED
+transactionType = Deposit
+transactionTime = 04:32 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Bernard Wairimu
+======================================
+Response at: 2014-06-10 16:33:15
+sms = 1
+success = 1
+transactionCode = DOBF426A3
+transactionType = Deposit
+transactionTime = 04:33 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Thomas Kasengesi
+======================================
+Response at: 2014-06-10 16:34:24
+sms = 1
+success = 1
+transactionCode = XM059EBD2
+transactionType = Deposit
+transactionTime = 04:34 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Judith Nzioki
+=============================
+Received: 2014-06-10 16:34:25
+userName = daniel
+password = daniel
+imeiCode = dc5ccab3b44c9c48
+======================================
+Response at: 2014-06-10 16:34:25
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 16:34:26
+imeiCode = dc5ccab3b44c9c48
+format = json
+======================================
+Response at: 2014-06-10 16:34:26
+isAllocated = 
+=============================
+Received: 2014-06-10 16:34:26
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 16:34:26
+=============================
+Received: 2014-06-10 16:34:36
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 16:34:36
+=============================
+Received: 2014-06-10 16:34:38
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 16:34:38
+=============================
+Received: 2014-06-10 16:35:04
+userName = daniel
+password = daniel
+imeiCode = dc5ccab3b44c9c48
+======================================
+Response at: 2014-06-10 16:35:04
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 16:35:04
+imeiCode = dc5ccab3b44c9c48
+format = json
+======================================
+Response at: 2014-06-10 16:35:04
+isAllocated = 
+=============================
+Received: 2014-06-10 16:35:04
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 16:35:04
+=============================
+Received: 2014-06-10 16:35:22
+imeiCode = dc5ccab3b44c9c48
+format = json
+======================================
+Response at: 2014-06-10 16:35:22
+allocationDate = 2014-06-10 16:35:17
+allocatedBy = 10
+allocatedTo = 24
+allocationId = 804
+allocatedName = Catherine.   M                             
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 16:35:45
+sms = 1
+success = 1
+transactionCode = XP352856E
+transactionType = Deposit
+transactionTime = 04:35 PM
+transactionDate = 10/06/2014
+transactionAmount = 5000
+custNames = CAROLINE WACHIRA
+=============================
+Received: 2014-06-10 16:36:10
+userName = catherine.
+password = cate
+imeiCode = dc5ccab3b44c9c48
+======================================
+Response at: 2014-06-10 16:36:10
+userId = 24
+firstName = Catherine.  
+lastName = M
+userName = Catherine.  
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 16:36:58
+sms = 1
+success = 1
+transactionCode = BSAB7DF7C
+transactionType = Deposit
+transactionTime = 04:36 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Antony Kimani
+======================================
+Response at: 2014-06-10 16:38:18
+sms = 1
+success = 1
+transactionCode = DMAD038FC
+transactionType = Deposit
+transactionTime = 04:38 PM
+transactionDate = 10/06/2014
+transactionAmount = 400
+custNames = Caroline Wanjiru
+=============================
+Received: 2014-06-10 16:38:40
+userName = daniel
+password = daniel
+imeiCode = 1875947d7e01c80
+======================================
+Response at: 2014-06-10 16:38:40
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 16:38:52
+imeiCode = 1875947d7e01c80
+format = json
+======================================
+Response at: 2014-06-10 16:38:52
+allocationDate = 2014-06-10 09:54:38
+allocatedBy = 10
+allocatedTo = 16
+allocationId = 795
+allocatedName = Caroline     Muthoni                       
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 16:38:56
+userName = daniel
+password = daniel
+imeiCode = 3875df8dba565db7
+======================================
+Response at: 2014-06-10 16:38:56
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 16:39:00
+imeiCode = 3875df8dba565db7
+format = json
+======================================
+Response at: 2014-06-10 16:39:00
+allocationDate = 2014-06-10 09:18:49
+allocatedBy = 10
+allocatedTo = 12
+allocationId = 793
+allocatedName = Joan Barma
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 16:39:36
+countDifference = 0
+======================================
+Response at: 2014-06-10 16:40:36
+sms = 1
+success = 1
+transactionCode = LQD5F9CCA
+transactionType = Deposit
+transactionTime = 04:40 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Patrick .
+=============================
+Received: 2014-06-10 16:41:31
+userName = daniel
+password = daniel
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-10 16:41:31
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 16:41:36
+imeiCode = cc4a63bc36bebd50
+format = json
+======================================
+Response at: 2014-06-10 16:41:36
+allocationDate = 2014-06-10 10:54:20
+allocatedBy = 10
+allocatedTo = 28
+allocationId = 801
+allocatedName = Wangechi     Grace                         
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 16:43:40
+sms = 1
+success = 1
+transactionCode = PFDA6C2CA
+transactionType = Deposit
+transactionTime = 04:43 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Stephen mwangi
+======================================
+Response at: 2014-06-10 16:44:46
+sms = 1
+success = 1
+transactionCode = YIFCB39CA
+transactionType = Deposit
+transactionTime = 04:44 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Esther Gichuki
+======================================
+Response at: 2014-06-10 16:48:09
+sms = 1
+success = 1
+transactionCode = MH7D66553
+transactionType = Deposit
+transactionTime = 04:48 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Kevin Otieno
+======================================
+Response at: 2014-06-10 16:50:31
+sms = 1
+success = 1
+transactionCode = YHE3ADAF0
+transactionType = Deposit
+transactionTime = 04:50 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Macharia Irungu
+======================================
+Response at: 2014-06-10 16:53:07
+sms = 1
+success = 1
+transactionCode = ZXF63E04D
+transactionType = Deposit
+transactionTime = 04:53 PM
+transactionDate = 10/06/2014
+transactionAmount = 250
+custNames = Richard Njenga
+======================================
+Response at: 2014-06-10 16:53:27
+sms = 1
+success = 1
+transactionCode = KSE1B3FC7
+transactionType = Deposit
+transactionTime = 04:53 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Purity Karaba
+======================================
+Response at: 2014-06-10 16:54:09
+sms = 1
+success = 1
+transactionCode = YRC0EB49F
+transactionType = Deposit
+transactionTime = 04:54 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Judith Malala
+======================================
+Response at: 2014-06-10 16:54:56
+message = Not Logged In
+error = 
+isLogged = 
+======================================
+Response at: 2014-06-10 16:56:03
+message = Not Logged In
+error = 
+isLogged = 
+=============================
+Received: 2014-06-10 16:58:00
+userName = daniel
+password = daniel
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 16:58:00
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+======================================
+Response at: 2014-06-10 16:58:33
+sms = 1
+success = 1
+transactionCode = IVFFBB08E
+transactionType = Deposit
+transactionTime = 04:58 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Peter Onyiego
+======================================
+Response at: 2014-06-10 16:59:03
+countDifference = 0
+======================================
+Response at: 2014-06-10 16:59:07
+sms = 1
+success = 1
+transactionCode = AV4A33276
+transactionType = Deposit
+transactionTime = 04:59 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Peter Onyiego
+=============================
+Received: 2014-06-10 16:59:33
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 16:59:33
+=============================
+Received: 2014-06-10 16:59:33
+imeiCode = cdc66b7e39361ff1
+format = json
+======================================
+Response at: 2014-06-10 16:59:34
+allocationDate = 2014-06-10 10:11:37
+allocatedBy = 10
+allocatedTo = 19
+allocationId = 796
+allocatedName = Keziah       Ruguru                        
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 16:59:48
+userName = daniel
+password = dsniel
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 16:59:48
+error = Wrong userName or password
+authorize = 
+======================================
+Response at: 2014-06-10 17:02:25
+sms = 1
+success = 1
+transactionCode = JN94196E8
+transactionType = Deposit
+transactionTime = 05:02 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Faith Virembwa
+=============================
+Received: 2014-06-10 17:03:12
+userName = daniel
+password = daniel
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-10 17:03:12
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 17:03:14
+imeiCode = cdc66b7e39361ff1
+format = json
+======================================
+Response at: 2014-06-10 17:03:14
+allocationDate = 2014-06-10 10:11:37
+allocatedBy = 10
+allocatedTo = 19
+allocationId = 796
+allocatedName = Keziah       Ruguru                        
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 17:03:32
+userName = grace
+password = grace
+imeiCode = 3878ed416fd2df8b
+======================================
+Response at: 2014-06-10 17:03:32
+userId = 11
+firstName = Grace
+lastName = SunBeam
+userName = grace
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 17:03:40
+countDifference = 0
+======================================
+Response at: 2014-06-10 17:05:44
+sms = 1
+success = 1
+transactionCode = YW7852FA6
+transactionType = Deposit
+transactionTime = 05:05 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Winnie Gogo
+======================================
+Response at: 2014-06-10 17:10:17
+sms = 1
+success = 1
+transactionCode = HK0B06759
+transactionType = Deposit
+transactionTime = 05:10 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Rosemary Owuor
+=============================
+Received: 2014-06-10 17:11:23
+userName = Daniel
+password = daniel
+imeiCode = 3878ed416fd2df8b
+======================================
+Response at: 2014-06-10 17:11:23
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 17:11:26
+imeiCode = 3878ed416fd2df8b
+format = json
+======================================
+Response at: 2014-06-10 17:11:26
+allocationDate = 2014-06-10 09:32:37
+allocatedBy = 10
+allocatedTo = 11
+allocationId = 794
+allocatedName = Grace SunBeam
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 17:13:24
+sms = 1
+success = 1
+transactionCode = QNC37C722
+transactionType = Deposit
+transactionTime = 05:13 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Anastasia Kubai
+======================================
+Response at: 2014-06-10 17:16:21
+sms = 1
+success = 1
+transactionCode = GA658975E
+transactionType = Deposit
+transactionTime = 05:16 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Robert Njoki
+======================================
+Response at: 2014-06-10 17:19:47
+sms = 1
+success = 1
+transactionCode = NX2B36D89
+transactionType = Deposit
+transactionTime = 05:19 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Itulamiya Ngabomoyi
+======================================
+Response at: 2014-06-10 17:22:00
+countDifference = 0
+=============================
+Received: 2014-06-10 17:22:45
+userName = daniel
+password = daniel
+imeiCode = dc5ccab3b44c9c48
+======================================
+Response at: 2014-06-10 17:22:45
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 17:22:46
+imeiCode = dc5ccab3b44c9c48
+format = json
+======================================
+Response at: 2014-06-10 17:22:46
+allocationDate = 2014-06-10 16:35:17
+allocatedBy = 10
+allocatedTo = 24
+allocationId = 804
+allocatedName = Catherine.   M                             
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 17:23:12
+sms = 1
+success = 1
+transactionCode = TK79EEFF0
+transactionType = Deposit
+transactionTime = 05:23 PM
+transactionDate = 10/06/2014
+transactionAmount = 8000
+custNames = Stella Mosongo
+======================================
+Response at: 2014-06-10 17:25:48
+sms = 1
+success = 1
+transactionCode = YJB24FDD9
+transactionType = Deposit
+transactionTime = 05:25 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = SAMUEL OMBWOR
+======================================
+Response at: 2014-06-10 17:26:43
+sms = 1
+success = 1
+transactionCode = CZ18B5ED8
+transactionType = Deposit
+transactionTime = 05:26 PM
+transactionDate = 10/06/2014
+transactionAmount = 300
+custNames = Millicent Ombuor
+======================================
+Response at: 2014-06-10 17:30:02
+sms = 1
+success = 1
+transactionCode = DCBB06A09
+transactionType = Deposit
+transactionTime = 05:30 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Mary Ndinga
+=============================
+Received: 2014-06-10 17:30:19
+userName = daniel
+password = daniel
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-10 17:30:20
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 17:30:24
+imeiCode = 9e27bb074e23f17c
+format = json
+======================================
+Response at: 2014-06-10 17:30:24
+allocationDate = 2014-06-10 10:54:03
+allocatedBy = 10
+allocatedTo = 14
+allocationId = 800
+allocatedName = Regina Muthurwa
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 17:30:48
+countDifference = 0
+======================================
+Response at: 2014-06-10 17:32:08
+sms = 1
+success = 1
+transactionCode = TZ5265B12
+transactionType = Deposit
+transactionTime = 05:32 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Julius Okumu
+======================================
+Response at: 2014-06-10 17:33:52
+sms = 1
+success = 1
+transactionCode = NI5C55E5E
+transactionType = Deposit
+transactionTime = 05:33 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Lilian Okombo
+======================================
+Response at: 2014-06-10 17:37:00
+sms = 1
+success = 1
+transactionCode = SFB5FFBDC
+transactionType = Deposit
+transactionTime = 05:36 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Dorris Owino
+======================================
+Response at: 2014-06-10 17:40:39
+sms = 1
+success = 1
+transactionCode = JED7308B8
+transactionType = Deposit
+transactionTime = 05:40 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Zaitun Dafala
+======================================
+Response at: 2014-06-10 17:41:46
+message = Not Logged In
+error = 
+isLogged = 
+======================================
+Response at: 2014-06-10 17:43:50
+sms = 1
+success = 1
+transactionCode = BKEE8277D
+transactionType = Deposit
+transactionTime = 05:43 PM
+transactionDate = 10/06/2014
+transactionAmount = 100
+custNames = Juriah Razick
+======================================
+Response at: 2014-06-10 17:49:21
+sms = 1
+success = 1
+transactionCode = MNAC01C8F
+transactionType = Deposit
+transactionTime = 05:49 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Margaret Ngugi
+======================================
+Response at: 2014-06-10 17:50:13
+sms = 1
+success = 1
+transactionCode = WO4AC5B28
+transactionType = Deposit
+transactionTime = 05:50 PM
+transactionDate = 10/06/2014
+transactionAmount = 1600
+custNames = John Githinji
+======================================
+Response at: 2014-06-10 17:52:24
+sms = 1
+success = 1
+transactionCode = NH1E95D33
+transactionType = Deposit
+transactionTime = 05:52 PM
+transactionDate = 10/06/2014
+transactionAmount = 2000
+custNames = Joseph Wangeci
+======================================
+Response at: 2014-06-10 17:54:50
+sms = 1
+success = 1
+transactionCode = BS4ED5E63
+transactionType = Deposit
+transactionTime = 05:54 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Faith Okumu
+======================================
+Response at: 2014-06-10 18:08:38
+sms = 1
+success = 1
+transactionCode = TO6AD9EEF
+transactionType = Deposit
+transactionTime = 06:08 PM
+transactionDate = 10/06/2014
+transactionAmount = 400
+custNames = Arnold Chege
+======================================
+Response at: 2014-06-10 18:10:00
+sms = 1
+success = 1
+transactionCode = KDE0D07AB
+transactionType = Deposit
+transactionTime = 06:09 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Joe Kamau
+======================================
+Response at: 2014-06-10 18:14:55
+sms = 1
+success = 1
+transactionCode = NL670A806
+transactionType = Deposit
+transactionTime = 06:14 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Paul Ngaruiya
+======================================
+Response at: 2014-06-10 18:16:23
+sms = 1
+success = 1
+transactionCode = QXE42A451
+transactionType = Deposit
+transactionTime = 06:16 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Jimnah Ngaruiya
+======================================
+Response at: 2014-06-10 18:17:30
+sms = 1
+success = 1
+transactionCode = IL26B2FFD
+transactionType = Deposit
+transactionTime = 06:17 PM
+transactionDate = 10/06/2014
+transactionAmount = 500
+custNames = Paul Ngaruiya
+======================================
+Response at: 2014-06-10 18:35:04
+sms = 1
+success = 1
+transactionCode = QL0E73FD3
+transactionType = Deposit
+transactionTime = 06:35 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Boniface Njuguna
+======================================
+Response at: 2014-06-10 18:35:37
+sms = 1
+success = 1
+transactionCode = RE42BF2D3
+transactionType = Deposit
+transactionTime = 06:35 PM
+transactionDate = 10/06/2014
+transactionAmount = 400
+custNames = Moses Kahura
+======================================
+Response at: 2014-06-10 18:36:43
+sms = 1
+success = 1
+transactionCode = IU19A173D
+transactionType = Deposit
+transactionTime = 06:36 PM
+transactionDate = 10/06/2014
+transactionAmount = 200
+custNames = Solomon Njuguna
+=============================
+Received: 2014-06-10 18:52:59
+userName = daniel
+password = dabiel
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-10 18:52:59
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-10 18:53:11
+userName = daniel
+password = daniel
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-10 18:53:11
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+======================================
+Response at: 2014-06-10 18:53:37
+countDifference = 0
+=============================
+Received: 2014-06-10 18:53:52
+imeiCode = 4d83b0cb12dcb79e
+format = json
+======================================
+Response at: 2014-06-10 18:53:52
+allocationDate = 2014-06-10 10:38:38
+allocatedBy = 10
+allocatedTo = 9
+allocationId = 798
+allocatedName = Rose SunBeam
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 20:26:42
+userName = esther
+password = esther
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 20:26:42
+userId = 25
+firstName = Esther      
+lastName = Karambu
+userName = Esther      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-10 20:29:59
+success = 
+error = Transaction not posted. Customer does not have mobile Number saved. Please update and Try Again.
+======================================
+Response at: 2014-06-10 20:31:16
+sms = 1
+success = 1
+transactionCode = RS4E52C13
+transactionType = Deposit
+transactionTime = 08:31 PM
+transactionDate = 10/06/2014
+transactionAmount = 1000
+custNames = Elizabeth Irungu
+=============================
+Received: 2014-06-10 21:39:31
+userName = daniel
+password = daniel
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 21:39:31
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 21:39:45
+imeiCode = d33dfd59b6c18548
+format = json
+======================================
+Response at: 2014-06-10 21:39:45
+allocationDate = 2014-06-10 10:27:29
+allocatedBy = 10
+allocatedTo = 25
+allocationId = 797
+allocatedName = Esther       Karambu                       
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-10 21:39:56
+countDifference = 0
+=============================
+Received: 2014-06-10 21:40:13
+0 = Requested for Users
+======================================
+Response at: 2014-06-10 21:40:13
+=============================
+Received: 2014-06-10 21:40:43
+imeiCode = d33dfd59b6c18548
+format = json
+======================================
+Response at: 2014-06-10 21:40:43
+allocationDate = 2014-06-10 21:40:42
+allocatedBy = 10
+allocatedTo = 25
+allocationId = 805
+allocatedName = Esther       Karambu                       
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 21:45:37
+userName = daniel
+password = daniel
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 21:45:37
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-10 21:45:44
+imeiCode = d33dfd59b6c18548
+format = json
+======================================
+Response at: 2014-06-10 21:45:44
+allocationDate = 2014-06-10 21:40:42
+allocatedBy = 10
+allocatedTo = 25
+allocationId = 805
+allocatedName = Esther       Karambu                       
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-10 21:46:37
+userName = esther
+password = esther
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-10 21:46:37
+userId = 25
+firstName = Esther      
+lastName = Karambu
+userName = Esther      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 08:09:44
+userName = daniel
+password = daniel
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 08:09:44
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 08:09:48
+imeiCode = cc4a63bc36bebd50
+format = json
+======================================
+Response at: 2014-06-11 08:09:48
+allocationDate = 2014-06-10 10:54:20
+allocatedBy = 10
+allocatedTo = 28
+allocationId = 801
+allocatedName = Wangechi     Grace                         
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 08:17:50
+userName = daniel
+password = daniel
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-11 08:17:50
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 08:17:53
+imeiCode = cdc66b7e39361ff1
+format = json
+======================================
+Response at: 2014-06-11 08:17:53
+isAllocated = 
+=============================
+Received: 2014-06-11 08:17:54
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 08:17:54
+=============================
+Received: 2014-06-11 08:18:04
+imeiCode = cdc66b7e39361ff1
+format = json
+======================================
+Response at: 2014-06-11 08:18:04
+allocationDate = 2014-06-11 08:18:04
+allocatedBy = 10
+allocatedTo = 19
+allocationId = 806
+allocatedName = Keziah       Ruguru                        
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 08:20:56
+userName = keziah
+password = keziah
+imeiCode = cdc66b7e39361ff1
+======================================
+Response at: 2014-06-11 08:20:56
+userId = 19
+firstName = Keziah      
+lastName = Ruguru
+userName = Keziah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 08:22:38
+userName = daniel
+password = daniel
+imeiCode = 3875df8dba565db7
+======================================
+Response at: 2014-06-11 08:22:39
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 08:22:50
+imeiCode = 3875df8dba565db7
+format = json
+======================================
+Response at: 2014-06-11 08:22:50
+isAllocated = 
+=============================
+Received: 2014-06-11 08:22:51
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 08:22:51
+=============================
+Received: 2014-06-11 08:22:59
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 08:22:59
+=============================
+Received: 2014-06-11 08:23:23
+imeiCode = 3875df8dba565db7
+format = json
+======================================
+Response at: 2014-06-11 08:23:23
+allocationDate = 2014-06-11 08:23:17
+allocatedBy = 10
+allocatedTo = 12
+allocationId = 807
+allocatedName = Joan Barma
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 08:23:52
+userName = joan
+password = joan
+imeiCode = 3875df8dba565db7
+======================================
+Response at: 2014-06-11 08:23:52
+userId = 12
+firstName = Joan
+lastName = Barma
+userName = Joan
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 08:28:01
+userName = Daniel
+password = daniel
+imeiCode = 3878ed416fd2df8b
+======================================
+Response at: 2014-06-11 08:28:01
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 08:28:11
+imeiCode = 3878ed416fd2df8b
+format = json
+======================================
+Response at: 2014-06-11 08:28:11
+isAllocated = 
+=============================
+Received: 2014-06-11 08:28:11
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 08:28:11
+=============================
+Received: 2014-06-11 08:28:30
+imeiCode = 3878ed416fd2df8b
+format = json
+======================================
+Response at: 2014-06-11 08:28:30
+allocationDate = 2014-06-11 08:28:27
+allocatedBy = 10
+allocatedTo = 11
+allocationId = 808
+allocatedName = Grace SunBeam
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 08:28:46
+userName = grace
+password = grace
+imeiCode = 3878ed416fd2df8b
+======================================
+Response at: 2014-06-11 08:28:46
+userId = 11
+firstName = Grace
+lastName = SunBeam
+userName = grace
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 09:08:55
+userName = daniel
+password = daniel
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 09:08:55
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 09:08:58
+imeiCode = cc4a63bc36bebd50
+format = json
+======================================
+Response at: 2014-06-11 09:08:58
+allocationDate = 2014-06-10 10:54:20
+allocatedBy = 10
+allocatedTo = 28
+allocationId = 801
+allocatedName = Wangechi     Grace                         
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 09:09:22
+userName = daniel
+password = daniel
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 09:09:22
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 09:09:24
+imeiCode = cc4a63bc36bebd50
+format = json
+======================================
+Response at: 2014-06-11 09:09:24
+isAllocated = 
+=============================
+Received: 2014-06-11 09:09:25
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 09:09:25
+=============================
+Received: 2014-06-11 09:09:42
+imeiCode = cc4a63bc36bebd50
+format = json
+======================================
+Response at: 2014-06-11 09:09:42
+allocationDate = 2014-06-11 09:09:42
+allocatedBy = 10
+allocatedTo = 28
+allocationId = 809
+allocatedName = Wangechi     Grace                         
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 09:10:56
+userName = daniel
+password = daniel
+imeiCode = f5414d65a45d5198
+======================================
+Response at: 2014-06-11 09:10:56
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 09:10:59
+imeiCode = f5414d65a45d5198
+format = json
+======================================
+Response at: 2014-06-11 09:10:59
+isAllocated = 
+=============================
+Received: 2014-06-11 09:10:59
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 09:10:59
+=============================
+Received: 2014-06-11 09:11:09
+imeiCode = f5414d65a45d5198
+format = json
+======================================
+Response at: 2014-06-11 09:11:09
+allocationDate = 2014-06-11 09:11:08
+allocatedBy = 10
+allocatedTo = 22
+allocationId = 810
+allocatedName = Milkah       W                             
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-11 09:11:20
+countDifference = 0
+=============================
+Received: 2014-06-11 09:11:41
+userName = wangechi
+password = wan
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 09:11:41
+userId = 28
+firstName = Wangechi    
+lastName = Grace
+userName = Wangechi    
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 09:16:41
+userName = daniel
+password = dniel
+imeiCode = dc5ccab3b44c9c48
+======================================
+Response at: 2014-06-11 09:16:41
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-11 09:17:10
+userName = daniel
+password = daniel
+imeiCode = dc5ccab3b44c9c48
+======================================
+Response at: 2014-06-11 09:17:10
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 09:17:11
+imeiCode = dc5ccab3b44c9c48
+format = json
+======================================
+Response at: 2014-06-11 09:17:11
+isAllocated = 
+=============================
+Received: 2014-06-11 09:17:11
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 09:17:11
+=============================
+Received: 2014-06-11 09:21:27
+userName = daniel
+password = daniel
+imeiCode = dc5ccab3b44c9c48
+======================================
+Response at: 2014-06-11 09:21:27
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 09:21:28
+imeiCode = dc5ccab3b44c9c48
+format = json
+======================================
+Response at: 2014-06-11 09:21:28
+isAllocated = 
+=============================
+Received: 2014-06-11 09:21:29
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 09:21:29
+=============================
+Received: 2014-06-11 09:21:39
+imeiCode = dc5ccab3b44c9c48
+format = json
+======================================
+Response at: 2014-06-11 09:21:39
+allocationDate = 2014-06-11 09:21:38
+allocatedBy = 10
+allocatedTo = 24
+allocationId = 811
+allocatedName = Catherine.   M                             
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-11 09:37:50
+message = Not Logged In
+error = 
+isLogged = 
+=============================
+Received: 2014-06-11 09:43:39
+userName = esther
+password = esther
+imeiCode = d33dfd59b6c18548
+======================================
+Response at: 2014-06-11 09:43:39
+userId = 25
+firstName = Esther      
+lastName = Karambu
+userName = Esther      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 09:45:23
+sms = 1
+success = 1
+transactionCode = ML938313F
+transactionType = Deposit
+transactionTime = 09:45 AM
+transactionDate = 11/06/2014
+transactionAmount = 500
+custNames = George Njoki
+======================================
+Response at: 2014-06-11 09:55:08
+success = 
+error = Transaction not posted. Customer does not have mobile Number saved. Please update and Try Again.
+======================================
+Response at: 2014-06-11 09:57:00
+sms = 1
+success = 1
+transactionCode = CN9B0A415
+transactionType = Deposit
+transactionTime = 09:56 AM
+transactionDate = 11/06/2014
+transactionAmount = 2000
+custNames = Nicholas Zakayo
+======================================
+Response at: 2014-06-11 09:58:40
+sms = 1
+success = 1
+transactionCode = IS2EC1461
+transactionType = Deposit
+transactionTime = 09:58 AM
+transactionDate = 11/06/2014
+transactionAmount = 1700
+custNames = Joseph Kariithi
+======================================
+Response at: 2014-06-11 10:00:08
+sms = 1
+success = 1
+transactionCode = MN2C3F60D
+transactionType = Deposit
+transactionTime = 10:00 AM
+transactionDate = 11/06/2014
+transactionAmount = 2500
+custNames = Joahkim Ngenye
+======================================
+Response at: 2014-06-11 10:01:20
+sms = 1
+success = 1
+transactionCode = TEE9FF727
+transactionType = Deposit
+transactionTime = 10:01 AM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Samuel Ng`ang`a
+=============================
+Received: 2014-06-11 10:01:41
+userName = catherine.
+password = cate
+imeiCode = dc5ccab3b44c9c48
+======================================
+Response at: 2014-06-11 10:01:41
+userId = 24
+firstName = Catherine.  
+lastName = M
+userName = Catherine.  
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 10:02:01
+userName = sebastian
+password = seb
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:02:01
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-11 10:02:18
+userName = daniel
+password = daniel
+imeiCode = 1875947d7e01c80
+======================================
+Response at: 2014-06-11 10:02:18
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:02:23
+userName = daniel
+password = daniel
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:02:23
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:02:30
+imeiCode = 1875947d7e01c80
+format = json
+======================================
+Response at: 2014-06-11 10:02:30
+isAllocated = 
+=============================
+Received: 2014-06-11 10:02:32
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 10:02:32
+=============================
+Received: 2014-06-11 10:02:43
+imeiCode = aeac1b4635d56e01
+format = json
+======================================
+Response at: 2014-06-11 10:02:43
+isAllocated = 
+======================================
+Response at: 2014-06-11 10:02:43
+countDifference = 0
+=============================
+Received: 2014-06-11 10:02:43
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 10:02:43
+=============================
+Received: 2014-06-11 10:03:06
+imeiCode = 1875947d7e01c80
+format = json
+======================================
+Response at: 2014-06-11 10:03:06
+allocationDate = 2014-06-11 10:03:02
+allocatedBy = 10
+allocatedTo = 16
+allocationId = 812
+allocatedName = Caroline     Muthoni                       
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 10:03:49
+userName = caroline
+password = caroline
+imeiCode = 1875947d7e01c80
+======================================
+Response at: 2014-06-11 10:03:49
+userId = 16
+firstName = Caroline    
+lastName = Muthoni
+userName = Caroline    
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 10:04:16
+userName = daniel
+password = daniel
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:04:16
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:04:37
+imeiCode = aeac1b4635d56e01
+format = json
+======================================
+Response at: 2014-06-11 10:04:37
+isAllocated = 
+=============================
+Received: 2014-06-11 10:04:38
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 10:04:38
+=============================
+Received: 2014-06-11 10:05:07
+userName = daniel
+password = daniel
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:05:08
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:06:42
+userName = daniel
+password = daniel
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:06:42
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:06:47
+imeiCode = aeac1b4635d56e01
+format = json
+======================================
+Response at: 2014-06-11 10:06:47
+isAllocated = 
+=============================
+Received: 2014-06-11 10:06:48
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 10:06:48
+=============================
+Received: 2014-06-11 10:07:00
+imeiCode = aeac1b4635d56e01
+format = json
+======================================
+Response at: 2014-06-11 10:07:00
+allocationDate = 2014-06-11 10:06:59
+allocatedBy = 10
+allocatedTo = 23
+allocationId = 813
+allocatedName = Sebastian    Mwaura                        
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-11 10:07:07
+countDifference = 1076
+======================================
+Response at: 2014-06-11 10:07:19
+=============================
+Received: 2014-06-11 10:08:04
+userName = sebastian
+password = seb
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:08:04
+userId = 23
+firstName = Sebastian   
+lastName = Mwaura
+userName = Sebastian   
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 10:10:43
+userName = sebastian
+password = seb
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:10:43
+userId = 23
+firstName = Sebastian   
+lastName = Mwaura
+userName = Sebastian   
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 10:10:57
+sms = 1
+success = 1
+transactionCode = WK66C3E5B
+transactionType = Deposit
+transactionTime = 10:10 AM
+transactionDate = 11/06/2014
+transactionAmount = 1000
+custNames = John Ndung'u
+=============================
+Received: 2014-06-11 10:11:44
+userName = sebastian
+password = seb
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:11:44
+userId = 23
+firstName = Sebastian   
+lastName = Mwaura
+userName = Sebastian   
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 10:12:16
+sms = 1
+success = 1
+transactionCode = OV69162D0
+transactionType = Deposit
+transactionTime = 10:12 AM
+transactionDate = 11/06/2014
+transactionAmount = 1000
+custNames = Peter Chege
+=============================
+Received: 2014-06-11 10:13:33
+userName = sebastian
+password = se 
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:13:34
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-11 10:14:05
+userName = sebastian
+password = seb
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:14:05
+userId = 23
+firstName = Sebastian   
+lastName = Mwaura
+userName = Sebastian   
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 10:17:00
+sms = 1
+success = 1
+transactionCode = SN690C51B
+transactionType = Deposit
+transactionTime = 10:16 AM
+transactionDate = 11/06/2014
+transactionAmount = 400
+custNames = Joseph Irungu
+=============================
+Received: 2014-06-11 10:17:38
+userName = sebastian 
+password = seb
+imeiCode = aeac1b4635d56e01
+======================================
+Response at: 2014-06-11 10:17:38
+userId = 23
+firstName = Sebastian   
+lastName = Mwaura
+userName = Sebastian   
+authorize = 1
+firstTime = 
+group = fieldOfficer
+=============================
+Received: 2014-06-11 10:18:54
+userName = daniel
+password = daniel
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-11 10:18:54
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:18:58
+imeiCode = 89b5f9e97e45b522
+format = json
+======================================
+Response at: 2014-06-11 10:18:58
+allocationDate = 2014-06-10 13:36:29
+allocatedBy = 10
+allocatedTo = 15
+allocationId = 802
+allocatedName = Lucy Gikomba
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 10:22:22
+userName = daniel
+password = daniel
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-11 10:22:22
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:22:26
+imeiCode = 89b5f9e97e45b522
+format = json
+======================================
+Response at: 2014-06-11 10:22:26
+allocationDate = 2014-06-10 13:36:29
+allocatedBy = 10
+allocatedTo = 15
+allocationId = 802
+allocatedName = Lucy Gikomba
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 10:22:39
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 10:22:39
+======================================
+Response at: 2014-06-11 10:22:44
+countDifference = 0
+=============================
+Received: 2014-06-11 10:23:49
+userName = daniel
+password = daniel
+imeiCode = 89b5f9e97e45b522
+======================================
+Response at: 2014-06-11 10:23:49
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:23:54
+imeiCode = 89b5f9e97e45b522
+format = json
+======================================
+Response at: 2014-06-11 10:23:54
+isAllocated = 
+=============================
+Received: 2014-06-11 10:23:55
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 10:23:55
+=============================
+Received: 2014-06-11 10:24:32
+imeiCode = 89b5f9e97e45b522
+format = json
+======================================
+Response at: 2014-06-11 10:24:32
+allocationDate = 2014-06-11 10:24:32
+allocatedBy = 10
+allocatedTo = 15
+allocationId = 814
+allocatedName = Lucy Gikomba
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+======================================
+Response at: 2014-06-11 10:24:55
+sms = 1
+success = 1
+transactionCode = TE32734E3
+transactionType = Deposit
+transactionTime = 10:24 AM
+transactionDate = 11/06/2014
+transactionAmount = 1000
+custNames = Samson Njoroge
+=============================
+Received: 2014-06-11 10:26:31
+userName = regina
+password = regina
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-11 10:26:31
+firstTime = 
+authorize = 
+error = You have not been Allocated this device.
+=============================
+Received: 2014-06-11 10:27:05
+userName = daniel
+password = daniel
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-11 10:27:05
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 10:27:16
+imeiCode = 9e27bb074e23f17c
+format = json
+======================================
+Response at: 2014-06-11 10:27:17
+isAllocated = 
+=============================
+Received: 2014-06-11 10:27:17
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 10:27:17
+=============================
+Received: 2014-06-11 10:27:26
+imeiCode = 9e27bb074e23f17c
+format = json
+======================================
+Response at: 2014-06-11 10:27:26
+allocationDate = 2014-06-11 10:27:26
+allocatedBy = 10
+allocatedTo = 14
+allocationId = 815
+allocatedName = Regina Muthurwa
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 10:27:44
+userName = regina
+password = regina
+imeiCode = 9e27bb074e23f17c
+======================================
+Response at: 2014-06-11 10:27:44
+userId = 14
+firstName = Regina
+lastName = Muthurwa
+userName = regina
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 10:27:57
+sms = 1
+success = 1
+transactionCode = VJ35389F2
+transactionType = Deposit
+transactionTime = 10:27 AM
+transactionDate = 11/06/2014
+transactionAmount = 1000
+custNames = Lucy Wangui
+======================================
+Response at: 2014-06-11 10:28:20
+sms = 1
+success = 1
+transactionCode = HO06F17D2
+transactionType = Deposit
+transactionTime = 10:28 AM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Richard Carlos Owiro
+======================================
+Response at: 2014-06-11 10:30:46
+sms = 1
+success = 1
+transactionCode = NX6B7F3B1
+transactionType = Deposit
+transactionTime = 10:30 AM
+transactionDate = 11/06/2014
+transactionAmount = 100
+custNames = Grace Gitonga
+======================================
+Response at: 2014-06-11 10:32:35
+sms = 1
+success = 1
+transactionCode = LSCF0A569
+transactionType = Deposit
+transactionTime = 10:32 AM
+transactionDate = 11/06/2014
+transactionAmount = 1200
+custNames = Fredrick Kinyanjui
+======================================
+Response at: 2014-06-11 10:43:48
+message = Not Logged In
+error = 
+isLogged = 
+======================================
+Response at: 2014-06-11 10:46:43
+message = Not Logged In
+error = 
+isLogged = 
+=============================
+Received: 2014-06-11 10:47:04
+userName = joan
+password = joan
+imeiCode = 3875df8dba565db7
+======================================
+Response at: 2014-06-11 10:47:04
+userId = 12
+firstName = Joan
+lastName = Barma
+userName = Joan
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 10:47:17
+sms = 1
+success = 1
+transactionCode = GQC57ECEF
+transactionType = Deposit
+transactionTime = 10:47 AM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Miriam Wambui & John Irungu Murugami
+======================================
+Response at: 2014-06-11 10:56:53
+sms = 1
+success = 1
+transactionCode = VZ81C43D9
+transactionType = Deposit
+transactionTime = 10:56 AM
+transactionDate = 11/06/2014
+transactionAmount = 300
+custNames = Magdaline Murochia
+======================================
+Response at: 2014-06-11 10:57:31
+sms = 1
+success = 1
+transactionCode = ER42549DA
+transactionType = Deposit
+transactionTime = 10:57 AM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Hanna Wangui
+======================================
+Response at: 2014-06-11 10:58:05
+sms = 1
+success = 1
+transactionCode = AM3EA00D1
+transactionType = Deposit
+transactionTime = 10:58 AM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Kennedy Ngige
+======================================
+Response at: 2014-06-11 10:59:19
+sms = 1
+success = 1
+transactionCode = UPDA6D0A1
+transactionType = Deposit
+transactionTime = 10:59 AM
+transactionDate = 11/06/2014
+transactionAmount = 1000
+custNames = Michael Gatheru
+======================================
+Response at: 2014-06-11 10:59:21
+sms = 1
+success = 1
+transactionCode = ZWB0E2A0B
+transactionType = Deposit
+transactionTime = 10:59 AM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Michael Njoroge
+======================================
+Response at: 2014-06-11 10:59:22
+sms = 1
+success = 1
+transactionCode = PI8E61BFA
+transactionType = Deposit
+transactionTime = 10:59 AM
+transactionDate = 11/06/2014
+transactionAmount = 400
+custNames = Hanna Wanjiru Wangui Kennedy Wanjiru Wangui
+======================================
+Response at: 2014-06-11 11:02:52
+sms = 1
+success = 1
+transactionCode = NH57EEB04
+transactionType = Deposit
+transactionTime = 11:02 AM
+transactionDate = 11/06/2014
+transactionAmount = 500
+custNames = Alfred Najoli
+======================================
+Response at: 2014-06-11 11:04:03
+sms = 1
+success = 1
+transactionCode = WBDF7EF7E
+transactionType = Deposit
+transactionTime = 11:04 AM
+transactionDate = 11/06/2014
+transactionAmount = 1500
+custNames = Mathew Ndung`u
+======================================
+Response at: 2014-06-11 11:04:13
+sms = 1
+success = 1
+transactionCode = VK9E5DF76
+transactionType = Deposit
+transactionTime = 11:04 AM
+transactionDate = 11/06/2014
+transactionAmount = 350
+custNames = Francis Nyaga
+======================================
+Response at: 2014-06-11 11:05:14
+sms = 1
+success = 1
+transactionCode = NMCC67C17
+transactionType = Deposit
+transactionTime = 11:05 AM
+transactionDate = 11/06/2014
+transactionAmount = 300
+custNames = Ephantus Mwangi
+======================================
+Response at: 2014-06-11 11:11:25
+sms = 1
+success = 1
+transactionCode = FC8B9DBED
+transactionType = Deposit
+transactionTime = 11:11 AM
+transactionDate = 11/06/2014
+transactionAmount = 400
+custNames = Samwel Nganga
+=============================
+Received: 2014-06-11 11:12:38
+userName = milkah
+password = mumbi
+imeiCode = f5414d65a45d5198
+======================================
+Response at: 2014-06-11 11:12:38
+userId = 22
+firstName = Milkah      
+lastName = W
+userName = Milkah      
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 11:13:20
+sms = 1
+success = 1
+transactionCode = UT829DF69
+transactionType = Deposit
+transactionTime = 11:13 AM
+transactionDate = 11/06/2014
+transactionAmount = 1000
+custNames = Elizabeth Nderitu
+======================================
+Response at: 2014-06-11 11:15:39
+sms = 1
+success = 1
+transactionCode = BT92D9886
+transactionType = Deposit
+transactionTime = 11:15 AM
+transactionDate = 11/06/2014
+transactionAmount = 1300
+custNames = Paul Tanin
+=============================
+Received: 2014-06-11 11:21:18
+userName = daniel
+password = daniel
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-11 11:21:18
+userId = 10
+firstName = Daniel
+lastName = Gumisirize
+userName = daniel
+authorize = 1
+firstTime = 
+group = Admin
+=============================
+Received: 2014-06-11 11:21:42
+imeiCode = 4d83b0cb12dcb79e
+format = json
+======================================
+Response at: 2014-06-11 11:21:42
+isAllocated = 
+=============================
+Received: 2014-06-11 11:21:46
+0 = Requested for Users
+======================================
+Response at: 2014-06-11 11:21:46
+=============================
+Received: 2014-06-11 11:21:55
+imeiCode = 4d83b0cb12dcb79e
+format = json
+======================================
+Response at: 2014-06-11 11:21:55
+allocationDate = 2014-06-11 11:21:54
+allocatedBy = 10
+allocatedTo = 9
+allocationId = 816
+allocatedName = Rose SunBeam
+allocateeName = Daniel Gumisirize
+isAllocated = 1
+=============================
+Received: 2014-06-11 11:22:19
+userName = rose
+password = rosw
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-11 11:22:19
+error = Wrong userName or password
+authorize = 
+======================================
+Response at: 2014-06-11 11:22:28
+sms = 1
+success = 1
+transactionCode = OL473E6A0
+transactionType = Deposit
+transactionTime = 11:22 AM
+transactionDate = 11/06/2014
+transactionAmount = 300
+custNames = Antony mwindi
+=============================
+Received: 2014-06-11 11:22:28
+userName = rose
+password = rose
+imeiCode = 4d83b0cb12dcb79e
+======================================
+Response at: 2014-06-11 11:22:28
+userId = 9
+firstName = Rose
+lastName = SunBeam
+userName = rose
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 11:23:14
+sms = 1
+success = 1
+transactionCode = NHF0C1697
+transactionType = Deposit
+transactionTime = 11:23 AM
+transactionDate = 11/06/2014
+transactionAmount = 100
+custNames = Antonette Sewe
+======================================
+Response at: 2014-06-11 11:23:55
+sms = 1
+success = 1
+transactionCode = LX70E7543
+transactionType = Deposit
+transactionTime = 11:23 AM
+transactionDate = 11/06/2014
+transactionAmount = 100
+custNames = Josephine Ochola
+=============================
+Received: 2014-06-11 11:24:14
+userName = wangechi
+password = wan
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 11:24:14
+userId = 28
+firstName = Wangechi    
+lastName = Grace
+userName = Wangechi    
+authorize = 1
+firstTime = 
+group = fieldOfficer
+======================================
+Response at: 2014-06-11 11:26:35
+sms = 1
+success = 1
+transactionCode = CG4E6D949
+transactionType = Deposit
+transactionTime = 11:26 AM
+transactionDate = 11/06/2014
+transactionAmount = 100
+custNames = Joseph Gitau
+======================================
+Response at: 2014-06-11 11:27:58
+sms = 1
+success = 1
+transactionCode = OYE9EBAFD
+transactionType = Deposit
+transactionTime = 11:27 AM
+transactionDate = 11/06/2014
+transactionAmount = 100
+custNames = Pauline Gateri
+======================================
+Response at: 2014-06-11 11:28:56
+sms = 1
+success = 1
+transactionCode = DKD99F618
+transactionType = Deposit
+transactionTime = 11:28 AM
+transactionDate = 11/06/2014
+transactionAmount = 1200
+custNames = Peter Wanjiru
+=============================
+Received: 2014-06-11 11:36:31
+userName =   wangechi
+password = wan
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 11:36:31
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-11 11:36:50
+userName =   wangechi
+password = wan
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 11:36:50
+error = Wrong userName or password
+authorize = 
+======================================
+Response at: 2014-06-11 11:37:08
+sms = 1
+success = 1
+transactionCode = FOBF7C147
+transactionType = Deposit
+transactionTime = 11:37 AM
+transactionDate = 11/06/2014
+transactionAmount = 2000
+custNames = Dominus Yongo
+======================================
+Response at: 2014-06-11 11:37:19
+sms = 1
+success = 1
+transactionCode = COEDDC674
+transactionType = Deposit
+transactionTime = 11:37 AM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Stephen Mwangi
+=============================
+Received: 2014-06-11 11:37:31
+userName =  wangechi
+password = wan
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 11:37:31
+error = Wrong userName or password
+authorize = 
+=============================
+Received: 2014-06-11 11:38:35
+userName =  wangechi
+password = wall
+imeiCode = cc4a63bc36bebd50
+======================================
+Response at: 2014-06-11 11:38:35
+error = Wrong userName or password
+authorize = 
+======================================
+Response at: 2014-06-11 11:39:16
+sms = 1
+success = 1
+transactionCode = CBC2CB392
+transactionType = Deposit
+transactionTime = 11:39 AM
+transactionDate = 11/06/2014
+transactionAmount = 1000
+custNames = Joseph Njambara
+======================================
+Response at: 2014-06-11 11:39:42
+sms = 1
+success = 1
+transactionCode = RX3273606
+transactionType = Deposit
+transactionTime = 11:39 AM
+transactionDate = 11/06/2014
+transactionAmount = 800
+custNames = Peter Miruru
+======================================
+Response at: 2014-06-11 11:40:59
+sms = 1
+success = 1
+transactionCode = CM742F801
+transactionType = Deposit
+transactionTime = 11:40 AM
+transactionDate = 11/06/2014
+transactionAmount = 300
+custNames = Leah Kuria
+======================================
+Response at: 2014-06-11 11:41:32
+sms = 1
+success = 1
+transactionCode = VB9CC560E
+transactionType = Deposit
+transactionTime = 11:41 AM
+transactionDate = 11/06/2014
+transactionAmount = 300
+custNames = Geoffrey Maina
+======================================
+Response at: 2014-06-11 11:42:06
+sms = 1
+success = 1
+transactionCode = HJ9FF0590
+transactionType = Deposit
+transactionTime = 11:42 AM
+transactionDate = 11/06/2014
+transactionAmount = 500
+custNames = Serah Njoroge
+======================================
+Response at: 2014-06-11 11:42:43
+sms = 1
+success = 1
+transactionCode = EZDFAC3B3
+transactionType = Deposit
+transactionTime = 11:42 AM
+transactionDate = 11/06/2014
+transactionAmount = 500
+custNames = Wilfred Mulu
+======================================
+Response at: 2014-06-11 11:43:43
+sms = 1
+success = 1
+transactionCode = BR465FC36
+transactionType = Deposit
+transactionTime = 11:43 AM
+transactionDate = 11/06/2014
+transactionAmount = 100
+custNames = Benignas Munyao
+======================================
+Response at: 2014-06-11 11:45:29
+sms = 1
+success = 1
+transactionCode = FO19A629B
+transactionType = Deposit
+transactionTime = 11:45 AM
+transactionDate = 11/06/2014
+transactionAmount = 7000
+custNames = Mary Muriithi
+======================================
+Response at: 2014-06-11 11:45:32
+sms = 1
+success = 1
+transactionCode = JG48A23BF
+transactionType = Mini-Statement
+transactionTime = 11:45:29
+transactionDate = 2014-06-11 11:45:29
+transactionAmount = 10
+custNames = Benald Musyoki
+======================================
+Response at: 2014-06-11 11:48:03
+sms = 1
+success = 1
+transactionCode = GW13376B6
+transactionType = Deposit
+transactionTime = 11:48 AM
+transactionDate = 11/06/2014
+transactionAmount = 1000
+custNames = Joseph Kiragu
+======================================
+Response at: 2014-06-11 11:56:19
+sms = 1
+success = 1
+transactionCode = EP342A8F6
+transactionType = Deposit
+transactionTime = 11:56 AM
+transactionDate = 11/06/2014
+transactionAmount = 300
+custNames = John Kamau
+======================================
+Response at: 2014-06-11 11:59:00
+sms = 1
+success = 1
+transactionCode = SR486BEB1
+transactionType = Deposit
+transactionTime = 11:58 AM
+transactionDate = 11/06/2014
+transactionAmount = 500
+custNames = Benald Musyoki
+======================================
+Response at: 2014-06-11 11:59:52
+sms = 1
+success = 1
+transactionCode = PT58C24F4
+transactionType = Deposit
+transactionTime = 11:59 AM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Peter Mwangi
+======================================
+Response at: 2014-06-11 12:00:26
+sms = 1
+success = 1
+transactionCode = BZ8A840DD
+transactionType = Deposit
+transactionTime = 12:00 PM
+transactionDate = 11/06/2014
+transactionAmount = 200
+custNames = Gerald Muya

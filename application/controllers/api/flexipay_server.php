@@ -144,7 +144,7 @@ class Flexipay_server extends REST_Controller {
 					
 
 					if (strlen ( $names ) > 15) {
-						$names = substr ( $names, 0, 15 ) . "**";
+						$names = substr ( $names, 0, 15 ) . "** ";
 					}
 					
 					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $names . ".New balance is Ksh " . number_format ( $balance );
