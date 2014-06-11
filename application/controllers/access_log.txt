@@ -92,3 +92,13 @@ transactionTime = 01:43 PM
 transactionDate = 05/06/2014
 transactionAmount = 1
 custNames = Tom Kimani
+======================================
+Response at: 2014-06-11 11:08:28
+sms = 1
+success = 1
+transactionCode = MQ677E15C
+transactionType = Mini-Statement
+transactionTime = 11:08:24
+transactionDate = 2014-06-11 11:08:24
+transactionAmount = 10
+custNames = Tom Kimani
