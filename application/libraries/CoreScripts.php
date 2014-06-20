@@ -9,10 +9,12 @@ class CoreScripts {
 		$this->CI ()->load->model ( 'Transactions_Model', 'transactions' );
 		$this->CI ()->load->model ( 'Customer_Model', 'customers' );
 	}
+	
 	public function CI() {
 		$CI = & get_instance ();
 		return $CI;
 	}
+	
 	function updateCustomer($newMobile) {
 		// updating customer Record
 		$cust = array (
@@ -26,6 +28,7 @@ class CoreScripts {
 			$this->CI ()->customers->UpdateCustomer ( $inp ['clCode'], $newInput );
 		}
 	}
+	
 	function getStatement($clCode) {
 		if ($clCode == "") {
 			return;
@@ -75,6 +78,7 @@ class CoreScripts {
 			// $smsResponse2= $this->_send_sms2('0729472421', $message,'SMSLEOPARD');
 		}
 	}
+	
 	function _send_sms($recipient, $message) {
 		// Set the prefered message provider from here
 		return $this->_send_sms2 ( $recipient, $message );
@@ -150,6 +154,7 @@ class CoreScripts {
 			return false;
 		}
 	}
+	
 	function saveMiniStatement($clCode, $transactionType, $transactionAmount) {
 		$inp = array (
 				'clCode' => $clCode,
@@ -161,6 +166,7 @@ class CoreScripts {
 		
 		return $response;
 	}
+	
 }
 
 /* End of file CoreScripts.php */
