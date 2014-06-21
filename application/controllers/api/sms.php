@@ -15,6 +15,8 @@ class Sms extends REST_Controller {
 		$this->load->model ( 'Users_Model', 'users' );
 	}
 	function custSms_post() {
+		
+		//echo "Heere";
 		// 2.Read in the received values
 		$phoneNumber = $this->post ( "from" ); // sender's Phone Number
 		$shortCode = $this->post ( "to" ); // The short code that received the message
@@ -29,12 +31,12 @@ class Sms extends REST_Controller {
 			// 1. Use phoneNumber to get Client Code
 			if ($phoneNumber) {
 				$phoneNumber = "0" . substr ( $phoneNumber, 4 );
-				$custData = $this->customers->getSingleCustomer ( 'phone', $phoneNumber );
+				$custData = $this->customers->getSingleCustomer( 'phone', $phoneNumber );
 				
-				echo $custData ['customerId'];
+				echo "Customer Id>>".$custData ['customerId'];
 				
 				if ($custData ['customerId'] == "N/a") {
-					$message = "The phoneNumber you sent is not registered with the system. Kindly contact the nearest officer".
+					$message = "The phoneNumber you sent is not registered with the system. Kindly contact nearest branch".
 					" for more details.";
 					$myresponse = $this->corescripts->_send_sms ( $phoneNumber, $message );
 					return;
@@ -45,7 +47,7 @@ class Sms extends REST_Controller {
 			$response = $this->corescripts->getStatement ( $custData['customerId']);
 			echo $response;
 		} else {
-			$message = 'Incorrect Format sent.Please try again by sending "pioneerfsa#balance" to 20414"';
+			$message = 'Incorrect Format sent.Please try again by sending "pioneer balance" to 20414"';
 			$this->corescripts->_send_sms2 ( $phoneNumber, $message, $shortCode );
 		}
 	}
@@ -56,8 +58,9 @@ class Sms extends REST_Controller {
 		$imeiCode = '4d83b0cb12dcb79e';
 		
 		$login_ok = $this->users->login ( $userName, $password, $imeiCode );
+		
+		print_r($login_ok);
 		$this->users->update_session ( NULL, NULL, 17 );
 		
-		// echo $login_ok;
 	}
 }

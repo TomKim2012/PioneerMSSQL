@@ -82,8 +82,8 @@ class Flexipay_server extends REST_Controller {
 	}
 	function transactions_get() {
 		// Check if user is Logged In
-		if ($this->authorize ()) {
-			$transactions = $this->transactions->getTransactions ();
+		if ($this->authorize()) {
+			$transactions = $this->transactions->getTransactions();
 			
 			if ($transactions) {
 				// Get the Customer Details
@@ -92,7 +92,7 @@ class Flexipay_server extends REST_Controller {
 					// /Get Customer Data
 					$customerData = $this->customers->getSingleCustomer ( "clcode", $row ['clCode'] );
 					$customer ['custNames'] = $customerData ['firstName'] . " " . $customerData ['lastName'];
-					$mergedTransaction [] = array_merge ( $transactions [$counter], $customer );
+					$mergedTransaction [] = array_merge($transactions[$counter], $customer );
 					$counter += 1;
 				}
 				// $this->response($mergedTransaction, 200); // 200 being the HTTP response code
@@ -147,7 +147,9 @@ class Flexipay_server extends REST_Controller {
 						$names = substr ( $names, 0, 15 ) . "** ";
 					}
 					
-					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $names . ".New balance is Ksh " . number_format ( $balance );
+					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " 
+							   . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . 
+							   	$customer ['refNo'] . "- " . $names . ".New balance is Ksh " . number_format ( $balance );
 					
 					// $response = $this->corescripts->_send_sms ( '0729472421', $message );
 					$response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
