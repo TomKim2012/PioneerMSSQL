@@ -78,7 +78,7 @@ class Transactions_Model extends CI_Model {
 		//echo $this->db->last_query();
 
         $balance = $rs->row()->balance;
-        $cummulativeBalance = getPrevDeposits($customerId) + $balance;
+        $cummulativeBalance = $this->getPrevDeposits($customerId) + $balance;
         $this->db->query('Use mobileBanking');
 		return $cummulativeBalance;
 		
