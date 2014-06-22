@@ -46,7 +46,16 @@ class Transactions_Model extends CI_Model {
 			$inp['transaction_code']= $this->random_string(7);
 			$inp['transaction_date']=date("Y-m-d H:i:s");
 			$inp['transaction_time']=date("G:i:s");
-			$inp['userId']=$this->userData->userId;
+			
+			/*-Temporary Hack for User Id issue for self Initiated SMS-*/ 
+			if(isset($this->userData->userId)){
+				$inp['userId']=$this->userData->userId;
+			}else{
+				$inp['userId']=10;
+			}
+			
+			//print_r($this->userData)."\n";
+			
 			$inp['terminalId']=$this->terminal;
 
 		 	if($this->db->insert('transactions', $inp)){
@@ -54,7 +63,6 @@ class Transactions_Model extends CI_Model {
 		 					 'transaction_code'=>$inp['transaction_code'],
 		 					 'transaction_date'=>$inp['transaction_date'],
 		 					 'transaction_time'=>$inp['transaction_time'],
-		 					 'officer_names' =>$this->userData->firstName
 		 					);
 		 	}
 		 	else{
@@ -77,7 +85,7 @@ class Transactions_Model extends CI_Model {
 
 
 	function getPrevDeposits($customerId){
-		//Users transaction for Today
+		//Previous Cash Deposits
 		$this->db->select_sum('transaction_amount');
 		$this->db->where(
 						array('clCode'=>$customerId,
@@ -85,8 +93,19 @@ class Transactions_Model extends CI_Model {
 						       'isRecorded' => '0'
 						));
 		$query=$this->db->get('transactions');
-		$amount= $query->row()->transaction_amount;
-		return $amount;
+		$amountDep= $query->row()->transaction_amount;
+		
+		
+		//Previous Mpesa Deposits
+		$this->db->select_sum('mpesa_amt');
+		$this->db->where(
+				array(	'mpesa_acc'=>$idNo,
+						'isProcessed' => '0'
+				));
+		$query=$this->db->get('PioneerIPN');
+		$amountMpesa= $query->row()->mpesa_amt;
+		
+		return $amountDep+$amountMpesa;
 	}
 	
 	function random_string($length = 4) {
