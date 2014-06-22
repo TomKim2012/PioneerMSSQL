@@ -33,7 +33,7 @@ class Sms extends REST_Controller {
 				$phoneNumber = "0" . substr ( $phoneNumber, 4 );
 				$custData = $this->customers->getSingleCustomer( 'phone', $phoneNumber );
 				
-				echo "Customer Id>>".$custData ['customerId'];
+				//echo "Customer Id>>".$custData ['customerId'];
 				
 				if ($custData ['customerId'] == "N/a") {
 					$message = "The phoneNumber you sent is not registered with the system. Kindly contact nearest branch".
@@ -59,8 +59,7 @@ class Sms extends REST_Controller {
 		
 		$login_ok = $this->users->login ( $userName, $password, $imeiCode );
 		
-		print_r($login_ok);
+		//Updating Terminal
 		$this->users->update_session ( NULL, NULL, 17 );
-		
 	}
 }

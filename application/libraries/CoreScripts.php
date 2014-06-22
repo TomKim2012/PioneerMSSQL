@@ -35,7 +35,7 @@ class CoreScripts {
 		}
 		
 		$sharesBal = $this->CI ()->transactions->getCustTransaction ( $clCode, 1 );
-		$savingsBal = $this->CI ()->transactions->getCustTransaction ( $clCode, 2 );
+		$savingsBal = $this->CI()->transactions->getCustTransaction ( $clCode, 2 );
 		$loanBal = $this->CI ()->transactions->getCustTransaction ( $clCode, 3 );
 		
 		$customerData = $this->CI ()->customers->getSingleCustomer ( "clCode", $clCode );
@@ -59,8 +59,8 @@ class CoreScripts {
 		
 		if ($response ['success']) {
 			
-			// $smsResponse= $this->_send_sms('0729472421', $message);
-			$smsResponse = $this->_send_sms ( $customerData ['mobileNo'], $message );
+			$smsResponse= $this->_send_sms('0729472421', $message);
+			//$smsResponse = $this->_send_sms ( $customerData ['mobileNo'], $message );
 			
 			if ($smsResponse) {
 				$clientResponse ['sms'] = true;
