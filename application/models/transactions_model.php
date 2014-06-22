@@ -86,6 +86,7 @@ class Transactions_Model extends CI_Model {
 
 
 	function getPrevDeposits($customerId){
+		$this->db->query('Use mobileBanking');
 		//Previous Cash Deposits
 		$this->db->select_sum('transaction_amount');
 		$this->db->where(
