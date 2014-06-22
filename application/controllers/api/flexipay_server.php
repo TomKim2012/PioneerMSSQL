@@ -131,8 +131,7 @@ class Flexipay_server extends REST_Controller {
 			$customer = $this->customers->getSingleCustomer ( 'clCode', $inp ['clCode'] );
 			
 			$savingsBal = $this->transactions->getCustTransaction ( $inp ['clCode'], 2 );
-			$prevDeposits = $this->transactions->getPrevDeposits ( $inp ['clCode'] );
-			$balance = $savingsBal + $prevDeposits + $inp ['transaction_amount'];
+			$balance = $savingsBal + $inp ['transaction_amount'];
 			
 			if ($customer ['mobileNo']) {
 				$response = $this->transactions->createTransaction ( $inp );
@@ -151,7 +150,7 @@ class Flexipay_server extends REST_Controller {
 							   . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . 
 							   	$customer ['refNo'] . "- " . $names . ".New balance is Ksh " . number_format ( $balance );
 					
-					// $response = $this->corescripts->_send_sms ( '0729472421', $message );
+					//$response = $this->corescripts->_send_sms ( '0729472421', $message );
 					$response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
 					
 					if ($response) {
