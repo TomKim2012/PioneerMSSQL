@@ -143,87 +143,91 @@ class Users_Model extends CI_Model {
 		
 		// --Results found
 		if ($query->num_rows () > 0) {
-			$userInfo = $query->row (); // user Data
-			                            
+			// User Data
+			$userInfo = $query->row ();
+			
 			// Check the User's Group
-			$query2 = $this->db->get_where ( 'usergroup', array (
-					'userId' => $userInfo->userId 
+			$groupData = $this->checkUserGroups ( $userInfo );
+			
+			// Generate Cookie
+			$this->generateCookie ( $userInfo );
+			
+			// Get Session Information
+			return $this->getSessionInfo ( $userInfo, $groupData, $imeiCode );
+		} else {
+			$session_data = $this->falseAuthentication ();
+			return $session_data;
+		}
+	}
+	function checkUserGroups($userInfo) {
+		$query2 = $this->db->get_where ( 'usergroup', array (
+				'userId' => $userInfo->userId 
+		) );
+		$userdata = $query2->result ();
+		
+		// Add User Group
+		$groupsData = array ();
+		foreach ( $userdata as $value ) {
+			$this->db->select ( 'groupName' );
+			$this->db->where ( array (
+					'groupId' => $value->groupId 
 			) );
-			$userdata = $query2->result ();
-			
-			// Add User Group
-			$groupsData = array ();
-			
-			foreach ( $userdata as $value ) {
-				$this->db->select ( 'groupName' );
-				$this->db->where ( array (
-						'groupId' => $value->groupId 
-				) );
-				$query = $this->db->get ( 'groups' );
-				$groupsData [] = $query->row ()->groupName;
-			}
-			
-			// Save Data to session
-			$this->update_session ( $userInfo, $groupsData, NULL );
-			
-			// //////////////////////GENERATE COOKIE////////////////////////////
-			// make very unique cookie hash for auto-login
-			$salt = microtime ();
-			$cookie_hash = $this->_add_salt ( $userInfo->userId . $userInfo->userName . $userInfo->password . $userInfo->email, $salt );
-			
-			// set cookie with very unique cookie hash
-			$cookie = array (
-					'name' => 'userInfo',
-					'value' => $cookie_hash,
-					'expire' => $this->cookie_expire,
-					'domain' => $this->cookie_domain,
-					'path' => '/',
-					'prefix' => 'pioneer_' 
-			);
-			
-			set_cookie ( $cookie );
-			
-			// //---Check for Allocation(Admin has straight Pass) /////
-			if (in_array ( 'Admin', $groupsData )) {
-				$session_data = array (
-						'userId' => ( string ) $userInfo->userId,
-						'firstName' => $userInfo->firstName,
-						'lastName' => $userInfo->lastName,
-						'userName' => $userInfo->userName,
-						'authorize' => true,
-						'firstTime' => false,
-						'group' => 'Admin' 
-				);
+			$query = $this->db->get ( 'groups' );
+			$groupsData [] = $query->row ()->groupName;
+		}
+		
+		// Save Data to session
+		$this->update_session ( $userInfo, $groupsData, NULL );
+		return $groupsData;
+	}
+	function getSessionInfo($userInfo, $groupsData, $imeiCode) {
+		$session_data = array (
+				'userId' => ( string ) $userInfo->userId,
+				'firstName' => $userInfo->firstName,
+				'lastName' => $userInfo->lastName,
+				'userName' => $userInfo->userName,
+				'firstTime' => false 
+		);
+		// ---Check for Allocation(Admin has straight Pass) /////
+		if (in_array ( 'Admin', $groupsData )) {
+				$session_data ['authorize'] = true;
+				$session_data ['group'] = 'Admin';
+				$session_data ['isAllocated'] = true;
 				return $session_data;
-			}
-			
-			if ((in_array ( 'fieldofficer', $groupsData ))) {
-				if ($this->check_allocation ( $userInfo, $imeiCode )) {
-					$session_data = array (
-							'userId' => ( string ) $userInfo->userId,
-							'firstName' => $userInfo->firstName,
-							'lastName' => trim ( $userInfo->lastName ),
-							'userName' => $userInfo->userName,
-							'authorize' => true,
-							'firstTime' => false,
-							'group' => 'fieldOfficer' 
-					);
-					return $session_data;
-				} else {
-					$session_data = array (
-							'firstTime' => false,
-							'authorize' => false,
-							'error' => 'You have not been Allocated this device.' 
-					);
-					return $session_data;
-				}
+		} else if ((in_array ( 'fieldofficer', $groupsData ))) {
+			if ($this->check_allocation ( $userInfo, $imeiCode )) {
+				$session_data ['authorize'] = true;
+				$session_data ['group'] = 'fieldofficer';
+				$session_data ['isAllocated'] = true;
+				return $session_data;
 			} else {
-				$session_data = $this->falseAuthentication ();
+				$session_data ['authorize'] = true;
+				$session_data ['group'] = 'fieldofficer';
+				$session_data ['isAllocated'] = false;
+				$session_data ['error'] = 'You have not been Allocated this device.';
 				return $session_data;
 			}
 		} else {
-			return $this->localLogin ( $userName, $password );
+			$session_data = $this->localLogin ( $userName, $password );
+			return $session_data;
 		}
+	}
+	function generateCookie($userInfo) {
+		// GENERATE COOKIE
+		$salt = microtime ();
+		$cookie_hash = $this->_add_salt ( $userInfo->userId . $userInfo->userName . $userInfo->password . $userInfo->email, $salt );
+		
+		// set cookie with very unique cookie hash
+		$cookie = array (
+				'name' => 'userInfo',
+				'value' => $cookie_hash,
+				'expire' => $this->cookie_expire,
+				'domain' => $this->cookie_domain,
+				'path' => '/',
+				'prefix' => 'pioneer_' 
+		);
+		
+		set_cookie ( $cookie );
 	}
 	function falseAuthentication() {
 		return array (
@@ -233,7 +237,8 @@ class Users_Model extends CI_Model {
 	}
 	
 	/*
-	 * Check If user is allocated to terminal @params $Logged-In User Array
+	 * Check If user is allocated to terminal 
+	 * @params $Logged-In User Array
 	 */
 	function check_allocation($userInfo, $imeiCode) {
 		// Get the TerminalId
@@ -245,7 +250,9 @@ class Users_Model extends CI_Model {
 		}
 		$terminalId = $query->row ()->terminalId;
 		
-		// 1--Check Allocation for logging In
+		/* 1--Check Allocation for logging In
+		 * -- Allocation during Logging In
+		 * */
 		if ($userInfo) {
 			$this->db->select ( 'allocationDate' );
 			$this->db->where ( array (
@@ -254,9 +261,11 @@ class Users_Model extends CI_Model {
 					'deallocatedBy' => NULL 
 			) );
 			$query = $this->db->get ( 'allocation' );
-		} 		
-
-		// 2.. Allocation for a terminal(Initial)
+		} 
+		/*
+		 * 2--Checking for allocation for a terminal(Initial)
+		 *  --For the setUp page
+		 */ 
 		else {
 			$this->db->select ( 'allocationDate,allocatedBy,allocatedTo,allocationId' );
 			$this->db->where ( array (
@@ -269,8 +278,6 @@ class Users_Model extends CI_Model {
 		// if Data is Present
 		if ($query->num_rows () > 0) {
 			if ($userInfo) {
-				// echo "userInfo here";
-				// Save terminal Id to the Session
 				$this->update_session ( NULL, NULL, $terminalId );
 				return true;
 			} else {
@@ -309,7 +316,7 @@ class Users_Model extends CI_Model {
 		} elseif ($terminalId) {
 			$ez ['terminal'] = $terminalId;
 		}
-		$this->session->set_userdata ( $ez );
+		$this->session->set_userdata ($ez );
 		$this->user = $ez;
 	}
 	// v 0.2
@@ -404,22 +411,22 @@ class Users_Model extends CI_Model {
 			$admin_check = $this->filter_by_Group ( $row ['userId'] );
 			
 			if ($admin_check) {
-				//echo $row ['userId'] . "-Passed Admin Check";
+				// echo $row ['userId'] . "-Passed Admin Check";
 				$allocation_check = $this->filter_by_Allocation ( $row ['userId'] );
-			} else{
+			} else {
 				$allocation_check = false;
 			}
 			
 			if ($allocation_check) {
-				//echo $row ['userId'] . "-Passed Allocation Check; ";
+				// echo $row ['userId'] . "-Passed Allocation Check; ";
 				$data = array (
 						'userId' => ( string ) $row ['userId'],
-						'firstName' => trim($row ['firstName']),
-						'lastName' => trim($row ['lastName']),
-						'userName' => trim($row ['userName']) 
+						'firstName' => trim ( $row ['firstName'] ),
+						'lastName' => trim ( $row ['lastName'] ),
+						'userName' => trim ( $row ['userName'] ) 
 				);
 				array_push ( $response, $data );
-				//echo $row ['userId'] . "-Added to Array ";
+				// echo $row ['userId'] . "-Added to Array ";
 			}
 		}
 		
@@ -442,5 +449,17 @@ class Users_Model extends CI_Model {
 		);
 		return $userData;
 	}
+	
+	function getUsersByUserName($userName){
+		$this->db->select ( 'userId' );
+		$this->db->where ( array (
+				'userName' => $userName
+		) );
+		$query = $this->db->get ( 'users' );
+		
+		$userData = $query->row();
+		return $userData;
+	}
 }
+
 ?>

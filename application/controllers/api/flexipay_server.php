@@ -61,7 +61,7 @@ class Flexipay_server extends REST_Controller {
 			), 200 );
 			return false;
 		}
-// 		return true;
+		// return true;
 	}
 	
 	/*
@@ -82,8 +82,8 @@ class Flexipay_server extends REST_Controller {
 	}
 	function transactions_get() {
 		// Check if user is Logged In
-		if ($this->authorize()) {
-			$transactions = $this->transactions->getTransactions();
+		if ($this->authorize ()) {
+			$transactions = $this->transactions->getTransactions ();
 			
 			if ($transactions) {
 				// Get the Customer Details
@@ -92,7 +92,7 @@ class Flexipay_server extends REST_Controller {
 					// /Get Customer Data
 					$customerData = $this->customers->getSingleCustomer ( "clcode", $row ['clCode'] );
 					$customer ['custNames'] = $customerData ['firstName'] . " " . $customerData ['lastName'];
-					$mergedTransaction [] = array_merge($transactions[$counter], $customer );
+					$mergedTransaction [] = array_merge ( $transactions [$counter], $customer );
 					$counter += 1;
 				}
 				// $this->response($mergedTransaction, 200); // 200 being the HTTP response code
@@ -141,16 +141,13 @@ class Flexipay_server extends REST_Controller {
 					$tCode = $response ['transaction_code'];
 					$names = $customer ['firstName'] . " " . $customer ['lastName'];
 					
-
 					if (strlen ( $names ) > 15) {
 						$names = substr ( $names, 0, 15 ) . "** ";
 					}
 					
-					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " 
-							   . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . 
-							   	$customer ['refNo'] . "- " . $names . ".New balance is Ksh " . number_format ( $balance );
+					$message = "Transaction " . $response ['transaction_code'] . " confirmed on " . $tDate . " at " . $tTime . ". Ksh " . number_format ( $inp ['transaction_amount'] ) . " deposited to A/C " . $customer ['refNo'] . "- " . $names . ".New balance is Ksh " . number_format ( $balance );
 					
-					//$response = $this->corescripts->_send_sms ( '0729472421', $message );
+					// $response = $this->corescripts->_send_sms ( '0729472421', $message );
 					$response = $this->corescripts->_send_sms ( $customer ['mobileNo'], $message );
 					
 					if ($response) {
@@ -205,12 +202,10 @@ class Flexipay_server extends REST_Controller {
 			$UserName = $this->post ( 'userName' );
 			$password = $this->post ( 'password' );
 			$imeiCode = $this->post ( 'imeiCode' );
-			
 			$this->log ( $this->post () );
 		}
 		
 		if ((! empty ( $UserName )) && ! (empty ( $imeiCode ))) {
-			// $login_ok is true or false depending on user login information
 			$login_ok = $this->users->login ( $UserName, $password, $imeiCode );
 			if ($login_ok ['authorize'] == true) {
 				$this->response ( $login_ok, 200 );
@@ -226,7 +221,9 @@ class Flexipay_server extends REST_Controller {
 		}
 	}
 	
-	// -------Function to login user ------------------
+	/*
+	 * Updating User Password
+	 */
 	function updatePassword_post() {
 		if ($this->post ( 'password' )) {
 			$password = $this->post ( 'password' );
@@ -259,7 +256,9 @@ class Flexipay_server extends REST_Controller {
 	// --------Function to get All Users -------
 	function users_get() {
 		$response = $this->users->getUsers ();
-		$this->log(array('Requested for Users'));
+		$this->log ( array (
+				'Requested for Users' 
+		) );
 		$this->response ( $response, 200 );
 	}
 	function terminal_post() {
@@ -291,7 +290,7 @@ class Flexipay_server extends REST_Controller {
 	// ----Check Allocation
 	function allocation_get() {
 		if ($this->get ( 'imeiCode' )) {
-			$this->log($this->get());
+			$this->log ( $this->get () );
 			// Check if user is Logged In
 			if ($this->authorize ()) {
 				$allocation = $this->users->check_allocation ( NULL, $this->get ( 'imeiCode' ) );
@@ -317,6 +316,75 @@ class Flexipay_server extends REST_Controller {
 			), 200 );
 		}
 	}
+	/*
+	 * This is used to create an Allocation Process in Wira
+	 */
+	function preAllocation_post() {
+		if (! $this->authorize ()) {
+			$this->response ( array (
+					'message' => 'Not Logged In',
+					'error' => true 
+			), 200 );
+			return;
+		}
+		
+		if ($this->post ( 'allocateeName' )) {
+			$parameters = array (
+					'docType' => 'TERMINAL ALLOCATION',
+					'allocateeName' => $this->post ( 'allocateeName' ),
+					'allocatedTo' => $this->post ( 'allocatedTo' ) 
+			);
+		}
+		
+		$terminalData = $this->terminals->getTerminalById ();
+		$parameters ['terminalId'] = $terminalData->terminalId;
+		$parameters ['terminalName'] = $terminalData->terminalName;
+		$parameters ['imeiCode'] = $terminalData->ImeiCode;
+		
+		$this->createTask ( $parameters );
+		
+		// print_r($parameters);
+	}
+	
+	/*
+	 * From Wira Allocation
+	 */
+	function postAllocation_post() {
+		if ($this->post ( 'allocatedTo' )) {
+			$userData = $this->users->getUsersByUserName ( $this->post ( 'allocatedBy' ) );
+			$input = array (
+					'allocatedTo' => $this->post ( 'allocatedTo' ),
+					'allocatedBy' => $userData->userId,
+					'allocationDate' => date ( "Y-m-d H:i:s" ),
+					'deallocationDate' => NULL,
+					'deallocatedBy' => NULL,
+					'terminalId' => $this->post ( 'terminalId' ) 
+			);
+		}
+		
+		if ((! empty ( $input ['allocatedTo'] ))) {
+			$response = $this->users->createAllocation ( $input );
+			if ($response) {
+				$response = array (
+						'message' => 'Saved',
+						'success' => true 
+				);
+				$this->response ( $response, 200 );
+			} else {
+				$response = array (
+						'message' => 'UnSaved',
+						'success' => false 
+				);
+				$this->response ( $response, 500 );
+			}
+		} else {
+			$response = array (
+					'message' => 'Missing parameters for Allocation',
+					'success' => false 
+			);
+			$this->response ( $response, 500 );
+		}
+	}
 	function allocation_post() {
 		if ($this->post ( 'allocatedTo' )) {
 			$input = array (
@@ -338,7 +406,7 @@ class Flexipay_server extends REST_Controller {
 			}
 		} else {
 			$response = array (
-					'message' => 'Missing parameters',
+					'message' => 'Missing parameters for Allocation',
 					'success' => false 
 			);
 			$this->response ( $response, 200 );
@@ -394,5 +462,21 @@ class Flexipay_server extends REST_Controller {
 	}
 	function version_get() {
 		echo CI_VERSION; // echoes something like 1.7.1
+	}
+	
+	/*
+	 * Function to create task into Wira
+	 */
+	function createTask($parameters) {
+		$serverUrl = "http://127.0.0.1:8888/ipnserv";		
+		$response = $this->curl->simple_get ( $serverUrl, $parameters );
+		
+		if($response){
+			// Should be saved in the database
+			echo "Wira Response:" . $response;
+		}else{
+			echo "No response from Wira";
+		}
+		
 	}
 }
