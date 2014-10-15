@@ -14,14 +14,18 @@ class Transactions_Model extends CI_Model {
 	}
 	function getTransactions() {
 		$this->db->query ( 'Use mobileBanking' );
-		// Users transaction for Today
-		// $this->db->limit (50);
 		$this->db->order_by ( "transaction_date", "asc" );
-		$this->db->where ( array (
-				'userId' => $this->userData->userId 
-		) );
-		$query = $this->db->get ( 'transactions' );
-		// echo $this ->db->last_query();
+		
+		/*Administrator pulls all transactions
+		 * HardCoded to UserId 10 - First Trial
+		 * */
+		if($this->userData->userId!=10){
+			$this->db->where ( array (
+					'userId' => $this->userData->userId 
+			) );
+		}
+		$query = $this->db->get ('transactions');
+		
 		
 		$transactions = $query->result_array ();
 		
@@ -134,6 +138,19 @@ class Transactions_Model extends CI_Model {
 		
 		return $query->row()->docNum;
 	}
+	
+	/*
+	 * Get Transaction Summary for Field Officer
+	 */
+	function getTransactionSummary($userId, $allocationDate){
+		$query = $this->db->query("select COUNT(distinct(clcode)) AS customer_count,SUM(transaction_amount) AS transaction_sum, COUNT(transaction_amount) as transaction_count ".
+				"from transactions where userId=".$userId.
+				" and transaction_date between '".$allocationDate."' and '".date ( "Y-m-d H:i:s" )."'");
+		
+		//echo $this->db->last_query();
+		return $query->result()[0];
+	}
+	
 	
 	function random_string($length = 4) {
 		$firstPart = substr ( str_shuffle ( "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ), 0, 2 );
