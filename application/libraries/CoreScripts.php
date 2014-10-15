@@ -62,6 +62,7 @@ class CoreScripts {
 			//$smsResponse= $this->_send_sms('0729472421', $message);
 			$smsResponse = $this->_send_sms ( $customerData ['mobileNo'], $message );
 			
+			$smsResponse=true;
 			if ($smsResponse) {
 				$clientResponse ['sms'] = true;
 				$clientResponse ['success'] = true;
