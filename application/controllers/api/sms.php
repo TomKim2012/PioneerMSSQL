@@ -5,7 +5,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 
 // 1.Import the helper Gateway class
 require APPPATH . '/libraries/REST_Controller.php';
-//require APPPATH . '/libraries/AfricasTalkingGateway.php';
+// require APPPATH . '/libraries/AfricasTalkingGateway.php';
 class Sms extends REST_Controller {
 	function __construct() {
 		parent::__construct ();
@@ -15,8 +15,7 @@ class Sms extends REST_Controller {
 		$this->load->model ( 'Users_Model', 'users' );
 	}
 	function custSms_post() {
-		
-		//echo "Heere";
+		// echo "Heere";
 		// 2.Read in the received values
 		$phoneNumber = $this->post ( "from" ); // sender's Phone Number
 		$shortCode = $this->post ( "to" ); // The short code that received the message
@@ -26,26 +25,35 @@ class Sms extends REST_Controller {
 		$id = $this->post ( "id" ); // A unique id for this message
 		                            
 		// Add Balance from the text
-		
 		if ($text) {
 			// 1. Use phoneNumber to get Client Code
 			if ($phoneNumber) {
 				$phoneNumber = "0" . substr ( $phoneNumber, 4 );
-				$custData = $this->customers->getSingleCustomer( 'phone', $phoneNumber );
+				$custData = $this->customers->getSingleCustomer ( 'phone', $phoneNumber );
 				
-				//echo "Customer Id>>".$custData ['customerId'];
 				
 				if ($custData ['customerId'] == "N/a") {
-					$message = "The phoneNumber you sent is not registered with the system. Kindly contact nearest branch".
-					" for more details.";
+					$message = "The phoneNumber you sent is not registered with the system." . 
+								"Kindly contact nearest branch for more details.";
 					$myresponse = $this->corescripts->_send_sms ( $phoneNumber, $message );
 					return;
 				}
-				$this->login ();
+			}else{
+				$message = 'Dear customer, the phoneNumber you used is not in our records';
+				$this->corescripts->_send_sms2 ( $phoneNumber, $message, $shortCode );
 			}
 			
-			$response = $this->corescripts->getStatement ( $custData['customerId']);
-			echo $response;
+			// Lipa Na Mpesa Request
+			
+			if (strpos ($text,"lipa") !== false) {
+				$this -> transferRequest($custData ['customerId']);
+			}else{
+				return;
+				$this->login ();
+				$response = $this->corescripts->getStatement ( $custData ['customerId'] );
+				echo $response;
+			}
+			
 		} else {
 			$message = 'Incorrect Format sent.Please try again by sending "pioneer balance" to 20414"';
 			$this->corescripts->_send_sms2 ( $phoneNumber, $message, $shortCode );
@@ -59,7 +67,19 @@ class Sms extends REST_Controller {
 		
 		$login_ok = $this->users->login ( $userName, $password, $imeiCode );
 		
-		//Updating Terminal
+		// Updating Terminal
 		$this->users->update_session ( NULL, NULL, 17 );
+	}
+	
+	function transferRequest($clCode){
+		$serverUrl = "http://localhost:8030/mTransport/index.php/Lipasms/custSms";
+		
+		$parameters = array (
+				'clCode' => $clCode,
+		);
+		
+		$response = $this->curl->simple_get ( $serverUrl, $parameters );
+		
+		echo $response;
 	}
 }

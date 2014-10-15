@@ -298,8 +298,23 @@ class Users_Model extends CI_Model {
 		$this->db->where ( 'allocationId', $allocationId );
 		$query = $this->db->update ( 'Allocation', $input );
 		if ($query) {
-			// echo $this->db->last_query();
 			return true;
+		} else {
+			return false;
+		}
+	}
+	/*
+	 * Get Allocation Summary during deallocation
+	 */
+	function getAllocationDetails($allocationId){
+		$queryStatement="select terminalName,Users.userName,Users.firstName +' '+ Users.lastName AS allocateeNames,".
+						"allocatedTo,allocationDate,allocationId from Allocation ".
+						"INNER JOIN Terminal ON Allocation.terminalId=Terminal.terminalId INNER JOIN Users".
+						" ON Allocation.allocatedTo = Users.userId where allocationId=".$allocationId;
+		$query = $this->db->query ( $queryStatement);
+		
+		if ($query->result()) {
+			return $query->result()[0];
 		} else {
 			return false;
 		}

@@ -342,8 +342,6 @@ class Flexipay_server extends REST_Controller {
 		$parameters ['imeiCode'] = $terminalData->ImeiCode;
 		
 		$this->createTask ( $parameters );
-		
-		// print_r($parameters);
 	}
 	
 	/*
@@ -385,6 +383,9 @@ class Flexipay_server extends REST_Controller {
 			$this->response ( $response, 500 );
 		}
 	}
+	/*
+	 * Former function for creating Allocations
+	 */
 	function allocation_post() {
 		if ($this->post ( 'allocatedTo' )) {
 			$input = array (
@@ -414,11 +415,19 @@ class Flexipay_server extends REST_Controller {
 	}
 	function deallocation_post() {
 		if ($this->post ( 'allocationId' )) {
+
+			if($this->post ('deallocatedBy') != null){
+				$deallocatedBy = $this->post ( 'deallocatedBy' );
+			}else if($this->post('actorId')){
+				$user = $this->users->getUsersByUserName($this->post('actorId'));
+				$deallocatedBy=$user->userId;
+			}
+							 
 			$input = array (
 					'deallocationDate' => date ( "Y-m-d H:i:s" ),
-					'deallocatedBy' => $this->post ( 'deallocatedBy' ) 
+					'deallocatedBy' => $deallocatedBy 
 			);
-		}
+		
 		
 		if ((! empty ( $input ['deallocatedBy'] ))) {
 			$response = $this->users->createDeallocation ( $input, $this->post ( 'allocationId' ) );
@@ -434,7 +443,38 @@ class Flexipay_server extends REST_Controller {
 			);
 			$this->response ( $response, 200 );
 		}
+		}
 	}
+	function predeAllocation_post() {
+		if (! $this->authorize ()) {
+			return;
+		}
+		
+		if ($this->post ( 'allocationId' )) {
+			$allocationId = $this->post ( 'allocationId' );
+			
+			$allocation = $this->users->getAllocationDetails ( $allocationId );
+			$transactionSummary = $this->transactions->getTransactionSummary ( $allocation->allocatedTo, $allocation->allocationDate );
+			
+			$input = array (
+					'userName' => $allocation->userName,
+					'allocateeNames' => $allocation->allocateeNames,
+					'allocationId' => $allocation->allocationId,
+					'docType' => 'TERMINAL DEALLOCATION',
+					'terminalName' => $allocation->terminalName,
+					'transactionCount' => $transactionSummary->transaction_count,
+					'transactionSum' => number_format ( $transactionSummary->transaction_sum ),
+					'customerCount' => $transactionSummary->customer_count 
+			);
+			
+			print_r ( $input );
+			$this->createTask ( $input );
+		}
+	}
+	
+	/*
+	 * Synchronization of contacts
+	 */
 	function customerSyncCheck_post() {
 		if ($this->post ( 'contactCount' )) {
 			$contactCount = $this->post ( 'contactCount' );
@@ -468,15 +508,14 @@ class Flexipay_server extends REST_Controller {
 	 * Function to create task into Wira
 	 */
 	function createTask($parameters) {
-		$serverUrl = "http://127.0.0.1:8888/ipnserv";		
+		$serverUrl = "http://127.0.0.1:8888/ipnserv";
 		$response = $this->curl->simple_get ( $serverUrl, $parameters );
 		
-		if($response){
+		if ($response) {
 			// Should be saved in the database
 			echo "Wira Response:" . $response;
-		}else{
+		} else {
 			echo "No response from Wira";
 		}
-		
 	}
 }
