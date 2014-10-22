@@ -201,7 +201,7 @@ class Users_Model extends CI_Model {
 				$session_data ['isAllocated'] = true;
 				return $session_data;
 			} else {
-				$session_data ['authorize'] = true;
+				$session_data ['authorize'] = false;
 				$session_data ['group'] = 'fieldofficer';
 				$session_data ['isAllocated'] = false;
 				$session_data ['error'] = 'You have not been Allocated this device.';
