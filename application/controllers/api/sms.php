@@ -48,7 +48,6 @@ class Sms extends REST_Controller {
 			if (strpos ($text,"lipa") !== false) {
 				$this -> transferRequest($custData ['customerId']);
 			}else{
-				return;
 				$this->login ();
 				$response = $this->corescripts->getStatement ( $custData ['customerId'] );
 				echo $response;
