@@ -69,14 +69,14 @@ class Sms extends REST_Controller {
 	function transferRequest($phone) {
 		$serverUrl = "http://localhost:8030/mTransport/index.php/Lipasms/custSms";
 		
-		$phoneNo = '0'.substr ( $phone, 0, 4 );
-		
 		$parameters = array (
-				'phoneNumber' =>  $phoneNo
+				'phoneNumber' =>  $phone
 		);
 		
 		$response = $this->curl->simple_get ( $serverUrl, $parameters );
 		
+
+		// echo "Transfered>>".$phone;
 		echo $response;
 	}
 }
