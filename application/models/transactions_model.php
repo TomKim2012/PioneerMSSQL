@@ -133,10 +133,12 @@ class Transactions_Model extends CI_Model {
 				'clientcode' => $clCode 
 		) );
 		$query = $this->db->get ('clientdoc');
-		//echo $this->db->last_query();
-		//print_r($query->row());
+		if(isset($query->row()->docNum)){
+			return $query->row()->docNum;
+		}else {
+			return null;
+		}
 		
-		return $query->row()->docNum;
 	}
 	
 	/*
