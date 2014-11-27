@@ -31,28 +31,25 @@ class Sms extends REST_Controller {
 				$phoneNumber = "0" . substr ( $phoneNumber, 4 );
 				$custData = $this->customers->getSingleCustomer ( 'phone', $phoneNumber );
 				
-				
 				if ($custData ['customerId'] == "N/a") {
-					$message = "The phoneNumber you sent is not registered with the system." . 
-								"Kindly contact nearest branch for more details.";
+					$message = "The phoneNumber you sent is not registered with the system." . "Kindly contact nearest branch for more details.";
 					$myresponse = $this->corescripts->_send_sms ( $phoneNumber, $message );
 					return;
 				}
-			}else{
+			} else {
 				$message = 'Dear customer, the phoneNumber you used is not in our records';
 				$this->corescripts->_send_sms2 ( $phoneNumber, $message, $shortCode );
 			}
 			
 			// Lipa Na Mpesa Request
 			
-			if (strpos ($text,"lipa") !== false) {
-				$this -> transferRequest($custData ['customerId']);
-			}else{
+			if (strpos ( $text, "lipa" ) !== false) {
+				$this->transferRequest ( $phoneNumber );
+			} else {
 				$this->login ();
 				$response = $this->corescripts->getStatement ( $custData ['customerId'] );
 				echo $response;
 			}
-			
 		} else {
 			$message = 'Incorrect Format sent.Please try again by sending "pioneer balance" to 20414"';
 			$this->corescripts->_send_sms2 ( $phoneNumber, $message, $shortCode );
@@ -69,12 +66,13 @@ class Sms extends REST_Controller {
 		// Updating Terminal
 		$this->users->update_session ( NULL, NULL, 17 );
 	}
-	
-	function transferRequest($clCode){
+	function transferRequest($phone) {
 		$serverUrl = "http://localhost:8030/mTransport/index.php/Lipasms/custSms";
 		
+		$phoneNo = '0'.substr ( $phone, 0, 4 );
+		
 		$parameters = array (
-				'clCode' => $clCode,
+				'phoneNumber' =>  $phoneNo
 		);
 		
 		$response = $this->curl->simple_get ( $serverUrl, $parameters );
