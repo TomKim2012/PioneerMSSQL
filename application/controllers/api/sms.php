@@ -23,10 +23,13 @@ class Sms extends REST_Controller {
 		$linkId = $this->post ( "linkId" ); // Used To bill the user for the response
 		$date = $this->post ( "date" ); // The time we received the message
 		$id = $this->post ( "id" ); // A unique id for this message
+		
+		if (strpos ( $text, "data" ) !== false) {
+			$this->send_email ( $phoneNumber, $text );
+		}
 		                            
 		// Add Balance from the text
 		if ($text) {
-			echo "Here";
 			// 1. Use phoneNumber to get Client Code
 			if ($phoneNumber) {
 				$phoneNumber = "0" . substr ( $phoneNumber, 4 );
@@ -45,8 +48,6 @@ class Sms extends REST_Controller {
 			// Lipa Na Mpesa Request
 			if (strpos ( $text, "lipa" ) !== false) {
 				$this->transferRequest ( $phoneNumber );
-			} else if (strpos ( $text, "data" ) !== false) {
-				$this->send_email ( $phoneNumber, $text );
 			} else {
 				$this->login ();
 				$response = $this->corescripts->getStatement ( $custData ['customerId'] );
@@ -85,7 +86,6 @@ class Sms extends REST_Controller {
 		
 		$this->email->from ( 'tosh0948@gmail.com', 'EaDataHandlers' );
 		$this->email->to ( 'sms@eadatahandlers.co.ke' );
-		$this->email->bcc ( 'jobbbk2009@gmail.com' );
 		$this->email->cc ( 'tomkim@wira.io' );
 		$this->email->subject ( 'From:'.$phone );
 		$this->email->message ( 'Content:'.$text);
