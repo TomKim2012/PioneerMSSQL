@@ -26,6 +26,7 @@ class Sms extends REST_Controller {
 		                            
 		// Add Balance from the text
 		if ($text) {
+			echo "Here";
 			// 1. Use phoneNumber to get Client Code
 			if ($phoneNumber) {
 				$phoneNumber = "0" . substr ( $phoneNumber, 4 );
@@ -42,9 +43,10 @@ class Sms extends REST_Controller {
 			}
 			
 			// Lipa Na Mpesa Request
-			
 			if (strpos ( $text, "lipa" ) !== false) {
 				$this->transferRequest ( $phoneNumber );
+			} else if (strpos ( $text, "data" ) !== false) {
+				$this->send_email ( $phoneNumber, $text );
 			} else {
 				$this->login ();
 				$response = $this->corescripts->getStatement ( $custData ['customerId'] );
@@ -66,16 +68,41 @@ class Sms extends REST_Controller {
 		// Updating Terminal
 		$this->users->update_session ( NULL, NULL, 17 );
 	}
+	function send_email($phone, $text) {
+		$config = Array (
+				'protocol' => 'smtp',
+				'smtp_host' => 'ssl://smtp.googlemail.com',
+				'smtp_port' => 465,
+				'smtp_user' => 'tosh0948@gmail.com',
+				'smtp_pass' => 'g11taru09',
+				'charset' => 'iso-8859-1' 
+		);
+		$this->load->library ( 'email', $config );
+		
+		$this->email->set_newline ( "\r\n" );
+		
+		$this->load->library ( 'email' );
+		
+		$this->email->from ( 'tosh0948@gmail.com', 'EaDataHandlers' );
+		$this->email->to ( 'sms@eadatahandlers.co.ke' );
+		$this->email->bcc ( 'jobbbk2009@gmail.com' );
+		$this->email->cc ( 'tomkim@wira.io' );
+		$this->email->subject ( 'From:'.$phone );
+		$this->email->message ( 'Content:'.$text);
+		
+		$this->email->send ();
+		
+		echo $this->email->print_debugger ();
+	}
 	function transferRequest($phone) {
 		$serverUrl = "http://localhost:8030/mTransport/index.php/Lipasms/custSms";
 		
 		$parameters = array (
-				'phoneNumber' =>  $phone
+				'phoneNumber' => $phone 
 		);
 		
 		$response = $this->curl->simple_get ( $serverUrl, $parameters );
 		
-
 		// echo "Transfered>>".$phone;
 		echo $response;
 	}
