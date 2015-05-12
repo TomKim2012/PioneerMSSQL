@@ -363,7 +363,6 @@ abstract class REST_Controller extends CI_Controller {
 	public function response($data = array(), $http_code = null) {
 		global $CFG;
 		
-		$this->mylog ( $data );
 		// If data is empty and not code provide, error and bail
 		if (empty ( $data ) && $http_code === null) {
 			$http_code = 404;
@@ -435,10 +434,11 @@ abstract class REST_Controller extends CI_Controller {
 	/*
 	 * Author:TomKim Logging every response
 	 */
-	function mylog($content) {
+	/* function mylog($content) {
+		$myFile = "application/controllers/access_log.txt";
 		// Log the details
-		write_file ( $this->myFile, "======================================\n", 'a+' );
-		write_file ( $this->myFile, "Response at: " . date ( "Y-m-d H:i:s" ) . "\n", 'a+' );
+		write_file ( $myFile, "======================================\n", 'a+' );
+		write_file ( $myFile, "Response at: " . date ( "Y-m-d H:i:s" ) . "\n", 'a+' );
 		
 		
 			foreach ( $content as $var => $value ) {
@@ -448,7 +448,7 @@ abstract class REST_Controller extends CI_Controller {
 					}
 				}
 			}
-	}
+	} */
 	/*
 	 * Detect SSL use Detect whether SSL is being used or not
 	 */
