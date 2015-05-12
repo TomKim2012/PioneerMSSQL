@@ -80,10 +80,11 @@ class Transactions_Model extends CI_Model {
 		 * if transactionId is 2 means we are getting savings balance
 		 */
 		if ($transactionId == 2){
-		$cashDeposits = $this->getPrevDeposits ( $customerId );
-		$mpesaDeposits = $this->getPrevMpesa ($customerId );
-		$cummulativeBalance =$balance + $cashDeposits + $mpesaDeposits;
-		return $cummulativeBalance;
+			/*$cashDeposits = $this->getPrevDeposits ( $customerId );
+			$mpesaDeposits = $this->getPrevMpesa ($customerId );*/
+			$cummulativeBalance =$balance;
+			echo "cummulativeBalance for client Code:"+$customerId+" is:"+$cummulativeBalance;
+			return $cummulativeBalance;
 		}else{
 			return $balance;
 		}

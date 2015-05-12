@@ -52,6 +52,8 @@ class CoreScripts {
 			$message = "Dear " . $customerData ['firstName'] . ", Your shares Balance is Ksh " .
 						number_format ( $sharesBal ) . ", Savings Balance is Ksh " . number_format ( $savingsBal ) .
 						".and Loan Balance is Ksh " . number_format ( $loanBal );
+
+			// $message = "This service is undergoing maintainance. We apologize for any inconvinience caused.";
 		}
 		
 		$tType = "Mini-Statement";
@@ -61,6 +63,8 @@ class CoreScripts {
 			
 			//$smsResponse= $this->_send_sms('0729472421', $message);
 			$smsResponse = $this->_send_sms ( $customerData ['mobileNo'], $message );
+
+			echo $smsResponse;
 			
 			$smsResponse=true;
 			if ($smsResponse) {
@@ -73,7 +77,7 @@ class CoreScripts {
 				$clientResponse ['transactionDate'] = $response ['transaction_date'];
 				$clientResponse ['transactionAmount'] = "10";
 				$clientResponse ['custNames'] = $customerData ['firstName'] . " " . $customerData ['lastName'];
-				$this->CI ()->response ( $clientResponse, 200 ); // 200 being the HTTP response code
+				//$this->CI ()->response ( $clientResponse, 200 ); // 200 being the HTTP response code
 			}
 			
 			// $smsResponse2= $this->_send_sms2('0729472421', $message,'SMSLEOPARD');
