@@ -30,6 +30,7 @@ class EmpireWifi extends REST_Controller {
 			$emailMessage = "Dear Client,<br>We have received your request for EmpireWifi Credentials." . "<br>Use this credentials below to Login. <br><br><br><strong>UserName:</strong> " . $data ['Username'] . " <br><strong>Password:</strong>" . $data ['Password'];
 			$this->sendSMS ( $parameters ['phone'], $smsMessage );
 			$this->sendEmail ( $parameters ['email'], $emailMessage );
+			header("172.20.0.1/login");
 		} else {
 			return array (
 					'status' => 'Failed' 
