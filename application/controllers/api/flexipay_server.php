@@ -65,6 +65,16 @@ class Flexipay_server extends REST_Controller {
 
 	}
 	
+
+	function customerSubmit_post(){
+		$parameters = array (
+				'phone' => $this->post ( 'phone' ),
+				'email' => $this->post ( 'email' ),
+				'ppid' => $this->random_string(4)
+		);
+		$this -> submitRequest($paramerters);
+	}
+	
 	/*
 	 * Get customer Transactions
 	 */
