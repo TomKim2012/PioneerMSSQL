@@ -13,7 +13,7 @@ class EmpireWifi extends REST_Controller {
 	function customerSubmit_post() {
 		$parameters = array (
 				'cf' => 'validate',
-				'phone' => $this->post ( 'phone' ),
+				'phone' => $this->post ( 'phoneNumber' ),
 				'email' => $this->post ( 'email' ),
 				'ppid' => $this->random_string ( 4 ) 
 		);
@@ -30,7 +30,9 @@ class EmpireWifi extends REST_Controller {
 			$emailMessage = "Dear Client,<br>We have received your request for EmpireWifi Credentials." . "<br>Use this credentials below to Login. <br><br><br><strong>UserName:</strong> " . $data ['Username'] . " <br><strong>Password:</strong>" . $data ['Password'];
 			$this->sendSMS ( $parameters ['phone'], $smsMessage );
 			$this->sendEmail ( $parameters ['email'], $emailMessage );
-			header("172.20.0.1/login");
+			$newLocation = "http://172.20.0.1/login";
+			 //loading the helper
+			 header('Location:'.$newLocation, TRUE, 301);
 		} else {
 			return array (
 					'status' => 'Failed' 
@@ -76,7 +78,7 @@ class EmpireWifi extends REST_Controller {
 				'matthew.mwangi10@gmail.com',
 				'a.mellu@virtualmetrik.com' 
 		);
-		$this->email->cc ( $copied );
+		//$this->email->cc ( $copied );
 		$this->email->subject ( 'Login Credentials' );
 		$this->email->message ( $message );
 		
