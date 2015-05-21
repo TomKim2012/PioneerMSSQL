@@ -26,11 +26,13 @@ class EmpireWifi extends REST_Controller {
 		$data = json_decode ( $response, true );
 		
 		if ($data ['Status'] == 'Successful') {
-			$smsMessage = "Thank-you for your registration. Use this credentials to Login. UserName: " . $data ['Username'] . " Password:" . $data ['Password'];
-			$emailMessage = "Dear Client,<br>We have received your request for EmpireWifi Credentials." . "<br>Use this credentials below to Login. <br><br><br><strong>UserName:</strong> " . $data ['Username'] . " <br><strong>Password:</strong>" . $data ['Password'];
+			$smsMessage = "Thank-you for your registration. Use this credentials to Login. Access Code: " . $data ['Username'];
+			$emailMessage = "Dear Client,<br>We have received your request for EmpireWifi Credentials." . 
+							"<br>Use this credentials below to Login. <br><br><br><strong>Access Code:</strong> " .
+							 $data ['Username'];
 			$this->sendSMS ( $parameters ['phone'], $smsMessage );
 			$this->sendEmail ( $parameters ['email'], $emailMessage );
-			header("172.20.0.1/login");
+			header ( "172.20.0.1/login" );
 		} else {
 			return array (
 					'status' => 'Failed' 
